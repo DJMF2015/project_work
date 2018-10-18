@@ -95,10 +95,10 @@ class TestFriends < MiniTest::Test
 
   # 5. For a given person, remove a specific name from their list of friends
   # (hint: Same as above, testing for the length of the array should be sufficient)
-def test_unlike_friend
-  result = unlike_friend(@person4,"Daphne")
-  assert_equal(2, result.length)
-end
+  def test_unlike_friend
+    result = unlike_friend(@person4,"Daphne")
+    assert_equal(2, result.length)
+  end
 
   # 6. Find the total of everyone's money
   # (hint: use the @people array, remember how we checked the total number of eggs yesterday?)
@@ -110,17 +110,18 @@ end
   # 7. For two given people, allow the first person to loan a given value of money to the other
   # (hint: our function will probably need 3 arguments passed to it... the lender, the lendee, and the amount for this function)
   # (hint2: You should test if both the lender's and the lendee's money have changed, maybe two assertions?)
- # def test_lendee_to_lender_monies
- #   loan = lend_monies(@person5, @person2, 20)
- #   assert_equal(22, )
- # end
+
+  # def test_lendee_to_lender_monies
+  #   loan = lend_monies(@person5, @person2, 20)
+  #   assert_equal(22, )
+  # end
 
   # 8. Find the set of everyone's favourite food joined together
   # (hint: concatenate the favourites/snack arrays together)
-def test_all_favourite_snacks
-  result = all_snacks(@people)
-  assert_equal(7, result.count)
-end
+  def test_all_favourite_snacks
+    result = all_snacks(@people)
+    assert_equal(7, result.count)
+  end
 
   # 9. Find people with no friends
   # (hint: return an array, there might be more people in the future with no friends!)

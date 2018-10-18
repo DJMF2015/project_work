@@ -5,16 +5,16 @@ stops = [ "Croy", "Cumbernauld", "Falkirk High", "Linlithgow", "Livingston", "Ha
 # 1. Add `"Edinburgh Waverley"` to the end of the array
 stops.push('Edinburgh Waverley')
 
-# p stops
+ p stops
 
 # 2. Add `"Glasgow Queen St"` to the start of the array
 stops.unshift('Glasgow Queen St')
 p stops
-# p stops
 
 # 3. Add `"Polmont"` at the appropriate point (between `"Falkirk High"` and `"Linlithgow"`)
 stops.insert(4,'Polmont')
 # p stops
+
 #4 position of livingston
 
 p stops.index("Livingston")

@@ -11,4 +11,4 @@ We have provided some tests for you. Your job is simply to make those tests pass
 * **Not all functions need to return something** - Sometimes we call a function and then test its _effects_, rather than test its _output_.
 i.e.) if not performing a function or operation of some then won't return or need to.
 
-@customer variable (instance) require d for passing data between objects and classes
+<!-- @customer variable (instance) required for passing data between objects and classes -->

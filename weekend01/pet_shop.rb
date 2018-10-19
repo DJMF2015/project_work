@@ -1,5 +1,4 @@
 # # ASK YOURSELF DOES IT PERFORM AN ACTUAL FUNCTION/OPERATION ON THE DATA?
-# IF NOT, DONT RETURN!
 
 #1 pet shop name "camelot of Pets"
 def pet_shop_name(name)
@@ -21,27 +20,58 @@ def pets_sold(sold)
 end
 
 #5 increase in no of pets sold by +2
-def increase_pets_sold(pet_shop, pets)
-  pet_shop[:admin][:pets_sold] += pets
+def increase_pets_sold(shop, pets)
+  shop[:admin][:pets_sold] += pets
 end
 
 #6 stock count check of pets
-def stock_count(pet_shop)
-  return pet_shop[:pets].count()
+def stock_count(shop)
+  return shop[:pets].count()
 end
 
-#7 pets found by breed
-def pets_by_breed(pet_shop, breed_type)
-  type = Array.new()
+#7/8 pets found by breed
+def pets_by_breed(shop, breed_type)
+  type = []
   # loop over petshop array
-  for pet in pet_shop[:pets]
-     #if breed-type = "british shorthair"
+  for pet in shop[:pets]
+    # if breed-type = "british shorthair"
     if pet[:breed] == breed_type
-    type.push(pet) #add/push to new array
+      type.push(pet) #add/push to new array
     end
   end
-  return p type
+  return type
 end
-# pet breed not found {dalmation}
-def pets_by_breed()
+
+#9/10 find Fred & Arthur by name
+def find_pet_by_name(shop, name)
+  found = nil
+  for pet in shop[:pets]
+    if (pet[:name] == name)
+      found = pet
+    end
+  end
+  return found
+end
+
+#11 remove artur
+def remove_pet_by_name(shop, name)
+  for pet in shop[:pets]
+    if pet[:name] == name
+      shop[:pets].delete(pet)
+    end
+  end
+end
+#12 add pet to stock
+def add_pet_to_stock(shop, new_pet)
+    # breed = []
+ shop[:pets].push(new_pet)
+end
+#13 check customer1 has 1000 cash
+def customer_cash(cash)
+  return cash[:cash]
+end
+#14 remove cash from customer1
+def remove_customer_cash()
+
+
 end

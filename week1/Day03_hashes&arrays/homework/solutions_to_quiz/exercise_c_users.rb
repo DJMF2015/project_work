@@ -27,12 +27,7 @@ country =   {
   }
 united_kingdom.push(country)
 # p united_kingdom
-# country.push(  {
-#     name: "Northern Island",
-#     population: 1811000,
-#     capital: "Belfast"
-#  })
-# united_kingdom.push(country)
+
 # 3. Use a loop to print the names of all the countries in the UK.
 for names in united_kingdom
 p names[:name]

@@ -70,7 +70,7 @@ result = []
 for numb in users["Avril"][:lottery_numbers]
   # users["Avril"][:lottery_numbers].each do |numb|
   # p numb if numb.even?
-# -------------------------------
+  # -------------------------------
   # if numb % 2 == 0
   # result.push(numb)
   result.push(numb) if numb.even?
@@ -80,7 +80,7 @@ p result
 
 # 7. Erik is one lottery number short! Add the number `7` to be included in his lottery numbers
 p users["Erik"][:lottery_numbers].unshift(7)
-  var = users["Erik"][:lottery_numbers]
+var = users["Erik"][:lottery_numbers]
 p var
 # 8. Change Erik's hometown to Edinburgh
 p users["Erik"][:home_town] = "Edinburgh"

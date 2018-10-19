@@ -53,7 +53,7 @@ def find_pet_by_name(shop, name)
   return found
 end
 
-#11 remove artur
+#11 remove arthur
 def remove_pet_by_name(shop, name)
   for pet in shop[:pets]
     if pet[:name] == name
@@ -63,8 +63,8 @@ def remove_pet_by_name(shop, name)
 end
 #12 add pet to stock
 def add_pet_to_stock(shop, new_pet)
-    # breed = []
- shop[:pets].push(new_pet)
+  # breed = []
+  shop[:pets].push(new_pet)
 end
 #13 check customer1 has 1000 cash
 def customer_cash(cash)
@@ -72,13 +72,27 @@ def customer_cash(cash)
 end
 #14 remove cash from customer1
 def remove_customer_cash(customer, amount)
-   return customer[:cash] -= amount
+  return customer[:cash] -= amount
 end
-#15 count customer1 no. of pets
+#15 count customer no. of pets
 def customer_pet_count(count)
   return count[:pets].count()
 end
 #16 add a pet to customer1
 def add_pet_to_customer(customer, new_pet)
   customer[:pets].push(new_pet)
+end
+#17/18 check custoemr can afford new pet
+def customer_can_afford_pet(customer, new_pet)
+  return p customer[:cash] >= new_pet[:price]
+end
+#19-21 : integration tests
+def sell_pet_to_customer(shop, pet, customer)
+   return if (pet == nil)
+   if customer_can_afford_pet( customer,pet )
+     add_pet_to_customer(customer,pet)
+     increase_pets_sold(shop, 1) #not quire correct here
+     remove_customer_cash(customer, pet[:price])
+     add_or_remove_cash(shop,pet[:price] )
+   end
 end

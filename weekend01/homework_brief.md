@@ -10,6 +10,3 @@ We have provided some tests for you. Your job is simply to make those tests pass
 * **Red - Green - Refactor** - Your test is passing, awesome! But before you move on, is there anything you can do to make your code more efficient? Or more readable? Or just prettier?
 Can you reuse functions you have already written?
 * **Not all functions need to return something** - Sometimes we call a function and then test its _effects_, rather than test its _output_.
-i.e.) if not performing a function or operation of some then won't return or need to.
-
-<!-- @customer variable (instance) required for passing data between objects and classes -->

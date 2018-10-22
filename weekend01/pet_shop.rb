@@ -1,11 +1,11 @@
 
 #1 pet shop name "camelot of Pets"
-def pet_shop_name(name)
-  return name[:name]
+def pet_shop_name(shop_name)
+  return shop_name[:name]
 end
 # 2 total cash in shop = > 1000
-def total_cash(cash_in_petshop)
-  return cash_in_petshop[:admin][:total_cash]
+def total_cash(shop_cash)
+  return shop_cash[:admin][:total_cash]
 end
 
 #  3: add/remove 10 to total in shop - {110, 90}
@@ -14,48 +14,48 @@ def add_or_remove_cash(pet_shop, amount)
 end
 
 #4 no of pets sold => 0
-def pets_sold(sold)
-  return sold[:admin][:pets_sold]
+def pets_sold(no_sold)
+  return no_sold[:admin][:pets_sold]
 end
 
 #5 increase in no of pets sold by +2
-def increase_pets_sold(shop, pets)
-  shop[:admin][:pets_sold] += pets
+def increase_pets_sold(pet_shop, pets)
+  pet_shop[:admin][:pets_sold] += pets
 end
 
 #6 stock count check of pets
-def stock_count(shop)
-  return shop[:pets].count()
+def stock_count(stock_level)
+  return stock_level[:pets].count()
 end
 
 #7/8 pets found by breed
-def pets_by_breed(shop, breed_type)
-  type = []
+def pets_by_breed(pet_shop, breed_type)
+  match = []
   # loop over petshop array
-  for pet in shop[:pets]
+  for pet in pet_shop[:pets]
     # if breed = "british shorthair"
     if pet[:breed] == breed_type
-      type.push(pet) #push to new array
+      match.push(pet) #push to new array
     end
   end
-  return type
+  return match
 end
 
 #9/10 find Fred & Arthur by name
-def find_pet_by_name(shop, name)
-  found = nil
+def find_pet_by_name(shop, pet_name)
+  found_match = nil
   for pet in shop[:pets]
-    if (pet[:name] == name)
-      found = pet
+    if (pet[:name] == pet_name)
+      found_match = pet
     end
   end
-  return found
+  return found_match
 end
 
 # 11 remove arthur
-def remove_pet_by_name(shop, name)
+def remove_pet_by_name(shop, pet_name)
   for pet in shop[:pets]
-    if pet[:name] == name
+    if pet[:name] == pet_name
       shop[:pets].delete(pet)
     end
   end
@@ -73,8 +73,8 @@ def add_pet_to_stock(shop, new_pet)
 end
 
 #13 check customer1 has 1000 cash
-def customer_cash(cash)
-  return cash[:cash]
+def customer_cash(check_cash)
+  return check_cash[:cash]
 end
 
 #14 remove cash from customer1

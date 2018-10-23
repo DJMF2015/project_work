@@ -37,11 +37,13 @@ def test_player_is_not_present()
   assert_equal("Gideon Smith", @team.check_player_present("Gideon Smith"))
 end
 
+  #test no of points if won (true)
 def test_if_team_has_won
 @team.check_win_or_lose(true)
 assert_equal(5, @team.points())
 end
-
+  
+#test no of points if lost(false)
 def test_if_team_has_lost
 @team.check_win_or_lose(false)
 assert_equal(0, @team.points())

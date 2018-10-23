@@ -5,8 +5,7 @@ require_relative('../student')
 
 
 class TestStudent < MiniTest::Test
-
-
+#can be refactord to include 'setup' initiliasers in replace of individual instances for each test
   def test_student_name
       student1 = Student.new("Ernest", "E26", "python")
     assert_equal("Ernest", student1.name)

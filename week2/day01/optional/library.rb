@@ -5,14 +5,15 @@ class Library
   attr_accessor :books
 
   def initialize(books)
-    @books = books
+    @book_list = books
   end
 
   # #loop over the instance books & if the paramater
-  #  matches book title, return
+  #  matches book title, return book details
+
   def lookup_book(title_book)
     found = nil
-    for book in @books
+    for book in @book_list #loop over instance variable for book objects
       if book[:title] == title_book
         found = book
       end

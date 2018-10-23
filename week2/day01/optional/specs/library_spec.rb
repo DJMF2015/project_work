@@ -6,7 +6,7 @@ require_relative('../library')
 class TestLibrary < MiniTest::Test
 
   def setup
-    @books = [ {
+    @book_list = [ {
       title: "lord_of_the_rings",
       year: 1955,
       rental_details: {
@@ -22,18 +22,19 @@ class TestLibrary < MiniTest::Test
         date: "22/10/18"
       }
       } ]
-      @library = Library.new(@books)
+      @library = Library.new(@book_list)
   end
 
-    def test_library_book_title
+    def test_library_all_book_title
       library_list =  @library.books()
-      assert_equal(@books,library_list)
+      assert_equal(@book_list,library_list)
     end
 
    def test_library_has_rental_details
      search_book = @library.lookup_book("The Fear Index")
      assert_equal("The Fear Index", search_book[:title])
    end
+
 
    def test_book_is_not_found
    #TO-DO....

@@ -5,6 +5,8 @@ class Student
     @name = name
     @cohort = cohort
     @language = language
+    #  would render the variable inaccessible without instance @
+    # language = langauge as local variable only availble within scope of method
   end
  #getter
   def name
@@ -28,7 +30,11 @@ class Student
   end
 
   def favourite_language(fav_language)
-     return "I love " + fav_language
+     return "I love #{fav_language}"
   end
 
+  # def favourite_language()
+  #    return "I love #{@fav_language}"
+  # end
+  
 end

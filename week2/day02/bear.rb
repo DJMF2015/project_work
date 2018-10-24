@@ -5,7 +5,7 @@ class Bear
   attr_reader :name_grizzly
 
   def initialize(name_grizzly)
-    @name_grizzly= name_grizzly#river's name i.e. Dee
+    @name_grizzly= name_grizzly
     @tummy = [] #array for populating with fish
 
   end

@@ -6,7 +6,7 @@ The dice is chosen randomly through ‘sample’ method and so would be hard to 
 
 #### Why is all of the 'puts'-ing in one viewer class?
 
-The Viewer class is responsible for the separation of the View from the rest of the model and controller. The ‘puts’ enable a way to output visually the questions and answer to the user in the terminal.  It prevents the rest of the game logic getting tangled up with what is responsible for just the View alone and easier to refactor or modify.
+The Viewer class is responsible for the separation of the View from the rest of the model and controller. The ‘puts’ enable a way to output visually the questions and answer to the user in the terminal.  It prevents the rest of the game logic getting tangled up with what is responsible for specifically the View and easier to refactor or modify.
 
 #### Are there any parts you don't understand?
 One line or method I was a little unclear of was on validate_movement() in Game class – specifically the line  :

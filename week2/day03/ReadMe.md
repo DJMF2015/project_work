@@ -12,3 +12,9 @@ The Viewer class is responsible for the separation of the View from the rest of 
 One line or method I was a little unclear of was on validate_movement() in Game class – specifically the line  :
 ‘movement = spaces > distance_to_end ? distance_to_end : spaces’
 ‘
+
+
+
+<br>
+
+*<i>class diagram on-paper </i>

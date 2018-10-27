@@ -6,6 +6,7 @@ class Room
   def initialize(room_name, room_cost, max_capacity)
     @room_name = room_name
     @room_cost = room_cost
+    @till = 100
     @max_capacity = max_capacity
     @guests_in_room = []
     @songs_list = []
@@ -22,9 +23,14 @@ class Room
   end
 
   def guest_check_out(party)
-    @guests_in_room.delete(party)
-    return party.count()
+     @guests_in_room.delete(party)
+    return   party.count()
   end
+
+  # def charge_customer(guest,fee)
+  #      guest.entry_fee(fee)
+  #     @till += fee
+  # end
 
   def add_songs(song)
     @songs_list << song
@@ -37,11 +43,12 @@ class Room
   end
 
   def check_max_capacity(capacity)
-    maximum = nil
-    if capacity >= @max_capacity
+    not_at_max = false
+  if capacity >= @max_capacity
       return true
-    end
-    return maximum
   end
+    return not_at_max
+  end
+
 
 end

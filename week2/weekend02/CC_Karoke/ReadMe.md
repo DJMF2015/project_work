@@ -11,7 +11,8 @@ remove songs in rooms
 
 ### Extensions
 What happens if there are more guests trying to be checked in than there is free space in the room?  
-Karaoke venues usually have an entry fee - So the guests could have money so they can pay it. Similiar to pub_lab- buy() basic method and serve() method in pub_lab basic
+Karaoke venues usually have an entry fee - So the guests could have money so they can pay it.
+Similiar to pub_lab- buy() basic method and serve() method in pub_lab basic
 
 ### Advanced extensions
 Guests could have a favourite song, and if their favourite song is on the room's playlist, they can cheer loudly! (return a string like "Whoo!").  include? method

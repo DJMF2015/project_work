@@ -21,4 +21,3 @@ Your program should be test driven and should be able to:
 <li>Add anything extra you think would be good to have at a karaoke venue!</li>
 </ol>
 
-![alt text](karoke.png 'class diagram')

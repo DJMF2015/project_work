@@ -13,8 +13,7 @@ class TestRoom < Minitest::Test
     @room2 = Room.new("The Elvis Presley", 25.0, 2)
     @room3 = Room.new("The Impersonator", 75.0, 8 )
     @room4  = Room.new("Rave Room", 20.0, 4)
-    @bar = BarAdmin.new(100.0)
-    # @till = Room.new(100.0)
+
     #guest name, favourite song, money
     @guest1 = Guest.new(10.0,"John Doe", "Feel Good:Gorillaz " )
     @guest2 = Guest.new(50.0, "John McClane", "Let it Snow")
@@ -42,17 +41,6 @@ class TestRoom < Minitest::Test
     assert_equal(expected, actual)
   end
 
-  def test_room_has_a_max_capacity
-    expected = 8
-    actual = @room3.max_capacity
-    assert_equal(expected, actual)
-  end
-
-  def test_room_is_full
-    max = @room2.guest_check_in(@check_in)
-    assert_equal(true, @room2.check_max_capacity(max))
-  end
-
   def test_room_not_full
     max = @room1.guest_check_in(@check_in)
     assert_equal(false, @room1.check_max_capacity(max))
@@ -66,15 +54,6 @@ class TestRoom < Minitest::Test
     @room2.guest_check_in(@check_in)
     actual = @room2.guest_check_out(@check_out)
     assert_equal(2, actual)
-  end
-
-  def test_charge_customer_room_fee
-    expected = 10.0
-    @charge = @room1.room_cost
-    @guest4.entry_fee(@charge)
-    @bar.add_to_till(@charge)
-    assert_equal(expected, @guest4.guest_wallet)#assert charge customer
-    assert_equal(150.0, @bar.till)
   end
 
   def test_room_has_a_fee_charge
@@ -93,6 +72,17 @@ class TestRoom < Minitest::Test
     @room1.remove_song(@song1)
     assert_equal(2, @room1.song_count)
   end
+
+    def test_room_has_a_max_capacity
+      expected = 8
+      actual = @room3.max_capacity
+      assert_equal(expected, actual)
+    end
+
+    def test_check_if_room_is_full
+      max = @room2.guest_check_in(@check_in)
+      assert_equal("room full", @room2.check_max_capacity(max))
+    end
 
 
 

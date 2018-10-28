@@ -1,4 +1,4 @@
-
+#baradmin.rb
 class BarAdmin
 
 attr_reader :till
@@ -9,7 +9,7 @@ attr_reader :till
 
 
   def add_to_till(fee)
-     p @till += fee
+   @till += fee
   end
 
 

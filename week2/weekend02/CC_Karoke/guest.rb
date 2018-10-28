@@ -11,7 +11,7 @@ class Guest
 
 
   def entry_fee(fee)
-     @guest_wallet -= fee
+    @guest_wallet -= fee
   end
 
 

@@ -1,11 +1,11 @@
-
+#song.rb
 class Song
 
- attr_reader :song
+  attr_reader :song_name
 
- def initialize(song)
- @song = song
- end
+  def initialize(song_name)
+    @song_name = song_name
+  end
 
 
 

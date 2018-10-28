@@ -20,3 +20,5 @@ Your program should be test driven and should be able to:
 <li>Rooms can keep track of the entry fees/spending of the guests - maybe add a bar tab/bar class?</li>
 <li>Add anything extra you think would be good to have at a karaoke venue!</li>
 </ol>
+
+![alt text](karoke.png 'class diagram')

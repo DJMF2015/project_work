@@ -1,6 +1,7 @@
 ## The OO CodeClan Karaoke (CCC)
 You have been approached to build software for a Karaoke bar. Specifically, they want you to build a software for checking guests in and out, plus handling songs.
 <hr>
+
 ![alt text](https://github.com/DJMF2015/cc_homework/blob/master/week2/weekend02/CC_Karoke/Karoke.png)
 
 <hr>

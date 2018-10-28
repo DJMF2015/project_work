@@ -73,16 +73,28 @@ class TestRoom < Minitest::Test
     assert_equal(2, @room1.song_count)
   end
 
-    def test_room_has_a_max_capacity
-      expected = 8
-      actual = @room3.max_capacity
-      assert_equal(expected, actual)
-    end
+  def test_room_has_a_max_capacity
+    expected = 8
+    actual = @room3.max_capacity
+    assert_equal(expected, actual)
+  end
 
-    def test_check_if_room_is_full
-      max = @room2.guest_check_in(@check_in)
-      assert_equal("room full", @room2.check_max_capacity(max))
-    end
+  def test_check_if_room_is_full
+    max = @room2.guest_check_in(@check_in)
+    assert_equal("room full", @room2.check_max_capacity(max))
+  end
+
+  #validate guest can choose random song from playlist
+  def test_guest_can_choose_random_song
+    @room2.add_songs(@song1)
+    @room2.add_songs(@song2)
+    @room2.add_songs(@song3)
+    @room2.add_songs(@song4)
+    @room2.add_songs(@song5)
+    songs = [@song1, @song2, @song3, @song4, @song5]
+    change = @room2.surprise_song(songs)
+    assert_equal(true, change)
+  end
 
 
 

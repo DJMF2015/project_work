@@ -4,7 +4,7 @@ You have been approached to build software for a Karaoke bar. Specifically, they
 Your program should be test driven and should be able to:
 
 <ol>
-### Create rooms, songs and guests
+###Create rooms, songs and guests
 <li>Check in guests to rooms</li>
 <li>Check out guests from rooms</li>
 <li>Add songs to rooms</li>

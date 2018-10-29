@@ -1,5 +1,8 @@
 require('minitest/autorun')
 require('minitest/rg')
+require 'minitest/emoji'
+# require 'color_pound_spec_reporter'
+require 'minitest/hyper'
 require_relative('../room.rb')
 require_relative('../song.rb')
 require_relative('../guest.rb')

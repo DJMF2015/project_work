@@ -3,6 +3,8 @@ require('minitest/rg')
 require_relative('../baradmin.rb')
 require_relative('../room.rb')
 require_relative('../guest.rb')
+require 'minitest/emoji'
+require 'minitest/hyper'
 
 class TestBarAdmin  < Minitest::Test
 

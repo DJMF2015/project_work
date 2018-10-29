@@ -2,7 +2,9 @@ require('minitest/autorun')
 require('minitest/rg')
 require_relative('../guest.rb')
 require_relative('../song.rb')
-
+require 'minitest/emoji'
+require 'minitest/hyper'
+# require 'color_pound_spec_reporter'
 class TestGuest < Minitest::Test
 
   def setup

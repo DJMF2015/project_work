@@ -3,6 +3,10 @@ require('minitest/rg')
 require_relative('../song.rb')
 require_relative('../guest.rb')
 require_relative('../room.rb')
+# require 'minitest/emoji'
+# require 'minitest/hyper'
+require 'color_pound_spec_reporter'
+
 class TestSong < Minitest::Test
 
   def setup

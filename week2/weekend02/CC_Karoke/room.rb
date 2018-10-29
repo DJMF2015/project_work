@@ -25,7 +25,7 @@ class Room
   #remove a guest from array
   def guest_check_out(party)
     @guests_in_room.delete(party)
-    return   party.count()
+    return  party.count()
   end
 
   #add song to song_list array

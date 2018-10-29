@@ -8,11 +8,11 @@ require 'minitest/hyper'
 class TestGuest < Minitest::Test
 
   def setup
-    @guest1 = Guest.new(10.0,"John Doe", "One More Time: Daft Punk")
-    @guest2 = Guest.new(60.0, "David Blain", "Pump-Up-The-Jam")
     @song1 = Song.new("Solo: Clean Bandit")
     @song2 = Song.new("Pump Up the Jam: Technotronic")
     @song3 = Song.new("One More Time: Daft Punk")
+    @guest1 = Guest.new(10.0,"John Doe", @song3)
+    @guest2 = Guest.new(60.0, "David Blain", "Pump-Up-The-Jam")
 
   end
 
@@ -22,9 +22,8 @@ class TestGuest < Minitest::Test
 
   def test_guest_has_favourite_song
     @songs = [@song1, @song2, @song3]
-    expected = "One More Time: Daft Punk"
-    @guest1.my_fav_song(@songs)
-    actual = @guest1.favourite_song
+    expected = "Whoo!"
+    actual = @guest1.my_fav_song(@songs)
     assert_equal(expected,  actual)
   end
 

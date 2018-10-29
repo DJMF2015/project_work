@@ -41,12 +41,14 @@ class Room
 
   #check that capacity is not more than max. permitted e.g.2,room2
   def check_max_capacity(capacity)
-    not_full = false
-    room_full = "room full"
-    if capacity >= @max_capacity
-      return room_full
-    end
-    return not_full #false
+    # not_full = false
+    # room_full = true
+    # if capacity >= @max_capacity
+    #   return room_full
+    # end
+    # return not_full #false
+
+    return capacity >= @max_capacity
   end
 
   #returns a 'random' song from guest's playlist

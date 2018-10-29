@@ -16,8 +16,8 @@ class Guest
 
 # return "whoo!" if guest favoutite song in playlist
   def my_fav_song(my_song)
-    my_song.find { |song| p song == my_song}
-    p "Whoo!"
+    # my_song.find { |song| p song == my_song}
+    return "Whoo!" if my_song.include?(@favourite_song)
   end
 
 #same as above using each iterator instead of enumerator

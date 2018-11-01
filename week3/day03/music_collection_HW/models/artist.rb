@@ -20,6 +20,11 @@ class Artist
     @id = SqlRunner.run(sql, values)[0]['id'].to_i
   end
 
+  def update
+    sql =  "UPDATE artist SET name = $1 WHERE id = $2"
+    values = [@name, @id]
+    SqlRunner.run(sql,values)
+  end
 
   def self.all()
     sql = "select * from artist"#retrieve all artist as hash object
@@ -33,11 +38,18 @@ class Artist
   end
 
   def albums()
-    sql = "select * from album where artist_id = $1 "
+    sql = "select genre from album where artist_id = $1 "
     values = [@id]
     list = SqlRunner.run(sql, values)
     return list.map{|art| Artist.new(art)}#return array transformed to hash pg obj.
+  end
 
+  def self.find(id)
+    sql = "SELECT * FROM album WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    album = self.new(results.first)
+    return album
   end
 
 end

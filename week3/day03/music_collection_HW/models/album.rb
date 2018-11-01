@@ -53,11 +53,10 @@ class Album
 
       def self.find(id)
         sql = "SELECT * FROM album WHERE id = $1"
-        SqlRunner.run(sql)
         values = [id]
         results = SqlRunner.run(sql, values)
-        # list_hash = results.first
-        album = Self.new(results.first)
+        # binding
+        album = self.new(results.first)
         return album
       end
 

@@ -14,13 +14,14 @@ artist2 = Artist.new({'name' => "coldplay"})
 artist2.save()
 artist2.albums()
 p artist2
+
 list1 = Album.new({
   'title'=> 'Modern Anthems',
   'genre'=> 'britpop',
   'artist_id'=> artist1.id})
   list1.save()
   list1.artists()
-p list1
+  p list1
 
   # ================================
 
@@ -30,8 +31,8 @@ p list1
     'artist_id'=> artist2.id})
     list2.save()
     list2.artists()
- p list2
+    p list2
 
     #
-    # binding.pry
+    binding.pry
     nil

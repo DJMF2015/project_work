@@ -24,7 +24,7 @@ class Album
       (
         $1, $2, $3
       )
-      RETURNING id"
+      RETURNING *"
       values = [@title, @genre, @artist_id]
       @id = SqlRunner.run(sql, values)[0]["id"].to_i
     end
@@ -55,7 +55,6 @@ class Album
         sql = "SELECT * FROM album WHERE id = $1"
         values = [id]
         results = SqlRunner.run(sql, values)
-        # binding
         album = self.new(results.first)
         return album
       end
@@ -76,6 +75,7 @@ class Album
         values = [@artist_id]
         artist = SqlRunner.run(sql, values).first
         result = Artist.new(artist)
+        # p result
         return result
       end
 

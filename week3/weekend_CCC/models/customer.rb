@@ -35,7 +35,7 @@ class Customer
 
   #READ/FIND
   def self.all()
-    sql = "sELECT * FROM customers"
+    sql = "SELECT * FROM customers"
     customer_data = SqlRunner.run(sql)
     return Customer.map_items(customer_data)
   end
@@ -84,11 +84,18 @@ class Customer
 
   #decrease cost of customers' funds by ticket price
   def sell_ticket(ticket)
-    p @funds -= ticket.film.price #subtract price of ticket by calling film query
-    update() #necessary to update db wih changes
-    return ticket
+    if @funds < ticket.film.price
+      begin
+        raise ArgumentError.new("Sorry, you have insufficient funds")
+      rescue ArgumentError => e
+        puts e.message
+      end
+    else
+      p @funds -= ticket.film.price #subtract price of ticket by calling film query
+      update() #necessary to update db wih changes
+      return ticket
+    end
   end
-  
   #DELETE
   def self.delete_all()
     sql = "DELETE FROM customers"

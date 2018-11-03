@@ -20,14 +20,14 @@ class Ticket
     @id = ticket['id'].to_i
   end
 
-  #necessary???
+  # UPDATE: this really necessary???
   # def update()
   #   sql = "UPDATE films SET (film_id, customer_id) = ($1, $2 ) WHERE id = $3"
   #   values = [@film_id, @customer_id, @id]
   #   SqlRunner.run(sql, values)
   # end
 
-  #DELETE one record
+  #DELETE a record
   def delete()
     sql = "DELETE * FROM tickets where id = $1"
     values = [@id]
@@ -52,7 +52,7 @@ class Ticket
     return film
   end
 
-#READ/FIND
+#READ/FIND All
   def self.all()
     sql = "SELECT * FROM tickets"
     data = SqlRunner.run(sql)

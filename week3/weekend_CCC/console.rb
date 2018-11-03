@@ -82,9 +82,11 @@ p film1.no_viewers_per_film()
 p customer1.sell_ticket(ticket1)
 # customer2.sell_ticket(ticket3)
 
-
-
+p film1.showings()
 binding.pry
+
+
+
 #
 # erd = ['
 #              |         | 1..*      |       |  1..*     |     |

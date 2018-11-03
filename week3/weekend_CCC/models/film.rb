@@ -20,6 +20,14 @@ class Film
     @id = film['id'].to_i()
   end
 
+  def self.find(id) #find a film
+    sql = "SELECT * FROM films
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return Film.new(result[0])
+  end
+
   #update
   def update()
     sql = "UPDATE films set title = $1, price = $2 where id = $3"
@@ -33,8 +41,6 @@ class Film
     INNER JOIN tickets
     ON (tickets.customer_id = customers.id) WHERE tickets.film_id = $1"
     values = [@id]
-    # result_map = SqlRunner.run(sql, values)
-    # return result_map.map{|customer| Customer.new(customer)}
     cust_data = SqlRunner.run(sql, values)
     return Customer.map_items(cust_data)
   end
@@ -46,7 +52,7 @@ class Film
 
   # DELETE
   def delete()
-    sql = "DELETE * FROM films where id = $1"
+    sql = "DELETE FROM films where id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
@@ -58,14 +64,11 @@ class Film
     return Film.map_items(film_data)
   end
 
-  # def film
-  #   sql = "SELECT *
-  #   FROM films
-  #   WHERE films.id = $1"
-  #   values = [@film_id]
-  #   film_data = SqlRunner.run(sql, values)
-  #   film = Film.map_items(film_data).first
-  #   return film
+  # def showings()
+  #   sql = "select ARRAY_AGG(title) AS FILMS from films"
+  #   values = [@id]
+  #   result = SqlRunner.run(sql, values)
+  #   return result.map{|showings| Film.new(showings)}
   # end
 
   def self.delete_all()

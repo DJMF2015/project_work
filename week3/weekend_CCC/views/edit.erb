@@ -1,0 +1,21 @@
+<form method="post" action="/films/<%= @film.id %>">
+
+  <label for="title">Film Title:</label>
+  <input
+  type="text"
+  name="title"
+  id="title"
+  value="<%= @film.title %>"
+  />
+
+
+  <label for="price">Price: </label>
+  <input
+  type="text"
+  name="price"
+  id="price"
+  value="<%= @film.price %>"
+  />
+  
+  <input type='submit' value="Update "/>
+</form>

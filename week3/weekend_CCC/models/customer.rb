@@ -35,15 +35,15 @@ class Customer
 
   #READ/FIND
   def self.all()
-    sql = "select * from customers"
+    sql = "sELECT * FROM customers"
     customer_data = SqlRunner.run(sql)
     return Customer.map_items(customer_data)
   end
 
   # which films a customer has booked to see ONE film only
   def film()
-    sql = " SELECT count(title) AS FILM_TITLE,
-    cust.name AS CUSTOMER FROM customers cust inner join films on cust.id = films.id where cust.id = $1 group by title, cust.id;";
+    sql = " SELECT COUNT(title) AS FILM_TITLE,
+    cust.name AS CUSTOMER FROM customers cust INNER JOIN films ON cust.id = films.id where cust.id = $1 GROUP BY title, cust.id;";
     values = [@id]
     film_hash = SqlRunner.run(sql, values)
     return film_hash.map{|film| Customer.new(film)}
@@ -51,7 +51,7 @@ class Customer
 
   #READ/FIND
   def self.find(id) # find a particular customer by id
-    sql = "SELECT * FROM customers inner join films on c.id = films.id WHERE id = $1"
+    sql = "SELECT * FROM customers INNER JOIN films ON c.id = films.id WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values)
     customer = self.new(result.first)
@@ -60,7 +60,7 @@ class Customer
 
 
   def customer()
-    sql = "SELECT * FROM customers where customers.id = $1"
+    sql = "SELECT * FROM customers WHERE customers.id = $1"
     values =[@id]
     result = SqlRunner.run(sql, values)
     return result.map{|cust| Customer.new(cust)}

@@ -27,36 +27,46 @@ class Film
     SqlRunner.run(sql, values)
   end
 
-# DELETE
+  #show which films a customer has booked to see
+  def customers()
+    sql = "SELECT customers.* FROM customers
+    INNER JOIN tickets
+    ON (tickets.customer_id = customers.id) WHERE tickets.film_id = $1"
+    values = [@id]
+    # result_map = SqlRunner.run(sql, values)
+    # return result_map.map{|customer| Customer.new(customer)}
+    cust_data = SqlRunner.run(sql, values)
+    return Customer.map_items(cust_data)
+  end
+
+# Check how many customers are going to watch a certain film
+  def no_viewers_per_film()
+     return customers().count()
+  end
+
+  # DELETE
   def delete()
     sql = "DELETE * FROM films where id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
 
-
+  #READ
   def self.all()
     sql = "select * from films"
     film_data = SqlRunner.run(sql)
     return Film.map_items(film_data)
   end
 
-
-  def customer()
-    sql = "SELECT customers.* FROM customers
-    INNER JOIN tickets
-    ON (tickets.customer_id = customers.id) WHERE tickets.film_id = $1"
-    values = [@id]
-    result_map = SqlRunner.run(sql, values)
-    return result_map.map{|customer| Film.new(customer)}
-  end
-
-  def
-    delete_all()
-    sql = "DELETE * FROM films"
-    SqlRunner.run(sql)
-  end
-
+  # def film
+  #   sql = "SELECT *
+  #   FROM films
+  #   WHERE films.id = $1"
+  #   values = [@film_id]
+  #   film_data = SqlRunner.run(sql, values)
+  #   film = Film.map_items(film_data).first
+  #   return film
+  # end
 
   def self.delete_all()
     sql = "DELETE FROM films"

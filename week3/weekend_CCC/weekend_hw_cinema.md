@@ -16,6 +16,11 @@ It's enough if you can call your methods in pry, don't worry about an interface.
     - customer_id
     - film_id
 
+
+             |         | 1..*      |       |  1..*     |     |
+             |CUSTOMERS|----------/|TICKETS|\----------|FILMS|
+             |         |          \|       |/          |     |
+
 ### Your app should be able to:
   - Create customers, films and tickets
   - CRUD actions (create, read, update, delete) customers, films and tickets.
@@ -23,14 +28,15 @@ It's enough if you can call your methods in pry, don't worry about an interface.
   - Show which customers are coming to see One film.
 
 ### Basic extensions:
-  - Buying tickets should decrease the funds of the customer by the price [see budgets]
-  - Check how many tickets were bought by a customer (use count() ruby)
+  - Buying tickets should decrease the funds of the customer by the price
+  - Check how many tickets were bought by a customer
   - Check how many customers are going to watch a certain film
 
 ### Advanced extensions:
   - Create a screenings table that lets us know what time films are showing
   - Write a method that finds out what is the most popular time (most tickets sold) for a given film
   - Limit the available tickets for screenings.
+
   - Add any other extensions you think would be great to have at a cinema!
 
 ### PDA Reminder:

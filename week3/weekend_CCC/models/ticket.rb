@@ -35,7 +35,7 @@ class Ticket
   end
 
   def customer()
-    sql = "SELECT * FROM customers WHERE customerlid = $1"
+    sql = "SELECT * FROM customers WHERE customer_id = $1"
     values = [@id]
     hash_data = SqlRunner.run(sql, values)
     return hash_data{|cust| Customer.new(cust)}

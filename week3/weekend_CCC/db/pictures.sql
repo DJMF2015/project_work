@@ -4,13 +4,14 @@ DROP TABLE IF EXISTS customers;
 
 CREATE TABLE films(
   id serial4 primary key,
-  title varchar(255),
-  price int4
+  title varchar(255) not null,
+  price int4 not null,
+  times varchar(255) not null
 );
 
 CREATE TABLE customers(
   id serial4 primary key,
-  name varchar(255),
+  name varchar(255) not null,
   funds int4
 );
 

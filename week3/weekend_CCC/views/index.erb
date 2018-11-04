@@ -1,10 +1,28 @@
 <!-- <iterate over array and map to html tags -->
-<center><h2><u>Movies Showing</u></h2></center>
+<html>
+<head>
+  Films
+</head>
+<style>
+  body {
+    background: linear-gradient(green, #06c);
+    font-size: 25px;
+    font-style: sans-serif;
+    text-align: center;
+  }
+</style>
 
-<center>
-<h3><% @films.each do |list|  %>
-<p>Title: <%= list.title %></p>
-<p>price: <%= list.price%> </p>
-<p><a href="/films/<%= list.id %>"><h2>view</h3></a></p><!-- NEW LINE ADDED -->
-<% end %></h3>
-</center>
+<body>
+
+  <center><h2><u>Customer Bookings:</u></h2></center>
+
+  <h3><% @films.each do |list|  %>
+    <p>Title: <%= list.title %></p>
+    <p>price: <%= list.price%> </p>
+    <p>Times: <%= list.times%> </p>
+    <p><a href="/films/<%= list.id %>"><h2>view</h3></a></p>
+      <% end %>
+    </body>
+
+
+      </html>

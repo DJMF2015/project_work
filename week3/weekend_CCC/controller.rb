@@ -13,7 +13,13 @@ end
 
 get '/films' do
   @films = Film.all#FIND ALL
+  # @customers = Customer.all#FIND ALL
   erb(:index)
+end
+
+get '/customers' do
+  @customers = Customer.all
+  erb(:customers)
 end
 
 #Below "show" route 'picks-up' id to displays & avoids

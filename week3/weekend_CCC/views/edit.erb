@@ -8,7 +8,6 @@
   value="<%= @film.title %>"
   />
 
-
   <label for="price">Price: </label>
   <input
   type="text"
@@ -16,6 +15,13 @@
   id="price"
   value="<%= @film.price %>"
   />
-  
+
+  <label for="times">Screenings: </label>
+  <input
+  type="text"
+  name="times"
+  id="times"
+  value="<%= @film.times %>"
+  />
   <input type='submit' value="Update "/>
 </form>

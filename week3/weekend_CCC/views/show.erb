@@ -2,7 +2,7 @@
 
 <p>Title: <%= @film.title %></p>
 <p>Price: <%= @film.price %></p>
-
+<p>Screening: <%= @film.times %></p>
 
 <b><form method="get" action="/films/<%= @film.id %>/edit">
   <p><input type='submit' value="Update Film Details"/></p>

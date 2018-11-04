@@ -1,0 +1,26 @@
+<!-- <iterate over array and map to html tags -->
+<html>
+<head>
+Customers
+  </head>
+  <style>
+    body {
+      background: linear-gradient(to bottom left, #66ccff 0%, #009933 100%);
+      font-size: 25px;
+      font-style: sans-serif;
+      text-align: center;
+    }
+  </style>
+
+<body>
+  <center><h2><u>Customer Bookings:</u></h2></center>
+
+  <h3><% @customers.each do |show|  %>
+    <p>Customer: <%= show.name %></p>
+    <p>Funds: <%= show.funds%> </p>
+    <p><a href="/customers/<%= show.id %>"><h2></h3></a></p>
+      <% end %>
+    </body>
+
+
+      </html>

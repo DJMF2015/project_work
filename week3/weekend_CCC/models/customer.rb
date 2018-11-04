@@ -91,7 +91,7 @@ class Customer
         puts e.message
       end
     else
-      p @funds -= ticket.film.price #subtract price of ticket by calling film query
+     @funds -= ticket.film.price #subtract price of ticket by calling film query
       update() #necessary to update db wih changes
       return ticket
     end

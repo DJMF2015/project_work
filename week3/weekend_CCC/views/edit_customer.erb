@@ -1,0 +1,31 @@
+<!-- <iterate over array and map to html tags -->
+<html>
+<head>
+
+</head>
+
+<body>
+
+<form method="post" action="/customers/<%= @customer.id %>">
+
+  <label for="name">Customer Name:</label>
+  <input
+  type="text"
+  name="name"
+  id="name"
+  value="<%= @customer.name %>"
+  />
+
+  <label for="funds">Cash Available </label>
+  <input
+  type="text"
+  name="funds"
+  id="funds"
+  value="<%= @customer.funds %>"
+  />
+
+
+  <input type='submit' value="Update "/>
+</form>
+</body>
+</html>

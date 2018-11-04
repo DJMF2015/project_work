@@ -34,14 +34,6 @@ class Ticket
     SqlRunner.run(sql, values)
   end
 
-  def most_popular_films()
-    sql = " SELECT f.id, f.title, f.times, t.customer_id, c.name, SUM(f.id) AS MOST_POPULAR FROM films f join tickets t ON (f.id = t.film_id)
-    INNER JOIN customers c ON t.id = c.id
-    GROUP BY t.id, f.id, t.customer_id, c.name ORDER BY t.id ASC"
-    values = [@id]
-    hash_data = SqlRunner.run(sql, values)
-    return p hash_data{|time| Ticket.new(time)}
-  end
 
   def customer()
     sql = "SELECT * FROM customers WHERE customer_id = $1"

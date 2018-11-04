@@ -51,7 +51,6 @@ class Film
     return customers().count()
   end
 
-
   # DELETE
   def delete()
     sql = "DELETE FROM films where id = $1"
@@ -66,21 +65,20 @@ class Film
     return Film.map_items(film_data)
   end
 
-
-  def popular_films()
-    sql = "
-    SELECT f.id, f.title, f.times, tickets.customer_id, customers.name, SUM(f.id) AS MOST_POPULAR FROM films f
-    join tickets ON (f.id = tickets.film_id)
-    INNER JOIN customers ON tickets.id = customers.id LIMIT 2
-    group by tickets.id, f.id, tickets.customer_id, customers.name ORDER BY tickets.id ASC "
+#query below retrieves and sorts the total count of tickts sold for each film. Realise there is a betetr way to achieve this in ruby but never got as far as writing...
+# tickets_sold |    title
+# --------------+--------------
+#            3 | Outlaw
+#            2 | Star Wars VI
+#            1 | Skyfall
+#            1 | Ted
+#            1 | Die Hard
+# (5 rows)
+  def most_tickets_sold()
+    sql = "SELECT count(title) AS TICKETS_SOLD, films.title from films inner join tickets on (tickets.film_id = films.id) group by title ORDER BY count(title) DESC"
     values = [@id]
-    hash = SqlRunner.run(sql, values)
-    return hash.map{|time| Film.new(time)}
-  end
-
-
-  def showings()
-    return  p popular_films().count()
+    film_data = SqlRunner.run(sql, values)
+    return Film.map_items(film_data)
   end
 
   def self.delete_all()

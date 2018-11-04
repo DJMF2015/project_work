@@ -1,0 +1,11 @@
+<center><h2 > Customers listed: </h2>
+<
+p>Name: <%= @customer.name %></p>
+<p>Cash: <%= @customer.funds%></p>
+<b><form method="get" action="/customers/<%= @customer.id %>/edit">
+  <p><input type='submit' value="Update Customer Details"/></p>
+</form></b>
+
+<form method="post" action="/customers/<%= @customer.id %>/delete">
+<b>  <input type="submit" value="Delete"/></b>
+</form>

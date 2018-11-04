@@ -28,7 +28,7 @@ class Customer
   end
   # DELETE
   def delete()
-    sql = "DELETE * FROM customers where id = $1"
+    sql = "DELETE FROM customers where id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
@@ -50,17 +50,17 @@ class Customer
   end
 
   #READ/FIND
-  def self.find(id) # find a particular customer by id
-    sql = "SELECT * FROM customers INNER JOIN films ON c.id = films.id WHERE id = $1"
+  def self.find(id) # find a particular customer by id and associated film
+    sql = "SELECT * FROM customers WHERE customers.id = $1"
     values = [id]
     result = SqlRunner.run(sql, values)
     customer = self.new(result.first)
     return customer
   end
 
-
+#select customer by id
   def customer()
-    sql = "SELECT * FROM customers WHERE customers.id = $1"
+    sql = "SELECT * FROM customers INNER JOIN films ON c.id = films.id WHERE id = $1"
     values =[@id]
     result = SqlRunner.run(sql, values)
     return result.map{|cust| Customer.new(cust)}
@@ -79,7 +79,7 @@ class Customer
 
   #no of tickets bought by customer
   def count_tickets_sold()
-    return films().count() #count method retrning no of films from sql query above
+    return films().count() #count method returning no of films from sql query (above)
   end
 
   #decrease cost of customers' funds by ticket price

@@ -1,8 +1,9 @@
-<center><h2 > Movies listed: </h2>
+<center><h2> Movies listed: </h2>
 
 <p>Title: <%= @film.title %></p>
 <p>Price: <%= @film.price %></p>
 <p>Screening: <%= @film.times %></p>
+
 
 <b><form method="get" action="/films/<%= @film.id %>/edit">
   <p><input type='submit' value="Update Film Details"/></p>
@@ -11,4 +12,6 @@
 <form method="post" action="/films/<%= @film.id %>/delete">
 <b>  <input type="submit" value="Delete"/></b>
 </form>
+
+
 </center>

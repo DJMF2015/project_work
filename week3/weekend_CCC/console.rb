@@ -99,10 +99,11 @@ ticket5.save()
 ticket6.save()
 ticket7.save()
 ticket8.save()
-p film2.no_viewers_per_film()
-p customer2.sell_ticket(ticket1)
+# p film2.no_viewers_per_film()
+# p customer2.sell_ticket(ticket1)
+# p film1.most_tickets_sold
 
-
+p film2.most_tickets()
 
 binding.pry
 

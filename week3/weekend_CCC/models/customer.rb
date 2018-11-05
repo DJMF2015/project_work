@@ -40,14 +40,6 @@ class Customer
     return Customer.map_items(customer_data)
   end
 
-  # which films a customer has booked to see ONE film only
-  def film()
-    sql = " SELECT COUNT(title) AS FILM_TITLE,
-    cust.name AS CUSTOMER FROM customers cust INNER JOIN films ON cust.id = films.id where cust.id = $1 GROUP BY title, cust.id;";
-    values = [@id]
-    film_hash = SqlRunner.run(sql, values)
-    return film_hash.map{|film| Customer.new(film)}
-  end
 
   #READ/FIND
   def self.find(id) # find a particular customer by id and associated film
@@ -66,6 +58,7 @@ class Customer
     return result.map{|cust| Customer.new(cust)}
   end
 
+#all films a partiuclar customer has booked to see
   def films()
     sql = "SELECT films.*
     FROM films
@@ -77,6 +70,16 @@ class Customer
     return Film.map_items(film_data)
   end
 
+    # films where a customer has booked to see ONE film only
+    def film()
+      sql = " SELECT COUNT(title) AS FILM_TITLE,
+      cust.name AS CUSTOMER FROM customers cust INNER JOIN films ON cust.id = films.id where cust.id = $1
+       GROUP BY title, cust.id";
+      values = [@id]
+      film_hash = SqlRunner.run(sql, values)
+      return film_hash.map{|film| Customer.new(film)}
+    end
+
   #no of tickets bought by customer
   def count_tickets_sold()
     return films().count() #count method returning no of films from sql query (above)
@@ -84,7 +87,7 @@ class Customer
 
   #decrease cost of customers' funds by ticket price
   def sell_ticket(ticket)
-    if @funds < ticket.film.price
+    if @funds < ticket.film.price #calls film method and checks price in films table
       begin
         raise ArgumentError.new("Sorry, you have insufficient funds")
       rescue ArgumentError => e

@@ -16,6 +16,7 @@ get '/films' do
   erb(:index)
 end
 
+
 #Below "show" route 'picks-up' id to displays & avoids
 # treating the :id as a string when searching. Avoids conversion error
 get '/films/new' do  # NEW

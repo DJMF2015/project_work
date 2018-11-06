@@ -1,5 +1,7 @@
 ## Sinatra Homework - Rock Paper Scissors
 
+![rock, paper, scissors](https://github.com/DJMF2015/cc_homework/blob/master/week4/day2/rps.png)
+      
 Create a simple sinatra app to allow the user to play rock, paper, scissors in their browser.
 
 - You should be able to go to /rock/scissors and return the string "rock wins" to the page, for example.

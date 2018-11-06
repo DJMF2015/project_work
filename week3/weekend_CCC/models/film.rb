@@ -80,8 +80,9 @@ class Film
     return  Film.map_items(film_data)  
   end
 
+  #most popular film by tickets sold
   def most_tickets()
-    return  most_tickets_sold().first() #return top 'most tickets sold'  (i.e.Outlaw)
+    return  most_tickets_sold().first() #return first element from query (i.e.Outlaw)
   end
 
   def self.delete_all()

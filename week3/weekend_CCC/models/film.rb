@@ -76,13 +76,12 @@ class Film
 # (5 rows)
   def most_tickets_sold()
     sql = "SELECT COUNT(title) AS TICKETS_SOLD, films.title from films inner join tickets on (tickets.film_id = films.id) group by title ORDER BY count(title) DESC"
-    # values = [@id]
     film_data = SqlRunner.run(sql)#values
-    return  Film.map_items(film_data)   # return Film.new(result[0])
+    return  Film.map_items(film_data)  
   end
 
   def most_tickets()
-    return  most_tickets_sold().first() #return top 'most tickets sold' from array(i.e.Outlaw)
+    return  most_tickets_sold().first() #return top 'most tickets sold'  (i.e.Outlaw)
   end
 
   def self.delete_all()

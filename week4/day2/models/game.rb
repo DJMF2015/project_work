@@ -14,7 +14,7 @@ class Game
     while true
 
       winner = nil
-    
+
     p computer = win.keys.sample
 
       if win[hand1] == computer
@@ -24,7 +24,7 @@ class Game
       end
 
       if winner != nil
-        return " #{winner[:hand]} won by playing " + winner[:hand]
+        return " #{winner[:player_no]} won by playing " + winner[:hand]
       elsif hand1 == computer
         return "it was a draw!"
       else

@@ -5,8 +5,8 @@ require_relative('./models/game')
 also_reload('./models/*')
 
 get '/:hand1/:computer' do
-  player1 = { player_no: 1, hand: params[:hand1]}
-  player2 = { player_no: 2, hand: params[:computer]}
+  player1 = { player_no: "You", hand: params[:hand1]}
+  player2 = { player_no: "computer", hand: params[:computer]}
   @result = Game.play_game(player1, player2)
   erb(:result)
 end

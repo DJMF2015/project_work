@@ -77,7 +77,7 @@ class Film
   def most_tickets_sold()
     sql = "SELECT COUNT(title) AS TICKETS_SOLD, films.title from films inner join tickets on (tickets.film_id = films.id) group by title ORDER BY count(title) DESC"
     film_data = SqlRunner.run(sql)#values
-    return  Film.map_items(film_data)  
+    return  Film.map_items(film_data)
   end
 
   #most popular film by tickets sold

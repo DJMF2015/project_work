@@ -14,7 +14,7 @@ class Game
     while true
 
       winner = nil
-      # hand1= win.keys
+    
     p computer = win.keys.sample
 
       if win[hand1] == computer
@@ -28,7 +28,7 @@ class Game
       elsif hand1 == computer
         return "it was a draw!"
       else
-        return "please enter valid inputs!"
+        return "please choose rock, paper, scissors!"
       end
     end
   end

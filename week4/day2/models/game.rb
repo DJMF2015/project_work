@@ -1,34 +1,33 @@
 class Game
 
   def self.play_game(player1, player2)
-    hand1 = player1[:hand].downcase
+    human = player1[:hand].downcase
     computer = player2[:hand].downcase
+
 
     win = {
       "rock" => "scissors",
-      "scissors" => "paper",
-      "paper" => "rock"
+      "paper" => "rock",
+      "scissors" => "paper"
     }
-
 
     while true
 
       winner = nil
 
-    p computer = win.keys.sample
+     p computer = win.keys.sample
 
-      if win[hand1] == computer
+      if win[human]==computer
         winner = player1
-      elsif win[computer] == hand1
+      elsif win[computer] == human
         winner = player2
       end
 
       if winner != nil
-        return " #{winner[:player_no]} won by playing " + winner[:hand]
-      elsif hand1 == computer
-        return "it was a draw!"
-      else
-        return "please choose rock, paper, scissors!"
+        return " #{winner[:choice]} wins against #{winner[:hand]}"
+      elsif human == computer
+        return "It's a draw!"
+      else "please choose rock, paper, scissors"
       end
     end
   end

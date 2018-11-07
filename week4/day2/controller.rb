@@ -15,7 +15,7 @@ get '/' do
   erb(:home)
 end
 
-get 'rock/:computer' do
+get 'rock/scissors' do
   erb(:result)
 end
 

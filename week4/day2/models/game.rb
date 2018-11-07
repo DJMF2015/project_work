@@ -32,3 +32,30 @@ class Game
     end
   end
 end
+#   case player1
+#   when 'rock'
+#     if player2 == 'scissors'
+#       return "Player 1 wins by playing #{player1}!"
+#     elsif
+#       player2 == 'paper'
+#       return "Player2 wins by playing #{player2}!"
+#     else return "Draw!"
+#     end
+#   when 'scissors'
+#     if player2 == 'paper'
+#       return "Player 1 wins by playing #{player1}!"
+#     elsif
+#       player2 == 'rock'
+#       return "Player2 wins by playing #{player2}!"
+#     else return "Draw!"
+#     end
+#   when 'paper'
+#     if player2 == 'rock'
+#       return "Player 1 wins by playing #{player1}!"
+#     elsif
+#       player2 == 'scissors'
+#       return "Player2 wins by playing #{player2}!"
+#     else return "Draw!"
+#     end
+#   end
+# end

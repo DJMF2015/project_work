@@ -1,0 +1,7 @@
+<p>Show students</p>
+<p>First Name<% @student.first_name %> </p>
+<p>Last Name<%= @student.last_name %> </p>
+<p>Age<%= @student.age %> </p>
+
+<a href="/students/<%= @student.id %>/edit">Modify</a>
+<form action="/students/<%= @student.id %>/delete" method="POST"><input type="submit" value="Delete">

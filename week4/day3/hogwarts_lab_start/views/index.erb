@@ -1,0 +1,13 @@
+<p>Students</p>
+<% @students.each do |student| %>
+<p>Name</p>
+<%= student.format_name %>
+<p>Age</p>
+<%= student.age%>
+<p>House: <%= student.house.name %></p>
+
+<a href="/students/<%= student.id %>/edit">Edit Students</a>
+<form action="/students/<%= student.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+
+<hr/>
+<% end %>

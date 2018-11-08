@@ -1,0 +1,25 @@
+<form action = "/students" method ="post">
+  <div class="form-wrapper">
+    <label for ="first_name">First name:</label>
+    <input id ="first_name" type ="text" name ="first_name">
+    <label for ="last_name">Last name:</label>
+    <input id ="last_name" type ="text" name ="last_name">
+  </div>
+
+  <div class="form-el">
+    <label for="age">Age</label>
+    <input id ="age" type="number" name = "age"/>
+  </div>
+
+  <div>
+    <label for="house_select">Select House:</label>
+    <select name="house_id" id="house_select">
+      <% @houses.each do |house| %>
+      <option value=<%= house.id %>><%= house.name %></option>
+      <% end %>
+    </select>
+  </div>
+
+  <input type="submit" value="Create Student">
+
+</form>

@@ -3,6 +3,12 @@ require_relative( "../models/activity.rb" )
 require_relative( "../models/booking.rb" )
 require("pry-byebug")
 # -----------------------------------
+
+Booking.delete_all()
+Member.delete_all()
+Activity.delete_all()
+
+
 member1 = Member.new({
   "first_name" => "David",
   "last_name" => "Fulton",

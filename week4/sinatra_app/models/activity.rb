@@ -3,13 +3,14 @@ require_relative( '../db/sql_runner' )
 
 class Activity
 
-  attr_reader( :session, :spaces, :description, :duration, :id )
+  attr_reader( :session, :spaces, :description, :time_of_day, :duration, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @session = options['session']
     @spaces = options['spaces']
     @description = options['description']
+    @time_of_day = options['time_of_day']
     @duration = options['duration']
   end
 
@@ -20,14 +21,15 @@ class Activity
       session,
       spaces,
       description,
+      time_of_day,
       duration
     )
     VALUES
     (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5
     )
     RETURNING id"
-    values = [@session, @spaces, @description, @duration]
+    values = [@session, @spaces, @description,@time_of_day, @duration]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -40,13 +42,14 @@ class Activity
         session,
         spaces,
         description,
+        time_of_day,
         duration
       ) =
       (
-        $1, $2, $3, $4
+        $1, $2, $3, $4, $5
       )
-      WHERE id = $5"
-      values = [@session, @spaces, @description, @duration, @id]
+      WHERE id = $6"
+      values = [@session, @spaces, @description,@time_of_day, @duration, @id]
       SqlRunner.run(sql, values)
     end
 
@@ -66,7 +69,13 @@ class Activity
       return Activity.new( results.first )
     end
 
-
+#find a certain member's classes that he/she is booked for
+def find_customer_booking()
+  sql= "SELECT activities.* FROM ACTIVITIES INNER JOIN bookings ON bookings.activities_id = activities.id INNER JOIN members ON BOOKINGS.members_id = members.id WHERE members.id = $1 ORDER BY activities.id ASC"
+   values = [@id]
+   result = SqlRunner.run(sql, values)
+   return result.map{|activity| Activity.new( activity)}
+end
     #Delete by ID
       def self.delete(id)
         sql = "DELETE FROM activites where id = $1"
@@ -81,6 +90,6 @@ class Activity
       end
 
     def self.map_items(members_data)
-        return members_data.map { |member| Activity.new(member) }
+        return members_data.map { |member|  Activity.new(member) }
     end
 end

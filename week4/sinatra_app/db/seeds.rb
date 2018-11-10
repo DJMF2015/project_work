@@ -19,7 +19,7 @@ member1.save()
 member2 = Member.new({
     "first_name" => "John",
     "last_name" => "Smith",
-    "membership" => 'premium'
+    "membership" => 'standard'
     })
 member2.save()
 
@@ -34,7 +34,7 @@ member3.save()
 member4 = Member.new({
         "first_name" => "Emily",
         "last_name" => "Jenkins",
-        "membership" => 'standard'
+        "membership" => 'premium'
         })
 
 member4.save()
@@ -43,6 +43,7 @@ activity1 = Activity.new({
   'session' => 'Circuits',
   'spaces' => 10,
   "description" => "These classes are for anyone that loves music and energy.",
+  "time_of_day" => '11:00',
   "duration" => '60'
   })
 
@@ -52,6 +53,7 @@ activity2 = Activity.new({
     'session' => 'Spin',
     'spaces' => 10,
     "description" => "An intensive spin-bike class designed to work your whole body!",
+      "time_of_day" => '22:00',
     "duration" => '45'
     })
 
@@ -61,6 +63,7 @@ activity2.save()
       'session' => 'Pilates',
       'spaces' => 15,
       "description" => "physical conditioning involving low-impact exercises & stretches",
+       "time_of_day" => '09:00',
       "duration" => '30'
       })
 activity3.save()
@@ -69,6 +72,7 @@ activity4 = Activity.new({
         'session' => 'PurePump',
         'spaces' => 8,
         "description" => "designed to develop your full body STRENGTH!",
+         "time_of_day" => '14:30',
         "duration" => '60'
         })
 
@@ -98,6 +102,22 @@ booking4 = Booking.new({
         })
 booking4.save()
 
+booking5 = Booking.new({
+          "members_id" => member3.id,
+          "activities_id" => activity1.id
+        })
+booking5.save()
+
+booking6 = Booking.new({
+          "members_id" => member1.id,
+          "activities_id" => activity4.id
+        })
+
+booking6.save()
+
+# member1.customer_bookings()
+# p booking2.session_bookings()
+activity2.find_customer_booking()
 
 binding.pry
 nil

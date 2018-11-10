@@ -15,7 +15,8 @@ CREATE TABLE ACTIVITIES(
   session varchar(255),
   spaces INT4,
   description varchar(255),
-  duration varchar(255) --time of activity
+  time_of_day varchar(255), --time of day e 10am
+  duration varchar(255) --length of activity
 );
 
 CREATE TABLE BOOKINGS(

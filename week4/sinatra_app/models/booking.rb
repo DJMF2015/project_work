@@ -46,7 +46,7 @@ class Booking
   end
 
   def self.map_items(bookings_data)
-    return bookings_data.map { |bookings| bookings.new(bookings) }
+    return bookings_data.map { |bookings|  Booking.new(bookings) }
   end
 
 end

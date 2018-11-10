@@ -1,0 +1,21 @@
+<h2>Update Member Details</h2>
+
+<h3> <%= @member.first_name %></h3><h3> <%= @member.last_name %></h3>
+<form method="POST" action="/members/<%= @member.id %>">
+  <label for="first_name">First Name:</label>
+  <input type="text" name="first_name" id="first_name" value="<%= @member.first_name %>"/>
+
+  <label for="last_name">Last Name:</label>
+  <input type="text" name="last_name" id="last_name" value="<%= @member.last_name %>"/>
+
+  <label for="membership">Membership:</label>
+  <input type="text" name="membership" id="membership" value="<%= @member.membership %>"/>
+  <br>
+  <div>
+    <input type="submit" value="Update Member"/>
+  </div>
+  <br>
+  <form action="/members/<%= member.id %>/delete" method="POST">
+    <input type="submit" value="Update" />
+  </form>
+    <br>

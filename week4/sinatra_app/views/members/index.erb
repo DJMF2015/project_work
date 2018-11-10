@@ -1,4 +1,4 @@
-<p>Members</p>
+<p>Current Members</p>
 <% @members.each do |member| %>
 <p>First Name</p>
 <%= member.first_name %>
@@ -7,9 +7,13 @@
 <p>Membership: <%= member.membership %></p>
 
 <br>
+
+<br>
 <form action="/members/<%= member.id %>/delete" method="POST">
   <input type="submit" value="delete" />
 </form>
 
-<hr/>
 <% end %>
+<hr/>
+<a href='/members/new'>Add Member</a>
+<!-- <a href="/members/edit">Edit</a> -->

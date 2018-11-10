@@ -1,0 +1,15 @@
+<p>Members</p>
+<% @members.each do |member| %>
+<p>First Name</p>
+<%= member.first_name %>
+<p>Last Name</p>
+<%= member.last_name %>
+<p>Membership: <%= member.membership %></p>
+
+<br>
+<form action="/members/<%= member.id %>/delete" method="POST">
+  <input type="submit" value="delete" />
+</form>
+
+<hr/>
+<% end %>

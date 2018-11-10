@@ -21,6 +21,6 @@ CREATE TABLE ACTIVITIES(
 
 CREATE TABLE BOOKINGS(
   id serial8 primary key,
-  members_id INT8 REFERENCES members(id),
-  activities_id INT8 REFERENCES activities(id)
+  members_id INT8 REFERENCES members(id) ON DELETE CASCADE,
+  activities_id INT8 REFERENCES activities(id) ON DELETE CASCADE
 );

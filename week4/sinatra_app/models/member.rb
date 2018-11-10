@@ -46,11 +46,12 @@ class Member
     SqlRunner.run(sql, values)
   end
 
-#READ/FIND all
+#READ/FIND ALL
   def self.all()
     sql = "SELECT * FROM members"
-    results = SqlRunner.run( sql )
-    return p results.map_items (members_data)
+    results = SqlRunner.run(sql)
+    members = map_items(results)
+    return members
   end
 
 #FIND by id
@@ -59,7 +60,7 @@ class Member
     WHERE id = $1"
     values = [id]
     results = SqlRunner.run( sql, values )
-    return p Member.new( results.first )
+    return Member.new( results.first )
   end
 
 #find all upcoming classes a customer is booked for by id
@@ -90,8 +91,8 @@ end
     SqlRunner.run( sql )
   end
 
-  def self.map_items(members_data)
-      return p members_data.map { |member|  Member.new(member) }
+  def self.map_items(results)
+      return results.map { |member|  Member.new(member) }
   end
 
 end

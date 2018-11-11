@@ -17,13 +17,3 @@
 <%= Member.find(booking.members_id).membership %>
 
 <% end %>
-
-<!--
-<form method="POST" action="/bookings">
-  <label for="activities_id">Select session:</label>
-  <select name="activities_id" id="activities_id">
-    <% @activities.each do |activity| %>
-    <option value=<%= activity.id %>><%= activity.session.capitalize %></option>
-    <% end %>
-  </select>
-</form> -->

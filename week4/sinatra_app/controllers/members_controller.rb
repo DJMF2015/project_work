@@ -21,6 +21,7 @@ end
 # treating the :id as a string when searching. Avoids conversion error
 #CRETE
 get '/members/new' do
+    @members = Member.all
   erb(:"members/new")
 end
 
@@ -32,7 +33,8 @@ end
 
 #sinatra reads top-down. update method accepts :id from create
 get '/members/:id/edit' do #EDIT
- @member = Member.find(params[:id])#or ['id']?
+ @types = ['Standard','Premium']
+ @member = Member.find(params[:id])#or ['id']
  erb (:"members/edit")
 end
 

@@ -28,11 +28,11 @@ These briefs detail what is expected of you, including an MVP. Note that the MVP
 Talk through your ideas with an instructor during the planning process, and before you begin coding.
 
 ## MVP
-- The app should allow the gym to create / edit / delete members
-- The app should allow the gym to create / edit / delete classes
-- The app should show a list of all upcoming classes
-- The app should allow the gym to add members to specific classes
-- The app should show all members that are registered for a particular class
+ - [x]  The app should allow the gym to create / edit / delete members
+ - [x]  The app should allow the gym to create / edit / delete classes
+ - [x]  The app should show a list of all upcoming classes
+ - []  The app should allow the gym to add members to specific classes
+ - []  The app should show all members that are registered for a particular class
 
 ## Possible Extensions
 - Classes could have a maximum capacity, and users can only be added while there is space remaining.

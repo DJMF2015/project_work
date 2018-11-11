@@ -17,7 +17,7 @@ get '/members' do
   erb(:"members/index")
 end
 
-#Below "show" route 'picks-up' id to displays & avoids
+#"show" route 'picks-up' id to displays & avoids
 # treating the :id as a string when searching. Avoids conversion error
 #CRETE
 get '/members/new' do
@@ -46,10 +46,8 @@ end
 post '/members' do  # CREATE
   @member = Member.new(params)
   @member.save() #s'id'
-  @time = Time.new()
   erb (:"members/create")
 end
-
 
 #DELETE
 post '/members/:id/delete' do

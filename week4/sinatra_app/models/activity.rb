@@ -36,7 +36,7 @@ class Activity
 
 
   def update()
-    sql = "UPDATE members
+    sql = "UPDATE activities
     SET
     (
       session,
@@ -53,12 +53,14 @@ class Activity
       SqlRunner.run(sql, values)
   end
 
-    #READ/FIND all
-    def self.all()
-      sql = "SELECT * FROM activities"
-      results = SqlRunner.run( sql )
-      return results.map_items (members_data)
-    end
+  #READ/FIND ALL
+  def self.all()
+    sql = "SELECT * FROM activities"
+    results = SqlRunner.run(sql)
+    classes = map_items(results)
+    return classes
+  end
+
 
     #FIND by id
     def self.find( id )
@@ -85,7 +87,7 @@ class Activity
     end
     #Delete by ID
     def self.delete(id)
-      sql = "DELETE FROM activites where id = $1"
+      sql = "DELETE FROM activities where id = $1"
       values = [id]
       SqlRunner.run( sql, values )
     end
@@ -96,8 +98,8 @@ class Activity
       SqlRunner.run( sql )
     end
 
-    def self.map_items(members_data)
-      return members_data.map { |member|  Activity.new(member) }
+    def self.map_items(results)
+      return results.map { |classes|  Activity.new(classes) }
     end
 
 end

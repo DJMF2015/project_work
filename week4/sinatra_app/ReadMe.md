@@ -32,9 +32,8 @@ Talk through your ideas with an instructor during the planning process, and befo
  - [x]  The app should allow the gym to create / edit / delete classes
  - [x]  The app should show a list of all upcoming classes
  - [X]  The app should allow the gym to add members to specific classes
- - [?]  The app should show all members that are registered for a particular class
- - []  CSS styling
-
+ - []  The app should show all members that are registered for a particular class
+ -
 ## Possible Extensions
 - Classes could have a maximum capacity, and users can only be added while there is space remaining.
 - The gym could be able to give its members Premium or Standard membership. Standard members can only be signed up for classes during off-peak hours.

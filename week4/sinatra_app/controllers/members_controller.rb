@@ -17,34 +17,39 @@ get '/members' do
   erb(:"members/index")
 end
 
-#CREATE
+#Below "show" route 'picks-up' id to displays & avoids
+# treating the :id as a string when searching. Avoids conversion error
+#CRETE
 get '/members/new' do
   erb(:"members/new")
 end
 
-#SAVE
-post '/members' do
-  Member.new(params).save
-  redirect to '/members'
+# use params[:id] in the block that defines the route.
+get '/films/:id' do  #   SHOW
+  @member= Member.find( params['id']) # or 'id'?
+  erb(:show)
 end
 
-# get '/members/:id' do
-#   @member = Member.find(params['id'])
-#   erb( :"members/show" )
-# end
-
-#FIND BY ID
-get '/members/:id/edit' do
-  @member = Member.find(params['id'])
-  erb( :"members/edit" )
+#sinatra reads top-down. update method accepts :id from create
+get '/members/:id/edit' do #EDIT
+ @member = Member.find(params[:id])#or ['id']?
+ erb (:"members/edit")
 end
 
 #MODIFY/UPDATE
 post '/members/:id' do
-  member = Member.new(params)
-  member.update
-  redirect to "/members/#{params['id']}"
+  Member.new(params).update
+  redirect to '/members' #{params['id']}"
 end
+
+#SAVE
+post '/members' do  # CREATE
+  @member = Member.new(params)
+  @member.save() #s'id'
+  @time = Time.new()
+  erb (:"members/create")
+end
+
 
 #DELETE
 post '/members/:id/delete' do

@@ -3,7 +3,7 @@ require_relative( '../db/sql_runner' )
 
 class Activity
 
-  attr_reader( :session, :spaces, :description, :time_of_day, :duration, :id )
+  attr_accessor( :session, :spaces, :description, :time_of_day, :duration, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -14,7 +14,7 @@ class Activity
     @duration = options['duration']
   end
 
-#€CREATE
+  #€CREATE
   def save()
     sql = "INSERT INTO ACTIVITIES
     (
@@ -35,15 +35,15 @@ class Activity
   end
 
 
-    def update()
-      sql = "UPDATE members
-      SET
-      (
-        session,
-        spaces,
-        description,
-        time_of_day,
-        duration
+  def update()
+    sql = "UPDATE members
+    SET
+    (
+      session,
+      spaces,
+      description,
+      time_of_day,
+      duration
       ) =
       (
         $1, $2, $3, $4, $5
@@ -53,14 +53,14 @@ class Activity
       SqlRunner.run(sql, values)
     end
 
-  #READ/FIND all
+    #READ/FIND all
     def self.all()
       sql = "SELECT * FROM activities"
       results = SqlRunner.run( sql )
       return results.map_items (members_data)
     end
 
-  #FIND by id
+    #FIND by id
     def self.find( id )
       sql = "SELECT * FROM activities
       WHERE id = $1"
@@ -69,27 +69,27 @@ class Activity
       return Activity.new( results.first )
     end
 
-#find a certain member's classes that he/she is booked for
-def find_customer_booking()
-  sql= "SELECT activities.* FROM ACTIVITIES INNER JOIN bookings ON bookings.activities_id = activities.id INNER JOIN members ON BOOKINGS.members_id = members.id WHERE members.id = $1 ORDER BY activities.id ASC"
-   values = [@id]
-   result = SqlRunner.run(sql, values)
-   return result.map{|activity| Activity.new( activity)}
-end
+    #find a certain member's classes that he/she is booked for
+    def find_customer_booking()
+      sql= "SELECT activities.* FROM ACTIVITIES INNER JOIN bookings ON bookings.activities_id = activities.id INNER JOIN members ON BOOKINGS.members_id = members.id WHERE members.id = $1 ORDER BY activities.id ASC"
+      values = [@id]
+      result = SqlRunner.run(sql, values)
+      return result.map{|activity| Activity.new( activity)}
+    end
     #Delete by ID
-      def self.delete(id)
-        sql = "DELETE FROM activites where id = $1"
-        values = [id]
-        SqlRunner.run( sql, values )
-      end
+    def self.delete(id)
+      sql = "DELETE FROM activites where id = $1"
+      values = [id]
+      SqlRunner.run( sql, values )
+    end
 
     #Delete all
-      def self.delete_all
-        sql = "DELETE FROM activities"
-        SqlRunner.run( sql )
-      end
+    def self.delete_all
+      sql = "DELETE FROM activities"
+      SqlRunner.run( sql )
+    end
 
     def self.map_items(members_data)
-        return members_data.map { |member|  Activity.new(member) }
+      return members_data.map { |member|  Activity.new(member) }
     end
-end
+  end

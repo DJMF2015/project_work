@@ -2,10 +2,10 @@ require_relative( '../db/sql_runner' )
 
 class Member
 
-  attr_reader( :first_name, :last_name, :membership, :id )
+  attr_accessor( :first_name, :last_name, :membership, :id )
 
   def initialize( options )
-    @id = options['id'].to_i if options['id']
+    @id = options['id'].to_i() if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
     @membership = options['membership']

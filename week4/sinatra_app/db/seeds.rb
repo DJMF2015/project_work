@@ -115,9 +115,10 @@ booking6 = Booking.new({
 
 booking6.save()
 
-# member1.customer_bookings()
-# p booking2.session_bookings()
+ member1.customer_bookings()
 activity2.find_customer_booking()
+p activity1.upcoming_classes()
+#  # booking2.session_bookings()
 
 binding.pry
 nil

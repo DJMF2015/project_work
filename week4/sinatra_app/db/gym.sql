@@ -16,11 +16,11 @@ CREATE TABLE ACTIVITIES(
   spaces INT4,
   description varchar(255),
   time_of_day varchar(255), --time of day e 10am
-  duration varchar(255) --length of activity
+  duration varchar(255) --length of activity/class
 );
 
 CREATE TABLE BOOKINGS(
   id serial8 primary key,
-  members_id INT8 REFERENCES members(id) ON DELETE CASCADE,
+  members_id INT8 REFERENCES members(id) ON DELETE CASCADE, --maintain referential integrity
   activities_id INT8 REFERENCES activities(id) ON DELETE CASCADE
 );

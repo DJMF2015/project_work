@@ -51,7 +51,7 @@ class Activity
       WHERE id = $6"
       values = [@session, @spaces, @description,@time_of_day, @duration, @id]
       SqlRunner.run(sql, values)
-    end
+  end
 
     #READ/FIND all
     def self.all()
@@ -69,10 +69,17 @@ class Activity
       return Activity.new( results.first )
     end
 
-    #find a certain member's classes that he/she is booked for
+    def upcoming_classes() #PASS
+      sql = " select activities.*, description from activities where id = $1"
+      values = [id]
+      results = SqlRunner.run( sql, values )
+      return Activity.new( results.first )
+    end
+
+    #find a certain member's classes that he/she is booked for OKAY/PASS
     def find_customer_booking()
-      sql= "SELECT activities.* FROM ACTIVITIES INNER JOIN bookings ON bookings.activities_id = activities.id INNER JOIN members ON BOOKINGS.members_id = members.id WHERE members.id = $1 ORDER BY activities.id ASC"
-      values = [@id]
+      sql= "SELECT activities.* , members.last_name, members.id FROM ACTIVITIES INNER JOIN bookings ON bookings.activities_id = activities.id INNER JOIN members ON BOOKINGS.members_id = members.id WHERE members.id = $1 ORDER BY activities.id ASC"
+       values = [@id]
       result = SqlRunner.run(sql, values)
       return result.map{|activity| Activity.new( activity)}
     end
@@ -92,4 +99,5 @@ class Activity
     def self.map_items(members_data)
       return members_data.map { |member|  Activity.new(member) }
     end
-  end
+
+end

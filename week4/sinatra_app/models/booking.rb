@@ -46,9 +46,8 @@ class Booking
     WHERE id = $1"
     values = [id]
     results = SqlRunner.run( sql, values )
-    return p Member.new( results.first )
+    return Member.new( results.first )
   end
-
 
 
   def self.delete_all()

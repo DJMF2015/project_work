@@ -1,0 +1,29 @@
+<h2>Bookings</h2>
+
+<a href="/bookings/new">Create Booking</a>
+<br>
+<% for booking in @bookings %>
+<br>
+<%= Activity.find(booking.activities_id).session %>
+<br>
+<%= Activity.find(booking.activities_id).time_of_day %>
+<br>
+<%= Activity.find(booking.activities_id).description %>
+<br>
+<%= Member.find(booking.members_id).first_name %>
+<br>
+<%= Member.find(booking.members_id).last_name %>
+<br>
+<%= Member.find(booking.members_id).membership %>
+
+<% end %>
+
+<!--
+<form method="POST" action="/bookings">
+  <label for="activities_id">Select session:</label>
+  <select name="activities_id" id="activities_id">
+    <% @activities.each do |activity| %>
+    <option value=<%= activity.id %>><%= activity.session.capitalize %></option>
+    <% end %>
+  </select>
+</form> -->

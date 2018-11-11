@@ -27,11 +27,39 @@ class Booking
     @id = results.first()['id'].to_i
   end
 
+  #READ/FIND ALL
   def self.all()
-    sql = "SELECT * FROM bookings"
-    results = SqlRunner.run( sql )
-    return results.map_items (bookings_data)
+    sql = "SELECT * FROM bookings ORDER BY bookings.id ASC"
+    results = SqlRunner.run(sql)
+    hash = results.map{|activity| Booking.new(activity)}
+    return hash
   end
+
+
+  #FIND by id
+  def self.find( id )
+    sql = "SELECT * FROM bookings
+    WHERE id = $1 ORDER BY bookings.id ASC"
+    values = [id]
+    results = SqlRunner.run( sql, values ).first
+    return Booking.new( results.first )
+  end
+
+  # def members()
+  #   sql = "SELECT * FROM members
+  #   WHERE id = $1"
+  #   values = [@members_id]
+  #   results = SqlRunner.run( sql, values )
+  #   return Member.new( results.first )
+  # end
+
+  # def activitys()
+  #   sql = "SELECT * FROM activities
+  #   WHERE id = $1"
+  #   values = [@activities_id]
+  #   results = SqlRunner.run( sql, values )
+  #   return Activity.new( results.first )
+  # end
 
   #Delete by ID
   def self.delete(id)
@@ -40,23 +68,14 @@ class Booking
     SqlRunner.run( sql, values )
   end
 
-  #FIND by id
-  def self.find( id )
-    sql = "SELECT * FROM bookings
-    WHERE id = $1"
-    values = [id]
-    results = SqlRunner.run( sql, values )
-    return Member.new( results.first )
-  end
-
-
   def self.delete_all()
     sql = "DELETE FROM bookings"
     SqlRunner.run( sql )
   end
 
-  def self.map_items(bookings_data)
-    return bookings_data.map { |bookings|  Booking.new(bookings) }
+
+  def self.map_items(results)
+    return results.map { |bookings|  Booking.new(bookings) }
   end
 
 end

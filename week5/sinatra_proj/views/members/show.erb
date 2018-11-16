@@ -1,0 +1,45 @@
+
+<html>
+
+<center><h2> Members listed: </h2>
+  <table class="alt">
+    <tr>
+      <th> First: </th>
+      <th> Last: </th>
+      <th> Membership: </th>
+    </tr>
+    <tr>
+      <td>  <%= @member.first_name %></td>
+      <td>  <%= @member.last_name %></td>
+      <td>  <%= @member.membership %></td>
+    </tr>
+    <br ><br>
+  </table>
+  <br><hr>
+  <table class="alt">
+    <tr>
+      <th> Activity: </th>
+      <th> Duration: </th>
+      <th> Time: </th>
+    </tr>
+      <tr>
+      <% @member.activities.each do |mem| %>
+
+      <td><%= mem.session %> </td>
+      <td><%= mem.duration %> </td>
+      <td><%= mem.time_of_day %></td>
+    </tr>
+  </table>
+  <% end %>
+
+
+
+  <b><form method="get" action="/members/<%= @member.id %>/edit">
+    <p><input type='submit' value="Update Members Details"/></p>
+  </form></b>
+
+  <form method="post" action="/members/<%= @member.id %>/delete">
+    <b>  <input type="submit" value="Delete"/></b>
+  </form>
+
+</center>

@@ -1,0 +1,70 @@
+/* *{
+  margin: 0 auto;
+} */
+body{
+  font-family: 'Ubuntu';font-size: 18px;
+}
+h1, h2, h3{
+  font-size: 20px;
+  font-family: 'Ubuntu';
+  font-weight: bold;
+  text-align: center;
+}
+nav {
+  background: forestgreen;
+  overflow: auto;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  padding: 5px 300px 5px 75px;
+}
+nav ul{
+  list-style: none;
+}
+nav li {
+  float: left;
+  padding: 5px 30px;
+}
+
+nav a  {
+  color: white;
+  text-align: center;
+  font-size: 22px;
+  font-family:  sans-serif;
+  font-weight: normal;
+  
+
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+table.alt tr:nth-child(even) {
+  background-color: #eee;
+}
+table.alt tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+
+footer{
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  text-align:center;
+}
+
+.footer {
+  background: grey;
+  height: 20px;
+  margin: auto;
+  width: 100%
+  padding:5px;
+  color:#ffffff;
+
+}

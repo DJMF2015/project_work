@@ -45,21 +45,21 @@ class Booking
     return Booking.new( results.first )
   end
 
-  # def members()
-  #   sql = "SELECT * FROM members
-  #   WHERE id = $1"
-  #   values = [@members_id]
-  #   results = SqlRunner.run( sql, values )
-  #   return Member.new( results.first )
-  # end
+  def member() #PASS
+    sql = "SELECT * FROM members
+    WHERE id = $1"
+    values = [@members_id]
+    results = SqlRunner.run( sql, values )
+    return Member.new( results.first )
+  end
 
-  # def activitys()
-  #   sql = "SELECT * FROM activities
-  #   WHERE id = $1"
-  #   values = [@activities_id]
-  #   results = SqlRunner.run( sql, values )
-  #   return Activity.new( results.first )
-  # end
+  def activity()
+    sql = "SELECT * FROM activities
+    WHERE id = $1"
+    values = [@activities_id]
+    results = SqlRunner.run( sql, values )
+    return Activity.new( results.first )
+  end
 
   #Delete by ID
   def self.delete(id)

@@ -71,11 +71,20 @@ class Activity
       return Activity.new( results.first )
     end
 
+#find classes available
     def upcoming_classes() #PASS
-      sql = " select activities.*, description from activities where id = $1"
+      sql = "select activities.*, description from activities where id = $1"
       values = [id]
       results = SqlRunner.run( sql, values )
       return Activity.new( results.first )
+    end
+
+    #find members for particualr activity PASS
+    def members()
+      sql = "SELECT m.* FROM members m INNER JOIN bookings b ON b.members_id = m.id WHERE b.activities_id = $1"
+       values = [@id]
+       results = SqlRunner.run(sql, values)
+       return results.map{ |member| Member.new(member)}
     end
 
     #find a certain member's classes that he/she is booked for OKAY/PASS
@@ -85,6 +94,7 @@ class Activity
       result = SqlRunner.run(sql, values)
       return result.map{|activity| Activity.new( activity)}
     end
+
     #Delete by ID
     def self.delete(id)
       sql = "DELETE FROM activities where id = $1"

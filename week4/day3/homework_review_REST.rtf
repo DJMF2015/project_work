@@ -1,0 +1,39 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs28 \cf0 \
+Homework Review\
+
+\b0 \
+1.  T
+\i here is a delete request made from within the form view to controller that allows the user to delete a student. Find where this request is made in the form which passes to the controller. What would be a reason for defining it in the place that it is?\
+
+\i0 \
+The request to delete a student is defined in the student_controller.rb. The purpose is to separate the restful requests from the Model that performs the actual logic for deletion. Seperation of Responsibilities.\
+\
+
+\i 2. Why is the delete request defined using a form?
+\i0 \
+It allows a way of the User to interact with the View and delete a student without having to make a call from the terminal itself. To be able to interactively make a POST request\
+\
+
+\i 3. Why do we need to have the \'91new\'92 route defined above the \'91show\'92 route?
+\i0 \
+This is to avoid the \'91new\'92 route producing a \'91InvalidTextRepresenation\'92 in Postgres due to picking-up the id from \'91show\'92 and not being able to parse. i.e. \'92:id\'92 wouldn\'92t recognise a \'91\'92new\'92 string from the students/new request.\
+\
+4. 
+\i In the 'new' view, what is the collection of data we iterate over to create the select for the house? 
+\i0 Where does that collection of data come from? Trace the data flow through the application.\
+\
+Instances of House\
+localhost=> View-> Controller->@houses defined in Controller\
+\
+
+\i 5. In the \'91new\'92 view, inside the form that allows a user to create a new student, why do the options in the 'house' select (dropdown) need to have a value of the house's id?\
+\
+
+\i0 So that the house selected can be related via an id to a unique house. Otherwise there would be no way of identifying it to perform a request on.}

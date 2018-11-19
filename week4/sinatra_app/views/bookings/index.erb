@@ -2,18 +2,8 @@
 
 <a href="/bookings/new">Create Booking</a>
 <br>
-<% for booking in @bookings %>
-<br>
-<%= Activity.find(booking.activities_id).session %>
-<br>
-<%= Activity.find(booking.activities_id).time_of_day %>
-<br>
-<%= Activity.find(booking.activities_id).description %>
-<br>
-<%= Member.find(booking.members_id).first_name %>
-<br>
-<%= Member.find(booking.members_id).last_name %>
-<br>
-<%= Member.find(booking.members_id).membership %>
 
+<% for book in @bookings %>
+  <li>
+  <p><%= book.activity.session %>  <%= book.member.last_name %> </p>
 <% end %>

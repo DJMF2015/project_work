@@ -19,7 +19,7 @@ end
 
 #"show" route 'picks-up' id to displays & avoids
 # creating the :id as a string when searching. Avoid conversion error
-#CRETE
+#CREATE
 get '/activities/new' do
   erb(:"activities/new")
 end

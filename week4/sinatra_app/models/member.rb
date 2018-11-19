@@ -64,19 +64,12 @@ class Member
     end
 
     #find all upcoming classes a customer is booked for by id PASS
-    def customer_bookings()
-      sql = "SELECT  m.first_name, m.last_name , activities.session, activities.description, activities.id  FROM activities INNER JOIN bookings ON bookings.activities_id = activities.id INNER JOIN members m ON bookings.members_id = m.id WHERE m.id =$1 ORDER BY activities.id, m.last_name "
+    def activities()
+      sql = "SELECT a.*  FROM activities a INNER JOIN bookings b ON b.activities_id = a.id WHERE b.members_id =$1"
       values = [@id]
       result = SqlRunner.run(sql, values)
       return  result.map { |session| Activity.new( session) }
     end
-
-    # def session_bookings()
-    #   sql = "select activities.* from activities inner join bookings on bookings.activities_id = activities.id where bookings.members_id = activities.id"
-    #   values = [@id]
-    #   result = SqlRunner.run(sql, values)
-    #   return result.map { |bookings| Booking.new( result)}
-    # end
 
     #Delete by ID
     def self.delete(id)

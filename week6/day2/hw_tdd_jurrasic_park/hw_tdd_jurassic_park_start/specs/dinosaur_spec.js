@@ -24,5 +24,5 @@ describe('Dinosaur', function() {
     assert.strictEqual(actual, 50);
   });
 
-  it('should calculate the total number of visitors per day')
+  
 });

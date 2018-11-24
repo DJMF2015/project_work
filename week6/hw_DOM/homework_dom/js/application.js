@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
   const clearAllBtn = document.querySelector('#delete')
   clearAllBtn.addEventListener('click', handleClearAllItems );
+
+  let btns = document.querySelectorAll("[name=color]");
+  for (let button of Array.from(btns)) {
+    button.addEventListener('change', ()=> {
+      document.body.style.background=button.value;
+    });
+  }
 })
 
 const handleFormSubmitItem = function (event){
@@ -15,6 +22,7 @@ const handleFormSubmitItem = function (event){
 
   event.target.reset();
 }
+
 const createPrimateListItem = function (form){
   const primatesListItem = document.createElement('li')
   primatesListItem.classList.add('list-of-primates-item');
@@ -35,8 +43,10 @@ const createPrimateListItem = function (form){
   apetype.textContent = form.apetype.value;
   primatesListItem.appendChild(apetype);
 
+
   return primatesListItem;
 }
+
 
 const handleClearAllItems = function (event){
   const primateList = document.querySelector('#list-of-primates');

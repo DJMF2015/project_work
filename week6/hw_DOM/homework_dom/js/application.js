@@ -1,3 +1,4 @@
+//add event listeners
 document.addEventListener('DOMContentLoaded', ()=> {
   const newItem = document.querySelector('#new-item');
   newItem.addEventListener('submit', handleFormSubmitItem);
@@ -5,6 +6,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
   const clearAllBtn = document.querySelector('#delete')
   clearAllBtn.addEventListener('click', handleClearAllItems );
 
+//loop of radio btn options and on click register color change
   let btns = document.querySelectorAll("[name=color]");
   for (let button of Array.from(btns)) {
     button.addEventListener('change', ()=> {
@@ -13,20 +15,19 @@ document.addEventListener('DOMContentLoaded', ()=> {
   }
 })
 
+//submit function for form
 const handleFormSubmitItem = function (event){
   event.preventDefault();
-
   const primatesListItem = createPrimateListItem(event.target);
   const primateList = document.querySelector('#list-of-primates');
   primateList.appendChild(primatesListItem);
 
   event.target.reset();
 }
-
+//form functions
 const createPrimateListItem = function (form){
   const primatesListItem = document.createElement('li')
   primatesListItem.classList.add('list-of-primates-item');
-
   const ape = document.createElement('h2');
   ape.textContent = form.ape.value;
   primatesListItem.appendChild(ape);
@@ -43,11 +44,9 @@ const createPrimateListItem = function (form){
   apetype.textContent = form.apetype.value;
   primatesListItem.appendChild(apetype);
 
-
-  return primatesListItem;
+  return primatesListItem; //return list items for above elements created
 }
-
-
+//delete function
 const handleClearAllItems = function (event){
   const primateList = document.querySelector('#list-of-primates');
   primateList.textContent = ''; //primateList.innerHTML = ''

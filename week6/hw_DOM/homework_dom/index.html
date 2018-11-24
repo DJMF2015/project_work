@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Primates Information Application</title>
+</head>
+<body>
+
+  <h2>Primate</h2>
+  <form id="new-item">
+    <div id ="form-wrapper">
+      <div form id="main-form">
+        <label for "ape" class="main">Primate</label>
+        <input type="text" id = "ape" required/>
+      </div>
+
+      <div class="main-form">
+        <label for "genus" class="main">Genus</label>
+        <input type="text" id='genus' required/>
+      </div>
+
+      <div class="main-form">
+        <label for "habitat" class="main">Habitat</label>
+        <input type="text" id='habitat' required/>
+      </div>
+
+
+      <div class="main-form">
+        <label for="ape-cat" class="main">Family</label>
+        <select id="ape-cat">
+          <option value="--select--" disabled selected></option>
+          <option value="Lemus">Lemus</option>
+          <option value="Baboon">Baboon</option>
+          <option value="Macaque"> Macaque</option>
+          <option value="Monkey"> Monkey</option>
+          <option value="Orangutan"> Orangutan</option>
+          <option value="Gorilla"> Gorilla</option>
+          <option value="Chimpanzee"> Chimpanzee</option>
+          <option value="Human"> Human</option>
+        </select>
+      </div>
+    </div>
+    <input type="submit" value="submit"/>
+  </form>
+
+  <button id="delete">Clear All</button>
+
+  <h1>List of Primates</h1>
+  <div id ="list-of-primates"></div>
+
+</body>
+</html>

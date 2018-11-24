@@ -1,12 +1,12 @@
-document.addEventListener('DOMContentLoaded'), ()=> {
+document.addEventListener('DOMContentLoaded', ()=> {
   const newItem = document.querySelector('#new-item');
   newItem.addEventListener('submit', handleFormSubmitItem);
 
   const clearAllBtn = document.querySelector('#delete')
-  clearAllBtn.addEventListener('click',handleClearAllItems );
+  clearAllBtn.addEventListener('click', handleClearAllItems );
 })
 
-const handleFormSubmitItem = function(event){
+const handleFormSubmitItem = function (event){
   event.preventDefault();
 
   const primatesListItem = createPrimateListItem(event.target);
@@ -15,23 +15,30 @@ const handleFormSubmitItem = function(event){
 
   event.target.reset();
 }
-const createPrimateListItem = function(form){
+const createPrimateListItem = function (form){
   const primatesListItem = document.createElement('li')
-  primatesListItem.classList.add('list-of-primates');
+  primatesListItem.classList.add('list-of-primates-item');
 
   const ape = document.createElement('h2');
   ape.textContent = form.ape.value;
   primatesListItem.appendChild(ape);
 
   const genus = document.createElement('h3');
-  genus.textContent=form.genus.value;
+  genus.textContent =form.genus.value;
   primatesListItem.appendChild(genus);
 
+  const habitat = document.createElement('h4')
+  habitat.textContent = form.habitat.value;
+  primatesListItem.appendChild(habitat);
 
+  const apetype = document.createElement('p');
+  apetype.textContent = form.apetype.value;
+  primatesListItem.appendChild(apetype);
 
+  return primatesListItem;
+}
 
-
-
-
-
+const handleClearAllItems = function (event){
+  const primateList = document.querySelector('#list-of-primates');
+  primateList.textContent = ''; //primateList.innerHTML = ''
 }

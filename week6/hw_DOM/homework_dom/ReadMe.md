@@ -1,6 +1,5 @@
 # Homework: Manipulating the DOM
-
-![alt text](monk.png ’app’)
+![alt text](monk.png 'hello')
 
 ### Learning Objectives
 

@@ -1,5 +1,7 @@
 # Homework: Manipulating the DOM
 
+![alt text](monk.png ’app’)
+
 ### Learning Objectives
 
 - Be able to attach event listeners to DOM elements to respond to events

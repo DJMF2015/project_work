@@ -19,69 +19,73 @@
   </div>
 </main>
 <h2>Primate</h2>
-<div class="container">
 
-  <form id="new-item">
-    <div id ="form-wrapper">
-      <div form id="main-form">
-        <label for "ape" class="main">Primate</label>
-        <input type="text" id = "ape" required/>
-        <br>
-      </div>
+  <div class="container">
 
-      <div class="main-form">
-        <label for "habitat" class="main">Habitat</label>
-        <input type="text" id='habitat' required/>
-      </div>
-
-      <div class="main-form">
-        <label for="genus" class="main">Genus</label>
-        <select id="genus">
-          <option value="" disabled selected></option>
-          <option value="lemur">Lemur</option>
-          <option value="papio">Papio</option>
-          <option value="macaca"> Macaca</option>
-          <option value="alouattinae"> Alouattinae</option>
-          <option value="pongo"> Pongo</option>
-          <option value="gorilla"> Gorilla</option>
-          <option value="pan"> Pan</option>
-          <option value="homosapien"> Homo</option>
-        </select>
+    <form id="new-item">
+      <fieldset>
+      <div id ="form-wrapper">
+        <div form id="main-form">
+          <legend>Favourite Animals</legend>
+          <label for "ape" class="main">Primate</label>
+          <input type="text" id = "ape" required/>
+          <br>
+        </div>
 
         <div class="main-form">
-          <label for="apetype" class="main">Family</label>
-          <select id="apetype">
+          <label for "habitat" class="main">Habitat</label>
+          <input type="text" id='habitat' required/>
+        </div>
+
+        <div class="main-form">
+          <label for="genus" class="main">Genus</label>
+          <select id="genus" multiple="multiple">
             <option value="" disabled selected></option>
-            <option value="Lemus">Lemus</option>
-            <option value="Baboon">Baboon</option>
-            <option value="Macaque"> Macaque</option>
-            <option value="Monkey"> Monkey</option>
-            <option value="Orangutan"> Orangutan</option>
-            <option value="Gorilla"> Gorilla</option>
-            <option value="Chimpanzee"> Chimpanzee</option>
-            <option value="Human"> Human</option>
+            <option value="lemur">Lemur</option>
+            <option value="papio">Papio</option>
+            <option value="macaca"> Macaca</option>
+            <option value="alouattinae"> Alouattinae</option>
+            <option value="pongo"> Pongo</option>
+            <option value="gorilla"> Gorilla</option>
+            <option value="pan"> Pan</option>
+            <option value="homosapien"> Homo</option>
           </select>
+
+          <div class="main-form">
+            <label for="apetype" class="main">Family</label>
+            <select id="apetype" multiple="multiple">
+              <option value="" disabled selected></option>
+              <option value="Lemus">Lemus</option>
+              <option value="Baboon">Baboon</option>
+              <option value="Macaque"> Macaque</option>
+              <option value="Monkey"> Monkey</option>
+              <option value="Orangutan"> Orangutan</option>
+              <option value="Gorilla"> Gorilla</option>
+              <option value="Chimpanzee"> Chimpanzee</option>
+              <option value="Human"> Human</option>
+            </select>
+          </div>
         </div>
       </div>
-    </div>
-    <div id= "button-colour">
-      <input type="submit" value="save" id="btn-colour"/>
-      <button type="reset" value="Reset">Clear Form</button>
-    </div>
-  </form>
-
-  <button id="delete">Clear All</button>
-
-  <h4>Background Colour</h4>
-  <label>
-    <input type ="radio" name="color" value="lightgreen">Green</label>
-    <label>
-      <input type ="radio" name="color" value="grey">Grey</label>
-      <label>
-        <input type ="radio" name="color" value="lightblue">blue</label>
-
-        <h1>List of Primates</h1>
-        <div id ="list-of-primates"></div>
+      <div id= "button-colour">
+        <input type="submit" value="save" id="btn-colour"/>
+        <button type="reset" value="Reset">Clear Form</button>
       </div>
-    </body>
-    </html>
+      </fieldset>
+    </form>
+
+    <button id="delete">Clear All</button>
+
+    <h4>Background Colour</h4>
+    <label>
+      <input type ="radio" name="color" value="lightgreen">Green</label>
+      <label>
+        <input type ="radio" name="color" value="grey">Grey</label>
+        <label>
+          <input type ="radio" name="color" value="lightblue">blue</label>
+
+          <h1>List of Primates</h1>
+          <div id ="list-of-primates"></div>
+        </div>
+      </body>
+      </html>

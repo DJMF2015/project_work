@@ -6,27 +6,37 @@ body {
   margin: auto;
 }
 .container{
-  display:;
   width: 100%;
   flex-wrap: wrap;
-  /* margin-left: 50px; */
-  padding: 30px 20px 50px;
+  margin: auto;
+  background: linear-gradient(120deg, #a0f2ff 0%, #ffafbd 100%);
+  padding: 30px 20px 30px;
   justify-content: space-between;
   border: 1px solid rgb(145, 0, 0);
   border-top: 10px solid blue;
+}
+.small-container{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 50px 30px 10px;
+  border: 1px solid rgb(145, 0, 0);
+  border-top: 10px solid green;
+}
+fieldset {
+  padding: 0 1em 1em 1em;
+}
+
+legend {
+  padding: 1em;
 }
 #form-wrapper {
   /* width: 100%; */
   flex-direction: row;
 }
 img {
-    flex-wrap: wrap;
-    padding: 30 20% 20 20%;
+  flex-wrap: wrap;
+  padding: 30 20% 20 20%;
 }
-.hide {
-  display: none;
-}
-
 #btn-colour{
   border-radius:10px;
   padding:5px;
@@ -39,9 +49,9 @@ img {
   list-style-type: none;
 }
 li, ul{
-display: inline;
-padding: 20px 50px 20px;
-margin: auto;
+  display: inline;
+  padding: 20px 50px 20px;
+  margin: auto;
 }
 h1, h2{
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -87,6 +97,9 @@ button{
 list-of-primates-item:hover {
   box-shadow: 2px 8px 45px rgb(110, 202, 86);
   transform: translate3D(0, -2px, 0);
+}
+.hide {
+  display: none;
 }
 
 @media screen and (min-width: 600px) {

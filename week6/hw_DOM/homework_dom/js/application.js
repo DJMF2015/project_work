@@ -1,9 +1,11 @@
+
+
 //add event listeners
 document.addEventListener('DOMContentLoaded', ()=> {
   const newItem = document.querySelector('#new-item');
-  newItem.addEventListener('submit', handleFormSubmitItem);
-
   const clearAllBtn = document.querySelector('#delete')
+
+  newItem.addEventListener('submit', handleFormSubmitItem);
   clearAllBtn.addEventListener('click', handleClearAllItems );
 
   //loop of radio btn options and on click register color change
@@ -14,7 +16,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     });
   }
 })
-//submit function for form
+// Add the event listener define function to respond to the evnt
 const handleFormSubmitItem = function (event){
   event.preventDefault();//prevent page reloading immediately
   const primatesListItem = createPrimateListItem(event.target);
@@ -28,28 +30,28 @@ const createPrimateListItem = function (form){
   const primatesListItem = document.createElement('li')
   primatesListItem.classList.add('list-of-primates-item');
   const ape = document.createElement('h2');
-  ape.textContent = form.ape.value;
-  primatesListItem.appendChild(ape);
-
   const genus = document.createElement('h3');
-  genus.textContent =form.genus.value;
-  primatesListItem.appendChild(genus);
-
   const habitat = document.createElement('h4')
-  habitat.textContent = form.habitat.value;
-  primatesListItem.appendChild(habitat);
-
   const apetype = document.createElement('p');
+
+  ape.textContent = form.ape.value;
+  genus.textContent =form.genus.value;
+  habitat.textContent = form.habitat.value;
   apetype.textContent = form.apetype.value;
+
+  primatesListItem.appendChild(ape);
+  primatesListItem.appendChild(genus);
+  primatesListItem.appendChild(habitat);
   primatesListItem.appendChild(apetype);
 
-  return primatesListItem; //return list items for above elements created
+  return primatesListItem; //return list items
 }
-//delete function
+// callback to reposnd to event when function is called
 const handleClearAllItems = function (event){
   const primateList = document.querySelector('#list-of-primates');
-  primateList.textContent = ''; //primateList.innerHTML = ''
+  primateList.innerHTML = ''; //or primateList.textContent = ''
 }
+
 //add event listeners. add to document object as in the above
 document.addEventListener('DOMContentLoaded', ()=> {
   //add const for referencing elementbyTag
@@ -62,7 +64,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
   monk3.addEventListener('click', photosLink);
 
   //function to loop over all images by selector and display when 'clicked-on'-otherwise 'hide'
-  function photosLink (){
+   function photosLink (){
     let allImages = document.querySelectorAll('img');
     for (let i =0;i < allImages.length;i++){
       allImages[i].className= 'hide';

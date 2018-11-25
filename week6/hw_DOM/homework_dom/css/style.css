@@ -1,18 +1,30 @@
 
 body {
-
+  /* font-family: "Courier New", Courier, monospace; */
   font-family: 'Patrick Hand', Courier, monospace;
   padding: 30px 50px 30px 100px;
-
-
+  margin: auto;
 }
-#container{
-  display: inline-flex;
+.container{
+  display:;
+  width: 100%;
+  flex-wrap: wrap;
+  /* margin-left: 50px; */
+  padding: 30px 20px 50px;
+  justify-content: space-between;
+  border: 1px solid rgb(145, 0, 0);
+  border-top: 10px solid blue;
 }
 #form-wrapper {
-  width: 100%;
-  display: flex;
+  /* width: 100%; */
   flex-direction: row;
+}
+img {
+    flex-wrap: wrap;
+    padding: 30 20% 20 20%;
+}
+.hide {
+  display: none;
 }
 
 #btn-colour{
@@ -26,13 +38,14 @@ body {
   flex-wrap: wrap;
   list-style-type: none;
 }
-
+li, ul{
+display: inline;
+padding: 20px 50px 20px;
+margin: auto;
+}
 h1, h2{
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-
-}
-p{
-    font-family: 'Trirong Unicode', 'Trirong', serif;
+  font-family: 'Trirong Unicode', 'Trirong', serif;
 }
 .main-form {
   margin-right: 1.8rem;
@@ -64,9 +77,38 @@ button{
 
 }
 .list-of-primates-item {
-  margin: 0.5rem 0.5rem;
-  padding: 0.5rem 0.8rem;
-  border: 1px solid #20437c;
-  border-radius: 10%;
-  background: #ddeaff;
+  margin: 1rem;
+  background: #cbd4a3;
+  box-shadow: 2px 4px 25px rgba(172, 76, 224, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all .2s cubic-bezier(0.4, 0, 1, 1);
+}
+list-of-primates-item:hover {
+  box-shadow: 2px 8px 45px rgb(110, 202, 86);
+  transform: translate3D(0, -2px, 0);
+}
+
+@media screen and (min-width: 600px) {
+  .list-of-primates-item {
+    flex: 1 1 calc(50% - 2rem);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .list-of-primates-item {
+    flex: 1 1 calc(33% - 2rem);
+  }
+}
+
+#list-of-primates > li:nth-child(2){
+  background-image: linear-gradient(120deg, #b0ceb5 0%, #13d8cf 100%);
+}
+
+.list-of-primates-item:nth-child(3n) {
+  background-image: linear-gradient(120deg, #ff9a9e 0%, #90d275 100%);
+}
+
+.list-of-primates-item:nth-child(4n){
+  background-image: linear-gradient(120deg, #a0f2ff 0%, #ffafbd 100%);
 }

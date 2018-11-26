@@ -14,9 +14,9 @@ ResultView.prototype.bindEvents = function (){
 ResultView.prototype.showResult = function (result) {
   const numberResult = document.querySelector('#result');//access Dom ele. with ID
   if (result) {
-    numberResult.textContext = `Your number is a prime number.`;
+    numberResult.textContext = `Your number ${result} a prime number.`;
   } else{
-    numberResult.textContent = `Your number isn't a Prime!`;
+    numberResult.textContent = `${result} is not even!`;
   }
 };
 module.exports = ResultView;

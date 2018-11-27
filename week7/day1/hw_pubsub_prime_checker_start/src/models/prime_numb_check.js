@@ -17,14 +17,14 @@ PrimeCheck.prototype.bindEvents = function () {
 
 PrimeCheck.prototype.primeChecking = function (prime){
   if (prime <= 1){
-    return false;
+    return 'is not a prime numer';
   }
   for (let i = 2; i < prime; i++){
     if (prime % i === 0){
-      return false; //if divisible by 0, return false
+      return 'is not a prime!'; //if divisible by 0, return false
     }
   }
-  return true; //if prime return
+  return 'is a prime number!'; //if prime return
 };
 
 

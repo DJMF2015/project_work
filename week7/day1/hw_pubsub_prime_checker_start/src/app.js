@@ -8,7 +8,7 @@ const ResultView = require('./views/result_view.js');
 
 document.addEventListener('DOMContentLoaded', () => {
   const formView = new FormView(); //initialise new formView obj.
-//  console.log('JavaScript Loaded');
+  console.log('JavaScript Loaded');
   formView.bindEvents();//to add behaviour to form's 'submit' by 'binding'
 
   const primeChecker = new PrimeCheck();

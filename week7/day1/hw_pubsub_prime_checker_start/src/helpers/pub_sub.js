@@ -6,7 +6,7 @@
 
 const PubSub = {
   publish: function(channel, payload){
-    //  console.log(`published via channel: ${channel}. payload: ${payload}`);
+      console.log(`published via channel: ${channel}. payload: ${payload}`);
     const event = new CustomEvent(channel, {
       detail: payload
     });

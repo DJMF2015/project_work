@@ -7,18 +7,20 @@ const SelectView = function(element){
 SelectView.prototype.bindEvents = function(){
   PubSub.subscribe('Instrument:all-instruments-ready', (event) => { //context
     const allInstruments = event.detail;
+    console.log('display subscribe', allInstruments);
     this.displayInstrument(allInstruments);
   });
 
   this.element.addEventListener('change', (event) => {
     const selectedIndex = event.target.value //store value ofrom addlistener
     PubSub.publish('SelectView:change', selectedIndex);
+    console.log('publish from channel Instrument', selectedIndex);
   });
 };
 
 SelectView.prototype.displayInstrument = function (instrumentData) {
   //loop over array of instrument object and retrieve index of obj.
-  instrumentData.forEach((instrument, index)) => {
+  instrumentData.forEach((instrument, index) => {
     const option = document.createElement('option');
     option.textContent = instrument.name;
     option.value = index;

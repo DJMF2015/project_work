@@ -20,7 +20,8 @@ const InstrumentFamilies = function() {
     {
       name: 'Percussion',
       description: 'A percussion instrument is a musical instrument that is sounded by being struck or scraped by a beater (including attached or enclosed beaters or rattles); struck, scraped or rubbed by hand; or struck against another similar instrument.',
-      instruments: ['timpani', 'snare drum', 'bass drum', 'cymbals', 'triangle', 'tambourine']
+      instruments: ['timpani', 'snare drum', 'bass drum', 'cymbals', 'triangle', 'tambourine'],
+    
     },
     {
       name: 'Keyboard',
@@ -35,12 +36,14 @@ InstrumentFamilies.prototype.bindEvents = function() {
 
   PubSub.subscribe('SelectView:change', (event) => {
     const selectedIndex = event.detail;
+      console.log('subscribe instrument_famailies', selectedIndex)
     this.publishInstrumentDetail(selectedIndex);
   });
 };
 
 InstrumentFamilies.prototype.publishInstrumentDetail = function(instrumentIndex){
   const selectedInstrument = this.instrumentFamilies[instrumentIndex];
+      console.log('publish instrument_details', selectedInstrument)
   PubSub.publish('Instruments:selected-instrument-ready', selectedInstrument);
 };
 

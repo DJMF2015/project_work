@@ -1,7 +1,24 @@
 label::after {
-content: ':'; }
+  content: ':'; }
 
-body {
-  background-color: lightsteelblue;
-  font-family: helvetica;
-}
+  body {
+    background-color: #c3cfe8;
+    font-family: helvetica;
+    padding: 20px 30px ;
+
+  }
+
+  footer{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align:center;
+  }
+
+  .footer {
+    background: grey;
+    height: 15px;
+    padding:5px;
+    color:#ffffff;
+
+  }

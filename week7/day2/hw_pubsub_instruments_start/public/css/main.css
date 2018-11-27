@@ -1,5 +1,5 @@
-/* label::after {
-content: ':'; } */
+label::after {
+content: ':'; }
 
 body {
   background-color: lightsteelblue;

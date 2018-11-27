@@ -1,11 +1,14 @@
-const PubSub = require('../helpers/pub_sub.js');
+const PubSub = {
+  publish: function(channel, payload){
+    const event = new CustomEvent(channel, {
+      detail: payload
+    });
+    document.dispatchEvent(event);
+  },
 
-const SelectView = function(element){
-  this.element = element;
+  subscribe: function(channel, callback){
+    document.addEventListener(channel, callback);
+  }
 }
 
-SelectView.prototype.bindEvents = function(){
-  PubSub.subscribe('Instrument:all-instruments', (event) => {
-    const allInstruments = event.detail;
-  })
-}
+module.exports = PubSub;

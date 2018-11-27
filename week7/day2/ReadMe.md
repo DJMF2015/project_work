@@ -17,18 +17,19 @@ Your task is to create an app that allows a user to select an instrument family 
 Implement the Pub/Sub pattern to separate your presentation and business logic into views and models.
 
 ### MVP
-
-- Allow the user to select a musical instrument family from the drop-down and view the family's name and description
+![alt text](monk.png 'hello')
+- [x] Allow the user to select a musical instrument family from the drop-down and view the family's name and description
 
 ### Extensions
 
-- In addition to displaying the name and description of the musical instrument family, also display a list of the musical instruments
-- Refactor your view code to implement small methods responsible creating sections of the UI.
+- [x] In addition to displaying the name and description of the musical instrument family, also display a list of the musical instruments
+- [x] Refactor your view code to implement small methods responsible creating sections of the UI.
 
 ## Considerations
 
 What are the responsibilities of the views and models? What is responsible for listening for the click of the menu item? What is responsible for finding the selected instrument family object? What is responsible for deciding how the instrument family details should be rendered?
 
 ## Planning
+![alt text](app.jpg 'pubsub')
 
 Draw a diagram of your files, detailing the publishing of and subscribing to events and the flow of data through the application.

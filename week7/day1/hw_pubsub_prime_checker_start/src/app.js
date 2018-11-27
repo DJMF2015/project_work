@@ -2,8 +2,9 @@
 
 //instantiate formview
 const FormView = require('./views/form_view.js');
-const ResultView = require('./views/result_view.js');
 const PrimeCheck = require('./models/prime_numb_check.js');
+const ResultView = require('./views/result_view.js');
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const formView = new FormView(); //initialise new formView obj.

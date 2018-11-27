@@ -6,7 +6,7 @@ const PrimeCheck = new function (){
 
 };
 
-PrimeCheck.prototype.bindEvents = function () {
+PrimeCheck.prototype.bindEvents = function (){
   PubSub.subscribe('FormView:number-submitted', (event) => {
     const evenNumber = event.detail;
     const result = this.primeChecking(evenNumber);

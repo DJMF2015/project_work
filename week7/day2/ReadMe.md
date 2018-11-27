@@ -10,14 +10,9 @@
 
 Your task is to create an app that allows a user to select an instrument family from a drop-down, and see information about it below.
 
-![Screenshot of resulting application](images/instrument_families_screenshot.png)
-
-*Screenshot of resulting application*
-
 Implement the Pub/Sub pattern to separate your presentation and business logic into views and models.
 
 ### MVP
-![alt text](monk.png 'hello')
 - [x] Allow the user to select a musical instrument family from the drop-down and view the family's name and description
 
 ### Extensions

@@ -4,7 +4,10 @@
 - Know how to render nested views using the Pub/Sub pattern
 - Know how to implement a reusable view
 - Understand the benefits of nested and reusable views
+![alt text](continent.png 'hello')
+<br>
 
+ ![alt text](bbcdata1_1.png 'hello')
 ## Brief
 
 Read the following information on nested and reusable views and complete the tasks below.
@@ -70,6 +73,6 @@ open public/index.html
 
 Answer the following questions:
 
-1. Which view is rendered more than once?
-2. Which views are nested in which other view?
-3. What are the benefits of using nested reusable views in this way?
+1. Which view is rendered more than once? ### ContinentView
+2. Which views are nested in which other view? ### coninentview rendered by continent_listView which fetches data from continent.js
+3. What are the benefits of using nested reusable views in this way? scalability, DRY, increased modularity, looser coupling

@@ -9,7 +9,15 @@ This repo contains full completed solutions where possible to the course cohort 
  - SQL with Postgres database
  - MVC model & Web Applications using Sinatra
  
- 
+ #### week 6-9
+  - ECMA6 Javascript fundamentals
+  - closure, promises, scope, prototypes
+  - Mocha - unit testing
+  - 00P & Design Paterns 
+  - PubSub
+  - REST API 
+  - Express
+  - MongoDb
  
  
  

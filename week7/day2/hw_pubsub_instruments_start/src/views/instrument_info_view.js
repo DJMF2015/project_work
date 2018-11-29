@@ -47,6 +47,7 @@ InstrumentInfoView.prototype.createDescription = function(instrument){
 InstrumentInfoView.prototype.createMusicalList = function (listData){
   const unordered = document.createElement('ul')
   console.log(listData);
+  //loop over instrumnet object and for each element in index add (append) to container as list
   listData.instruments.forEach((instrument, index) => {
     const ele = document.createElement('li');
     ele.textContent =instrument;

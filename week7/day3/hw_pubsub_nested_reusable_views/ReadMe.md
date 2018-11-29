@@ -7,7 +7,10 @@
 ![alt text](continent.png 'hello')
 <br>
 
- ![alt text](bbcdata1_1.png 'hello')
+![alt text](bbcdata1_1.png 'hello')
+ <br>
+![alt text](DomView.jpg 'hello')
+
 ## Brief
 
 Read the following information on nested and reusable views and complete the tasks below.

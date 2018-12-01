@@ -7,9 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
   beer.bindEvents();
   beer.getBeers();
 
-  const beerContainer = document.querySelector('#beers-container');
+  const beerContainer = document.querySelector('#beer-container');
   const beerView = new BeerView(beerContainer);
   beerView.bindEvents();
+
 
   const beerSelect = document.querySelector('#beers');
   const beerSelectView = new SelectView(beerSelect);

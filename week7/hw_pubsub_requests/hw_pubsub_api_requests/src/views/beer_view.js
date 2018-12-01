@@ -4,8 +4,9 @@ const BeerListView = require('./beer_list_view.js');
 const BeerView = function (container) {
   this.container = container;
 };
+
 BeerView.prototype.bindEvents = function () {
-  PubSub.subscribe('Beers:beer-ready', event => {
+  PubSub.subscribe('Beers:beers-ready', event => {
     const beers = event.detail;
     this.render(beers);
   });

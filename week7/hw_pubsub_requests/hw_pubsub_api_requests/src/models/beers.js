@@ -11,29 +11,27 @@ Beers.prototype.bindEvents = function () {
     const selectedBeers =  event.detail;
     const nameInChosenBeer = this.getListOfBeers(selectedBeers)
     PubSub.publish('Beers:names-ready', nameInChosenBeer);
-  });
-};
 
 Beers.prototype.getBeers = function () {
   const requestHelper = new requestHelper('https://api.punkapi.com/v2/beers');
-  requestHelper.get()
-  .then(beers) => {
+//console.log(requestHelper);
+  requestHelper.get().then(beers) => {
     this.beerData = beers;
     const name = this.getListofNames();
-    console.log(name);
 
-    PubSub.publish('Beers:beer-ready', name);
+     console.log(name);
+    PubSub.publish('Beers:beers-ready', name);
     PubSub.publish('Beers:names-ready', this.beerData);
   });
-}
+};
 
-Beers.prototype.getListOfBeers = function () {
+Beers.prototype.getListofNames = function () {
   return this.beerData
   .map(brew => brew.name)
   .filter((beer, index, beers) => beers.indexOf(beer) === index;
 };
 
-Beers.prototype.getNamesOfBeers = function (name) {
+Beers.prototype.getListOfBeers = function (name) {
   return this.beerData.filter(brew => brew.name === name);
 };
 

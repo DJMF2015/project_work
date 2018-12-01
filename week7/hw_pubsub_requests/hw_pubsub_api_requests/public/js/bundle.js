@@ -91,20 +91,9 @@
   !*** ./src/app.js ***!
   \********************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("const News = __webpack_require__(/*! ./models/news.js */ \"./src/models/news.js\");\n\ndocument.addEventListener('DOMContentLoaded', () => {\n\n\n\n\n  const news = new Beers();\n  news.bindEvents();\n  news.getData();\n\n  //console.log(news);\n});\n\n\n//# sourceURL=webpack:///./src/app.js?");
-
-/***/ }),
-
-/***/ "./src/models/news.js":
-/*!****************************!*\
-  !*** ./src/models/news.js ***!
-  \****************************/
-/*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("throw new Error(\"Module parse failed: Unexpected token (20:14)\\nYou may need an appropriate loader to handle this file type.\\n|   const requestHelper = new requestHelper('https://api.punkapi.com/v2/beers');\\n|   requestHelper.get()\\n>   .then(beer) => {\\n|     this.data = beer;\\n|   //  console.log(headlines);\");\n\n//# sourceURL=webpack:///./src/models/news.js?");
+eval("throw new Error(\"Module build failed: Error: ENOENT: no such file or directory, open '/Users/davidfulton/Desktop/codeclan/e26_homework/week7/hw_pubsub_requests/hw_pubsub_api_requests/src/app.js'\");\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ })
 

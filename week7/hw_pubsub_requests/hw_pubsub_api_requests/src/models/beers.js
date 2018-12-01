@@ -35,7 +35,8 @@ Beers.prototype.getListofNames = function () {
 };
 
 Beers.prototype.getListOfBeers = function (name) {
-  // was missing bracket end of next line
+  // was missing bracket end of next line 
+  //Missing? const selectedRegion = this.regions[regionIndex];??
   return this.beerData.filter(brew => brew.name === name);
 };
 

@@ -14,10 +14,14 @@ BeerView.prototype.bindEvents = function () {
 
 BeerView.prototype.render = function (beers) {
   this.container.innerHTML = '';
-  beers.forEach(beer => {
+  // beers.forEach(beer => {
+  for (i=0; i< beers; i++){
+    // console.log(beers);
     const beerItem = new BeerView(this.container)
-    beerItem.render(beer);
-  });
+    beerItem.render(i);
+
+  }
 };
+
 
 module.exports = BeerView;

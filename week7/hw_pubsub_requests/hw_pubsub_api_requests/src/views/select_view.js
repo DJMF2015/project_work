@@ -7,7 +7,7 @@ const SelectView = function (element) {
 SelectView.prototype.bindEvents = function () {
   PubSub.subscribe('Beers:beers-ready', event => {
     const names = event.detail;
-    this.fill(names)
+    this.populate(names)
   });
 
   this.element.addEventListener('change', (event) => {
@@ -16,7 +16,7 @@ SelectView.prototype.bindEvents = function () {
   })
 };
 
-SelectView.prototype.fill = function (beers) {
+SelectView.prototype.populate = function (beers) {
   beers.forEach((beer) => {
     const option = document.createElement('option');
     option.textContent = beer;

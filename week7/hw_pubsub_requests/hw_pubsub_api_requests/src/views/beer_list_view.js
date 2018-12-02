@@ -17,7 +17,7 @@ BeerListView.prototype.bindEvents = function () {
   const description = document.createElement('p');
   description.textContent = `Beer: ${beer.description}`;
   container.appendChild(description);
-
+   console.log(description);
   this.parent.appendChild(container);
 
 

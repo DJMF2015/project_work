@@ -21,7 +21,7 @@ BeerView.prototype.clearView = function () {
 BeerView.prototype.createBeerView = function (beerData) {
   for (const beer of beerData) {
     const div = document.createElement('div');
-    div.className = "individual-beer";
+    div.className = "particular-beer";
     const beerView = new BeerRenderView();
     beerView.populate(div, beer);
     this.container.appendChild(div);

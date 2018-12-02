@@ -13,12 +13,13 @@ BeerView.prototype.bindEvents = function () {
 }
 
 BeerView.prototype.render = function (beers) {
-  this.container.innerHTML = '';
+  
+   this.container.innerHTML = '';
   // beers.forEach(beer => {
-  for (i=0; i< beers; i++){
+  for (beer in beers){
     // console.log(beers);
     const beerItem = new BeerView(this.container)
-    beerItem.render(i);
+    beerItem.render(beer);
 
   }
 };

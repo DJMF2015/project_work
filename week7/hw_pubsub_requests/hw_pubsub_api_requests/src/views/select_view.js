@@ -24,4 +24,4 @@ SelectView.prototype.populate = function (beers) {
   });
 };
 
-module.export = SelectView;
+module.exports = SelectView;

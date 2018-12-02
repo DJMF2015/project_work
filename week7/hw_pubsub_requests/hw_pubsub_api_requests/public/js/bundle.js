@@ -86,17 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/webpack/buildin/module.js":
-/*!***********************************!*\
-  !*** (webpack)/buildin/module.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = function(module) {\r\n\tif (!module.webpackPolyfill) {\r\n\t\tmodule.deprecate = function() {};\r\n\t\tmodule.paths = [];\r\n\t\t// module.parent = undefined by default\r\n\t\tif (!module.children) module.children = [];\r\n\t\tObject.defineProperty(module, \"loaded\", {\r\n\t\t\tenumerable: true,\r\n\t\t\tget: function() {\r\n\t\t\t\treturn module.l;\r\n\t\t\t}\r\n\t\t});\r\n\t\tObject.defineProperty(module, \"id\", {\r\n\t\t\tenumerable: true,\r\n\t\t\tget: function() {\r\n\t\t\t\treturn module.i;\r\n\t\t\t}\r\n\t\t});\r\n\t\tmodule.webpackPolyfill = 1;\r\n\t}\r\n\treturn module;\r\n};\r\n\n\n//# sourceURL=webpack:///(webpack)/buildin/module.js?");
-
-/***/ }),
-
 /***/ "./src/app.js":
 /*!********************!*\
   !*** ./src/app.js ***!
@@ -104,7 +93,7 @@ eval("module.exports = function(module) {\r\n\tif (!module.webpackPolyfill) {\r\
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const Beers = __webpack_require__(/*! ./models/beers.js */ \"./src/models/beers.js\");\nconst BeerView = __webpack_require__(/*! ./views/beer_view.js */ \"./src/views/beer_view.js\");\nconst SelectView = __webpack_require__(/*! ./views/select_view.js */ \"./src/views/select_view.js\");\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  const beer = new Beers();\n  beer.bindEvents();\n  beer.getBeers();\n\n  const beerContainer = document.querySelector('#beers-container');\n  const beerView = new BeerView(beerContainer);\n  beerView.bindEvents();\n\n\n  const beerSelect = document.querySelector('#beers');\n  const beerSelectView = new SelectView(beerSelect);\n  beerSelectView.bindEvents();\n});\n\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("const Beers = __webpack_require__(/*! ./models/beers.js */ \"./src/models/beers.js\");\nconst BeerView = __webpack_require__(/*! ./views/beer_view.js */ \"./src/views/beer_view.js\");\nconst SelectView = __webpack_require__(/*! ./views/select_view.js */ \"./src/views/select_view.js\");\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  const beer = new Beers();\n  beer.bindEvents();\n  beer.getBeers();\n\n  const beerContainer = document.querySelector('beers-container');\n  const beerView = new BeerView(beerContainer);\n  beerView.bindEvents();\n\n\n  const beerSelect = document.querySelector('#beers');\n  const beerSelectView = new SelectView(beerSelect);\n  beerSelectView.bindEvents();\n\n});\n\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
@@ -137,7 +126,7 @@ eval("const RequestHelper = function (url) {\n  this.url = url;\n};\n\nRequestHe
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const RequestHelper = __webpack_require__(/*! ../helpers/request_helper.js */ \"./src/helpers/request_helper.js\");\nconst PubSub = __webpack_require__(/*! ../helpers/pub_sub.js */ \"./src/helpers/pub_sub.js\");\n\n//constructor should be Beers at that what you're exporting\nconst Beers = function () {\n  this.beerData = [];\n};\n\nBeers.prototype.bindEvents = function () {\n  // was missing brackets around event on next line\n  PubSub.subscribe('Beers:SelectView:beers-selected', (event) => {\n    const selectedBeers =  event.detail;\n    const nameInChosenBeer = this.getListOfBeers(selectedBeers);\n    console.log(nameInChosenBeer);\n    PubSub.publish('Beers:names-ready', nameInChosenBeer);\n  });\n};\n\nBeers.prototype.getBeers = function () {\n  const requestHelper = new RequestHelper('https://api.punkapi.com/v2/beers');\n   //console.log(requestHelper);\n  requestHelper.get().then((beers) => { // should be .then((beers) => {})\n    this.beerData = beers;\n    const name = this.getListofNames();\n\n     console.log(name);\n    PubSub.publish('Beers:beers-ready', name);\n    PubSub.publish('Beers:names-ready', this.beerData);\n  });\n};\n\nBeers.prototype.getListofNames = function () {\n  return this.beerData\n  .map(brew => brew.name)\n  .filter((beer, index, beers) => beers.indexOf(beer) === index);\n};\n\nBeers.prototype.getListOfBeers = function (index) {\n  // was missing bracket end of next line\n const selected  = this.name[index];\n console.log(selected);\n  return this.beerData.filter(brew => brew.name === name);\n\n};\n\nmodule.exports = Beers;\n\n\n//# sourceURL=webpack:///./src/models/beers.js?");
+eval("const RequestHelper = __webpack_require__(/*! ../helpers/request_helper.js */ \"./src/helpers/request_helper.js\");\nconst PubSub = __webpack_require__(/*! ../helpers/pub_sub.js */ \"./src/helpers/pub_sub.js\");\n\n//constructor should be Beers at that what you're exporting\nconst Beers = function () {\n  this.beerData = [];\n};\n\nBeers.prototype.bindEvents = function () {\n  PubSub.subscribe('Beers:SelectView:beers-selected', (event) => {\n    const selectedBeers =  event.detail;\n    const nameInChosenBeer = this.getListOfBeers(selectedBeers);\n    console.log(nameInChosenBeer);\n    PubSub.publish('Beers:names-ready', nameInChosenBeer);\n  });\n};\n\nBeers.prototype.getBeers = function () {\n  const requestHelper = new RequestHelper('https://api.punkapi.com/v2/beers');\n  requestHelper.get().then((beers) => { // should be .then((beers) => {})\n    this.beerData = beers;\n    const name = this.getListofNames();\n\n     console.log(name);\n    PubSub.publish('Beers:beers-ready', name);\n    PubSub.publish('Beers:names-ready', this.beerData);\n  });\n};\n\nBeers.prototype.getListofNames = function () {\n  return this.beerData\n  .map(brew => brew.name)\n  .filter((beer, index, beers) => beers.indexOf(beer) === index);\n};\n\nBeers.prototype.getListOfBeers = function (name) {\n\n const selected  = this.name;\n console.log(selected);\n  return this.beerData.filter(brew => brew.name === name);\n\n};\n\nmodule.exports = Beers;\n\n\n//# sourceURL=webpack:///./src/models/beers.js?");
 
 /***/ }),
 
@@ -159,7 +148,7 @@ eval("const BeerListView = function (parent) {\n  this.parent = parent;\n};\n\nB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const PubSub = __webpack_require__(/*! ../helpers/pub_sub.js */ \"./src/helpers/pub_sub.js\");\nconst BeerListView = __webpack_require__(/*! ./beer_list_view.js */ \"./src/views/beer_list_view.js\");\n\nconst BeerView = function (container) {\n  this.container = container;\n};\n\nBeerView.prototype.bindEvents = function () {\n  PubSub.subscribe('Beers:beers-ready', event => {\n    const beers = event.detail;\n    this.render(beers);\n  });\n}\n\nBeerView.prototype.render = function (beers) {\n  this.container.innerHTML = '';\n  // beers.forEach(beer => {\n  for (i=0; i< beers; i++){\n    // console.log(beers);\n    const beerItem = new BeerView(this.container)\n    beerItem.render(i);\n\n  }\n};\n\n\nmodule.exports = BeerView;\n\n\n//# sourceURL=webpack:///./src/views/beer_view.js?");
+eval("const PubSub = __webpack_require__(/*! ../helpers/pub_sub.js */ \"./src/helpers/pub_sub.js\");\nconst BeerListView = __webpack_require__(/*! ./beer_list_view.js */ \"./src/views/beer_list_view.js\");\n\nconst BeerView = function (container) {\n  this.container = container;\n};\n\nBeerView.prototype.bindEvents = function () {\n  PubSub.subscribe('Beers:beers-ready', event => {\n    const beers = event.detail;\n    this.render(beers);\n  });\n}\n\nBeerView.prototype.render = function (beers) {\n  \n   this.container.innerHTML = '';\n  // beers.forEach(beer => {\n  for (beer in beers){\n    // console.log(beers);\n    const beerItem = new BeerView(this.container)\n    beerItem.render(beer);\n\n  }\n};\n\n\nmodule.exports = BeerView;\n\n\n//# sourceURL=webpack:///./src/views/beer_view.js?");
 
 /***/ }),
 
@@ -170,7 +159,7 @@ eval("const PubSub = __webpack_require__(/*! ../helpers/pub_sub.js */ \"./src/he
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("/* WEBPACK VAR INJECTION */(function(module) {const PubSub = __webpack_require__(/*! ../helpers/pub_sub.js */ \"./src/helpers/pub_sub.js\");\n\nconst SelectView = function (element) {\n  this.element = element;\n};\n\nSelectView.prototype.bindEvents = function () {\n  PubSub.subscribe('Beers:beers-ready', event => {\n    const names = event.detail;\n    this.populate(names)\n  });\n\n  this.element.addEventListener('change', (event) => {\n    const selectedName = event.target.value;\n    PubSub.publish('Beers:SelectView:beers-selected', selectedName);\n  })\n};\n\nSelectView.prototype.populate = function (beers) {\n  beers.forEach((beer) => {\n    const option = document.createElement('option');\n    option.textContent = beer;\n    this.element.appendChild(option);\n  });\n};\n\nmodule.export = SelectView;\n\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/module.js */ \"./node_modules/webpack/buildin/module.js\")(module)))\n\n//# sourceURL=webpack:///./src/views/select_view.js?");
+eval("const PubSub = __webpack_require__(/*! ../helpers/pub_sub.js */ \"./src/helpers/pub_sub.js\");\n\nconst SelectView = function (element) {\n  this.element = element;\n};\n\nSelectView.prototype.bindEvents = function () {\n  PubSub.subscribe('Beers:beers-ready', event => {\n    const names = event.detail;\n    this.populate(names)\n  });\n\n  this.element.addEventListener('change', (event) => {\n    const selectedName = event.target.value;\n    PubSub.publish('Beers:SelectView:beers-selected', selectedName);\n  })\n};\n\nSelectView.prototype.populate = function (beers) {\n  beers.forEach((beer) => {\n    const option = document.createElement('option');\n    option.textContent = beer;\n    this.element.appendChild(option);\n  });\n};\n\nmodule.exports = SelectView;\n\n\n//# sourceURL=webpack:///./src/views/select_view.js?");
 
 /***/ })
 

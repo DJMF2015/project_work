@@ -7,7 +7,6 @@ const Beers = function () {
 };
 
 Beers.prototype.bindEvents = function () {
-  // was missing brackets around event on next line
   PubSub.subscribe('Beers:SelectView:beers-selected', (event) => {
     const selectedBeers =  event.detail;
     const nameInChosenBeer = this.getListOfBeers(selectedBeers);
@@ -18,7 +17,6 @@ Beers.prototype.bindEvents = function () {
 
 Beers.prototype.getBeers = function () {
   const requestHelper = new RequestHelper('https://api.punkapi.com/v2/beers');
-   //console.log(requestHelper);
   requestHelper.get().then((beers) => { // should be .then((beers) => {})
     this.beerData = beers;
     const name = this.getListofNames();
@@ -35,9 +33,9 @@ Beers.prototype.getListofNames = function () {
   .filter((beer, index, beers) => beers.indexOf(beer) === index);
 };
 
-Beers.prototype.getListOfBeers = function (index) {
-  // was missing bracket end of next line
- const selected  = this.name[index];
+Beers.prototype.getListOfBeers = function (name) {
+
+ const selected  = this.name;
  console.log(selected);
   return this.beerData.filter(brew => brew.name === name);
 

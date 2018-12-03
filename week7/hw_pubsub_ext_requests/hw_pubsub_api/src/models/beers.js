@@ -10,9 +10,10 @@ const Beers = function () {
 Beers.prototype.bindEvents = function () {
   PubSub.subscribe('Beers:SelectView:beers-selected', (event) => {
     const selectedBeers =  event.detail;
+    console.log(selectedBeers);
     const nameInChosenBeer = this.getListOfBeers(selectedBeers);
     console.log(nameInChosenBeer);
-    PubSub.publish('Beers:names-ready', nameInChosenBeer);
+    PubSub.publish('Beers:beers-ready', nameInChosenBeer);//names ready instead of beers-ready
   });
 };
 
@@ -22,9 +23,9 @@ Beers.prototype.getBeers = function () {
     this.beerData = beers;
     const name = this.getListofNames();
 
-     console.log(name);
-    PubSub.publish('Beers:beers-ready', name);
-    PubSub.publish('Beers:names-ready', this.beerData);
+    PubSub.publish('Beers:beers-ready', this.beerData);
+    //wasn't bening subscribed
+    // PubSub.publish('Beers:names-ready', this.beerData);
   });
 };
 

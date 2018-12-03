@@ -1,5 +1,6 @@
 const Beers = require('./models/beers.js');
 const BeerView = require('./views/beer_view.js');
+const BeerListView = require('./views/beer_list_view.js');
 const SelectView = require('./views/select_view.js');
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const beerSelectView = new SelectView(beerSelect);
   beerSelectView.bindEvents();
 
-  const beerContainer = document.querySelector('beers-container');
+  const beerContainer = document.querySelector('#beers-container');
   const beerView = new BeerView(beerContainer);
   beerView.bindEvents();
 

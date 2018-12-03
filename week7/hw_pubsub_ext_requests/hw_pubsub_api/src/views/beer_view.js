@@ -13,10 +13,12 @@ BeerView.prototype.bindEvents = function () {
 }
 
 BeerView.prototype.render = function (beers) {
-  //  this.container.innerHTML = '';
-  for (beer in beers){
-    const beerItem = new BeerListView(beer)
-    this.container.appendChild(beer);
+  const div = document.createElement('div');
+  this.container.innerHTML = '';
+  for (beer of beers){ //in 
+    const beerItem = new BeerListView(beer, this.container)
+    beerItem.render(); //wasn't being called in BeerListView
+    this.container.appendChild(div);
   }
 };
 

@@ -12,6 +12,7 @@ SelectView.prototype.bindEvents = function () {
 
   this.element.addEventListener('change', (event) => {
     const selectedName = event.target.value;
+   console.log(selectedName);
     PubSub.publish('Beers:SelectView:beers-selected', selectedName);
   })
 };
@@ -19,7 +20,7 @@ SelectView.prototype.bindEvents = function () {
 SelectView.prototype.populate = function (beers) {
   beers.forEach((beer) => {
     const option = document.createElement('option');
-    option.textContent = beer;
+    option.textContent = beer.name;
     this.element.appendChild(option);
   });
 };

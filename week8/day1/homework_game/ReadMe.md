@@ -11,8 +11,6 @@ Your boss has asked to you look over the codebase of a full-stack JavaScript app
 
 The application includes a README.md with instructions on running the application.
 
-![Overview of the tech stack and tooling with commands](images/tech_stack_with_commands.png)
-
 ![Dataflow](Game_Diagram.jpg)
 
 *Overview of the tech stack and tooling with commands*

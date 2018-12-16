@@ -23,10 +23,10 @@ BeerView.prototype.render = function (beers) {
   }
 };
 
-BeerView.prototype.createBeerListItem = function (beer) {
-  const beerListView = new BeerListView();
-  const beerDetail = beerDetailView.createBeerList(beer);
-  return beerDetail;
-};
+// BeerView.prototype.createBeerListItem = function (beer) {
+//   const beerListView = new BeerListView();
+//   const beerDetail = beerDetailView.createBeerList(beer);
+//   return beerDetail;
+// };
 
 module.exports = BeerView;

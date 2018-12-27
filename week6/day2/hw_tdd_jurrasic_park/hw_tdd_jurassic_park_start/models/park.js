@@ -25,7 +25,7 @@ Park.prototype.mostPopular = function  () {
 
 Park.prototype.findSpecies  = function  () {
   let dinosaurType = this.dinosaur
-// for (let i = 0; i <this.dinosaurs.length;i++){} --also work
+  // for (let i = 0; i <this.dinosaurs.length;i++){} --also work
   for (const dino of this.dinosaur){
     if (dino.species !== dinosaurType.species){
       dinosaurType = dino;
@@ -44,10 +44,10 @@ Park.prototype.removeDinosaur  = function  (speciesType) {
   this.dinosaur = dinoType;
 };
 
-Park.prototype.sumTotalGuests = function() {
+Park.prototype.sumTotalGuests = function () {
   let total = 0;
   for (const attracts of this.dinosaur){
-    total = total + this.dinosaur.guestsAttractedPerDay
+    total += attracts.guestsAttractedPerDay
   }
   return total;
 };

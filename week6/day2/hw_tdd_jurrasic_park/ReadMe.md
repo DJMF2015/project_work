@@ -31,7 +31,7 @@ A park must be able to:
 -[x] Remove a dinosaur from its collection of dinosaurs
 -[x] Find the dinosaur that attracts the most visitors
 -[x] Find all dinosaurs of a particular species
-- Calculate the total number of visitors per day
+-[x] Calculate the total number of visitors per day
 - Calculate the total number of visitors per year
 - Calculate the total revenue from ticket sales for one year
 

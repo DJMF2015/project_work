@@ -66,9 +66,14 @@ describe('Park', function() {
   });
 
   xit('should calculate the total number of visitors per day', function(){
-    park.addDinos(deinonychus1);
+    park.addDinos(stegosaurus1);
     park.addDinos(stegosaurus1);
     const actual = park.sumTotalGuests;
-    assert.strictEqual(actual, 55)
+    assert.strictEqual(actual, 30)
   });
+
+  it('it should calculate the total number of visitors per year', function() {
+
+  }
+
 });

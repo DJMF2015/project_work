@@ -1,6 +1,6 @@
 const assert = require('assert');
 const IsogramFinder = require('./isogram_finder.js');
-
+//An isogram is a word, phrase or sentence that does not contain any repeated letters. "Orange" is an isogram but "Banana" is not.
 describe('IsogramFinder', function () {
   it('should be able to detect an isogram', function () {
     const isogramFinder = new IsogramFinder('subdermatoglyphic');

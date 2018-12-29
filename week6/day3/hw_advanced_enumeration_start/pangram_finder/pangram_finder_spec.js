@@ -3,7 +3,7 @@ const PangramFinder = require('./pangram_finder.js');
 
 describe('PangramFinder', function () {
   it('should be able to detect a pangram', function () {
-    const pangramFinder = new PangramFinder('the quick brown fox jumps over the lazy dog');
+    const pangramFinder = new PangramFinder('Fickle bog dwarves jinx empathy quiz');
     assert.strictEqual(pangramFinder.isPangram(), true);
   });
 

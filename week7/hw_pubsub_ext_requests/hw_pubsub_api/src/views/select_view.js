@@ -12,7 +12,7 @@ SelectView.prototype.bindEvents = function () {
 
   this.element.addEventListener('change', (event) => {
     const selectedName = event.target.value;
-   console.log(selectedName);
+    //console.log(selectedName);
     PubSub.publish('Beers:SelectView:beers-selected', selectedName);
   })
 };

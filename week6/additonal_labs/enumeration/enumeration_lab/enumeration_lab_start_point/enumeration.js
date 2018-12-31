@@ -18,10 +18,7 @@ Enumeration.prototype.find = function(array, booleanFunction) {
 
 Enumeration.prototype.map = function(array, transformFunction){
   var results = [];
-  this.forEach(array, function(item){
-    results.push(transformFunction(item));
-  })
-  return results;
+
 };
 
 Enumeration.prototype.filter = function(array, booleanFunction){
@@ -45,6 +42,7 @@ Enumeration.prototype.every = function(array, booleanFunction){
 
 Enumeration.prototype.reduce = function(array, accumulatingFunction){
   var accumulator = 0;
+  
   
   return accumulator
 };

@@ -9,7 +9,7 @@ public enum Airline {
      private  String name;
 
      Airline(String name) {
-        this.name= name;
+        this.name = name;
     }
 
     public String getName(){

@@ -16,14 +16,11 @@ public class Airport {
          hangar = new ArrayList <>();
     }
 
-//    The airport should have:
-//    a collection of hangars (to store the planes)
-//    an airport code (e.g. GLA)
-
+//    TO-DO...
 //    The airport should be able to:
-//
-//    create flights
-//    assign planes from the hangar to flights
+
+//    create flights [method should create a flight with destination & plane]
+//    assign planes from the hangar to flights [should assign a plane with flightno &
 //    sell tickets for flights
 
 

@@ -28,7 +28,7 @@ The airport should be able to:
 * assign planes from the hangar to flights
 * sell tickets for flights
 
-##### Extensions
+##### Extensions
 - The airport wants to keep track of how many people have booked onto each flight
 - The airport shouldn't sell tickets for a flight if it is fully booked
 - Think about how an airport would assign a plane to a flight. It would be wasteful to assign a super big plane for a teeny tiny flight. Make sure your system assigns the most suitable plane for the flight

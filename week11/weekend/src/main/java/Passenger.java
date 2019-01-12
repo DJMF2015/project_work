@@ -4,7 +4,9 @@ public class Passenger {
 
     private ArrayList<Passenger> passenger;
 
-    public Passenger(){
+    private String name;
+
+    public Passenger(String name){
      this.passenger =  new ArrayList<>();
     }
 

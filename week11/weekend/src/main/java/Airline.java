@@ -6,13 +6,13 @@ public enum Airline {
     BRITISHAIRWAYS("BA");
 
 
-     private  String name;
+    private String name;
 
-     Airline(String name) {
+    Airline(String name) {
         this.name = name;
     }
 
-    public String getName(){
-         return this.name;
+    public String getName() {
+        return this.name;
     }
 }

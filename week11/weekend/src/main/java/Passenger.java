@@ -7,8 +7,11 @@ public class Passenger {
     private String name;
 
     public Passenger(String name){
-     this.passenger =  new ArrayList<>();
+        this.passenger =  new ArrayList<>();
+        this.name = name;
     }
 
-
+    public String getName(){
+        return this.name;
+    }
 }

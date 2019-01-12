@@ -21,4 +21,16 @@ public class Plane {
     public Airline getAirline(){
         return this.airline;
     }
+    public int getNoOfPassenger(){
+        System.out.println(this.passengers.size());
+      return this.passengers.size();
+
+    }
+    public void boardPassenger(Passenger passenger){
+        this.passengers.add(passenger);
+
+    }
+    public void deplane(Passenger passenger){
+        this.passengers.remove(passenger);
+    }
 }

@@ -6,7 +6,7 @@ public class Airport {
 
     private String name;
     private String airportCode;
-    Flight flight;
+    private ArrayList <Flight> flight;
     private ArrayList <Plane> hangar;
 
     LocalDateTime currentTime = LocalDateTime.now();
@@ -52,9 +52,11 @@ public class Airport {
         addFlight.getFlightNo();
 
     }
-    //TO-DO
-    public void sellTicket() {
 
+
+    //TO-DO
+    public void sellTicket(Passenger passenger, Destination ticket) {
+            passenger.purchaseTicket(ticket);
     }
 
 

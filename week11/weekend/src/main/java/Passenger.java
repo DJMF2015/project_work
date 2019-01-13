@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Passenger {
 
     private ArrayList<Passenger> passenger;
+    private Destination ticket;
 
     private String name;
 
@@ -14,4 +15,13 @@ public class Passenger {
     public String getName(){
         return this.name;
     }
+    public Destination checkTicket(){
+        return  ticket;
+    }
+
+    public void purchaseTicket(Destination ticket){
+          this.ticket = ticket;
+    }
+
+
 }

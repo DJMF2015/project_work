@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -8,6 +9,7 @@ public class AirportTest {
     private String name;
     Airport airport;
     Plane plane;
+    Flight flight;
     Destination destination;
 
     @Before
@@ -32,17 +34,17 @@ public class AirportTest {
     }
     @Test
     public void removePlaneFromHangar(){
-        airport.addToHangar(plane);
-        assertEquals(1, airport.getNoOfPlanes());
+        airport.addToHangar(plane);  airport.addToHangar(plane);
+        assertEquals(2, airport.getNoOfPlanes());
         airport.leaveHangar();
-        assertEquals(0, airport.getNoOfPlanes());
+        assertEquals(1, airport.getNoOfPlanes());
     }
+
     //TO-DO
     @Test
-    public void airportCanCreateFlights(){
-
+    public void airportCanAssignFlights() {//assign flight from hanagr to flight
+        airport.addFlightToPlane();
     }
-
     @Test
     public void canSellTickets(){
 

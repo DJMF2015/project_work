@@ -23,7 +23,7 @@ public class Plane {
     }
     public int getNoOfPassenger(){
         System.out.println(this.passengers.size());
-      return this.passengers.size();
+        return this.passengers.size();
 
     }
     public void boardPassenger(Passenger passenger){
@@ -33,4 +33,6 @@ public class Plane {
     public void deplane(Passenger passenger){
         this.passengers.remove(passenger);
     }
+
+
 }

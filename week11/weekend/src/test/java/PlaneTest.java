@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class PlaneTest {
 
@@ -27,18 +28,18 @@ public class PlaneTest {
     }
 
     @Test
-    public void planeTakesPassengers(){
+    public void planeIsEmpty(){
         assertEquals(0, plane.getNoOfPassenger());
     }
 
 
     @Test
-    public void addPassengerToPlane(){
+    public void boardPassengerToPlane(){
         plane.boardPassenger(passenger);
         assertEquals(1, plane.getNoOfPassenger());
     }
     @Test
-    public void removePassengerToPlane(){
+    public void deplanePassenger(){
         plane.boardPassenger(passenger);
         assertEquals(1, plane.getNoOfPassenger());
         plane.deplane(passenger);

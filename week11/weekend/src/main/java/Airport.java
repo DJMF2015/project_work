@@ -1,21 +1,20 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Airport {
 
     private String name;
     private String airportCode;
+    Flight flight;
     private ArrayList <Plane> hangar;
-    private ArrayList<Flight> flights;
-    private ArrayList<Passenger> passengers;
-    private ArrayList<Plane> plane; //this should be 'hangar' to assign plane to hangar;
 
-    public Airport(String name, String airportCode){
+    LocalDateTime currentTime = LocalDateTime.now();
+
+    public Airport(String name, String airportCode) {
         this.name = name;
         this.airportCode = airportCode;
-        passengers = new ArrayList <>();
-        flights = new ArrayList <>();
-        plane = new ArrayList <>();
-        hangar = new ArrayList <Plane>();
+        hangar = new ArrayList <>();
     }
 
     public String getAirportCode() {
@@ -26,27 +25,37 @@ public class Airport {
         return this.name;
     }
 
-    public int getNoOfPlanes(){
+    public int getNoOfPlanes() {
         return this.hangar.size();
     }
 
-    public void addToHangar(Plane plane){
+    public void addToHangar(Plane plane) {
         this.hangar.add(plane);
-        System.out.println("Planes inside Hangar :"+ getNoOfPlanes());
+        planeLeavesHangar();
     }
-    public void leaveHangar(){
+
+    public void leaveHangar() {
         this.hangar.remove(0);
-        System.out.println("Planes left inside Hangar :"+ getNoOfPlanes());
+        planeLeavesHangar();
+    }
+
+    public void planeLeavesHangar() {
+        System.out.println("Planes left Hangar at :" + currentTime.format(
+                DateTimeFormatter.ofPattern("HH:mm:ss"))
+                + getNoOfPlanes());
+    }
+
+    public void addFlightToPlane() {
+        Flight addFlight = new Flight(Airline.EASYJET, Destination.EDINBURGH, 745);
+        addFlight.getAirline();
+        addFlight.getFlightDestination();
+        addFlight.getFlightNo();
+
     }
     //TO-DO
-    public void createFlight(Plane plane, Destination destination){
+    public void sellTicket() {
 
     }
-
-    public void sellTicket(){
-
-    }
-
 
 
 }

@@ -5,10 +5,15 @@ public enum Destination {
     EDINBURGH("Edinburgh"),
     AUCKLAND("Auckland") ;
 
+
+
     Destination(String destination) {
+
+
     }
 
     public String getDestination(){
         return this.getDestination();
     }
+
 }

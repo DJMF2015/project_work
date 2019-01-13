@@ -16,7 +16,7 @@ public class AirportTest {
 
     @Before
     public void before() {
-        airport = new Airport("Edinburgh", "EDI");
+        airport = new Airport("Edinburgh", "EDI", 10);
         flight = new ArrayList <>();
     }
 
@@ -31,26 +31,25 @@ public class AirportTest {
     }
 
     @Test
-    public void addPlaneToHangar() {
-        airport.addToHangar(plane);
-        airport.addToHangar(plane);
+    public void assignPlaneToHangar() {
+        airport.addPlaneToHangar(plane);
+        airport.addPlaneToHangar(plane);
         assertEquals(2, airport.getNoOfPlanes());
     }
 
     @Test
-    public void removePlaneFromHangar() {
-        airport.addToHangar(plane);
-        airport.addToHangar(plane);
+    public void deplaneFromHangar() {
+        airport.addPlaneToHangar(plane);
+        airport.addPlaneToHangar(plane);
         assertEquals(2, airport.getNoOfPlanes());
-        airport.leaveHangar();
+        airport.planeLeavesHangar();
         assertEquals(1, airport.getNoOfPlanes());
     }
 
-    //TO-DO
+
     @Test
     public void airportCanAssignFlights() {//assign flight from hanagr to flight
         airport.addFlightToPlane();
     }
 
-//
 }

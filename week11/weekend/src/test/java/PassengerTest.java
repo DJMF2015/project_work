@@ -7,7 +7,6 @@ public class PassengerTest {
 
 
     Passenger passenger;
-    Destination destination;
 
     @Before
     public void before() {
@@ -19,16 +18,5 @@ public class PassengerTest {
         assertEquals("Harry", passenger.getName());
     }
 
-    @Test
-    public void getTicket() {
-        assertEquals(1, passenger.checkTicket());
-    }
 
-
-    @Test
-    public void canSellTickets() {
-        passenger.purchaseTicket(Destination.AUCKLAND);
-       // assertEquals(Destination.AUCKLAND, passenger.checkTicket());
-
-    }
 }

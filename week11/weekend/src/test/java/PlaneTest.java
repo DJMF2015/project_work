@@ -8,8 +8,7 @@ public class PlaneTest {
 
     Plane plane;
     Passenger passenger;
-
-
+    PlaneType type;
     @Before
     public void before(){
 
@@ -46,5 +45,13 @@ public class PlaneTest {
         assertEquals(0, plane.getNoOfPassenger());
     }
 
+    @Test
+    public void canSellTickets(){
+        plane.boardPassenger(passenger);
+        plane.boardPassenger(passenger);
+        assertEquals(3, plane.sellTicket());
     }
+
+
+}
 

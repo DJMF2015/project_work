@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public enum PlaneType {
-    BOEING747("Boeing787", 5), //plane type, capacity
+    BOEING747("Boeing787", 6), //plane type, capacity
     ROLLSROYCE("RollsRoyce", 110),
     PRATT_WHITNEY("Pratt & Whitney", 100),
     AIRBUS("Airbus", 220);
@@ -17,12 +17,9 @@ public enum PlaneType {
         this.passenger = new ArrayList <>();
     }
 
-//    public boolean checkPlaneCapacity(Passenger passenger){
-//        Plane plane = new Plane(Airline.EASYJET, 5);
-//        for (int i = 0 ;i <= 5; i++){
-//            (passenger);
-//
-//            System.out.println(this.passengers.size());
-//        }
-//    }
+    public int getValue(){
+        return this.capacity;
+    }
+
+
 }

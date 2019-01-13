@@ -6,14 +6,17 @@ public class Airport {
 
     private String name;
     private String airportCode;
+    Passenger passenger;
     private ArrayList <Flight> flight;
     private ArrayList <Plane> hangar;
-
+    private int tickets;
     LocalDateTime currentTime = LocalDateTime.now();
 
-    public Airport(String name, String airportCode) {
+    public Airport(String name, String airportCode, int tickets) {
         this.name = name;
         this.airportCode = airportCode;
+        this.tickets = tickets;
+        this.passenger = passenger;
         hangar = new ArrayList <>();
     }
 
@@ -29,17 +32,17 @@ public class Airport {
         return this.hangar.size();
     }
 
-    public void addToHangar(Plane plane) {
+    public void addPlaneToHangar(Plane plane) {
         this.hangar.add(plane);
-        planeLeavesHangar();
-    }
-
-    public void leaveHangar() {
-        this.hangar.remove(0);
-        planeLeavesHangar();
+        planeTakeOff();
     }
 
     public void planeLeavesHangar() {
+        this.hangar.remove(0);
+        planeTakeOff();
+    }
+
+    public void planeTakeOff() {
         System.out.println("Planes left Hangar at :" + currentTime.format(
                 DateTimeFormatter.ofPattern("HH:mm:ss"))
                 + getNoOfPlanes());
@@ -50,14 +53,8 @@ public class Airport {
         addFlight.getAirline();
         addFlight.getFlightDestination();
         addFlight.getFlightNo();
-
     }
 
-
-    //TO-DO
-    public void sellTicket(Passenger passenger, Destination ticket) {
-            passenger.purchaseTicket(ticket);
-    }
 
 
 }

@@ -28,26 +28,31 @@ public class Airport {
         return this.name;
     }
 
+    //return no of planes inside hangar
     public int getNoOfPlanes() {
         return this.hangar.size();
     }
 
+    //add a plane object to a hangar
     public void addPlaneToHangar(Plane plane) {
         this.hangar.add(plane);
         planeTakeOff();
     }
 
+
+    //remove a pane from hangar before takes off
     public void planeLeavesHangar() {
         this.hangar.remove(0);
         planeTakeOff();
     }
 
+    //time and no of planes left
     public void planeTakeOff() {
         System.out.println("Planes left Hangar at :" + currentTime.format(
                 DateTimeFormatter.ofPattern("HH:mm:ss"))
                 + getNoOfPlanes());
     }
-
+        //assign a new Flight object to a plane
     public void addFlightToPlane() {
         Flight addFlight = new Flight(Airline.EASYJET, Destination.EDINBURGH, 745);
         addFlight.getAirline();

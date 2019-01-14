@@ -16,7 +16,7 @@ public enum PlaneType {
         this.name = name;
         this.passenger = new ArrayList <>();
     }
-
+    //retunr the  capacity of planetype
     public int getValue(){
         return this.capacity;
     }

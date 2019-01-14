@@ -30,6 +30,7 @@ public class Flight {
         flights.add(destination);
     }
 
+    //assign a flight to airline
     public void addAirline(Flight airline) {
         flights.add(airline);
     }

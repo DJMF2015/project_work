@@ -5,7 +5,7 @@
 
 - your base class should be abstract and called FarmAnimal.
 
-#### FarmAnimal should have the following:
+#### FarmAnimal should have the following:
 
 - a species,
 - a getter for the species

@@ -17,7 +17,7 @@ public class Airport {
         this.airportCode = airportCode;
         this.tickets = tickets;
         this.passenger = passenger;
-        hangar = new ArrayList <>();
+        this.hangar = new ArrayList <Plane>();
     }
 
     public String getAirportCode() {
@@ -41,9 +41,9 @@ public class Airport {
 
 
     //remove a pane from hangar before takes off
-    public void planeLeavesHangar() {
-        this.hangar.remove(0);
-        planeTakeOff();
+    public void planeLeavesHangar(Plane plane) {
+        this.hangar.remove(plane);
+
     }
 
     //time and no of planes left
@@ -61,7 +61,11 @@ public class Airport {
     }
 
 
-
+    public Flight createFlight(Plane plane, int flightNo, Destination destination) {
+        planeLeavesHangar(plane);
+        Flight newFlight = new Flight(plane.getAirline(), destination,  flightNo);
+        return newFlight;
+    }
 }
 
 

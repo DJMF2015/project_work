@@ -5,19 +5,21 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class AirportTest {
 
     private String name;
     Airport airport;
     Plane plane;
-    private ArrayList <Flight> flight;
+    Flight flight;
     Destination destination;
 
     @Before
     public void before() {
         airport = new Airport("Edinburgh", "EDI", 10);
-        flight = new ArrayList <>();
+        flight = new Flight(Airline.EASYJET, Destination.EDINBURGH, 777);
+        plane = new Plane(PlaneType.BOEING747, Airline.EMIRATES);
     }
 
     @Test
@@ -42,10 +44,16 @@ public class AirportTest {
         airport.addPlaneToHangar(plane);
         airport.addPlaneToHangar(plane);
         assertEquals(2, airport.getNoOfPlanes());
-        airport.planeLeavesHangar();
+        airport.planeLeavesHangar(plane);
         assertEquals(1, airport.getNoOfPlanes());
     }
 
+     @Test
+     public void canCreateFlight(){
+         airport.addPlaneToHangar(plane);
+         Flight newFlight = airport.createFlight(plane, 777, destination);
+         assertNotNull(newFlight);
+     }
 
     @Test
     public void airportCanAssignFlights() {//assign flight from hanagr to flight

@@ -15,8 +15,8 @@ BeerView.prototype.bindEvents = function () {
     this.name = event.detail.name;
     console.log(event.detail.name)
     this.render(event.detail);
-    this.renderPieChart(event.detail)
-    this.renderLineChart(event.detail);
+    // this.renderPieChart(event.detail)
+    // this.renderLineChart(event.detail);
   });
 }
 
@@ -31,23 +31,23 @@ BeerView.prototype.render = function (beers) {
   }
 };
 
-BeerView.prototype.renderPieChart = function(beers){
-  this.container.innerHTML = '';
-  const chartData = PieChartHelper(beers);
-  const divContainer = document.createElement('div');
-  divContainer.className = 'pie-chart';
-  const pieChart = new PieChart('BrewDog Beers: % ABV', chartData, divContainer);
-  this.container.appendChild(divContainer);
-}
-
-BeerView.prototype.renderLineChart = function (beersData) {
-  const lineChartView = new LineChartView(this.container);
-  lineChartView.renderLineChart(beersData, this.name);
-};
-// BeerView.prototype.createBeerListItem = function (beer) {
-//   const beerListView = new BeerListView();
-//   const beerDetail = beerDetailView.createBeerList(beer);
-//   return beerDetail;
+// BeerView.prototype.renderPieChart = function(beers){
+//   this.container.innerHTML = '';
+//   const chartData = PieChartHelper(beers);
+//   const divContainer = document.createElement('div');
+//   divContainer.className = 'pie-chart';
+//   const pieChart = new PieChart('BrewDog Beers: % ABV', chartData, divContainer);
+//   this.container.appendChild(divContainer);
+// }
+//
+// BeerView.prototype.renderLineChart = function (beersData) {
+//   const lineChartView = new LineChartView(this.container);
+//   lineChartView.renderLineChart(beersData, this.name);
 // };
+BeerView.prototype.createBeerListItem = function (beer) {
+  const beerListView = new BeerListView();
+  const beerDetail = beerDetailView.createBeerList(beer);
+  return beerDetail;
+};
 
 module.exports = BeerView;

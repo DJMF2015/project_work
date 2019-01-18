@@ -12,7 +12,7 @@ In OOP this means that  objects  can represent different actions in a single way
 Interfaces via 'implements'; inheritance through sublcasses of its superclass - abstract or otherwise. Overloading performed statically at compile time or overriding at runtime - objects with same methods.
 
 ##### 4. How many 'forms' can an object take when using polymorphism?
-2 .
+as many as it wants.
 
 ##### 5. Give an example of when you could use polymorphism.
 When using an interface that is implented via multiple subclasses each with its own Arraylist objects. Another class through composition can then take in the same 'type' as the interface that will be implemented. to represent these objects as a 'single' arraylist that can perform different actions in an method appropriae to the particular object. eg) printer, speaker, desktop...

@@ -1,19 +1,20 @@
 package music;
+import java.util.logging.Logger;
 
-import interface_behaviours.IPlay;
 
 public class Guitar extends Instrument{
 
     private int noOfStrings;
     private String colour;
 
-    public Guitar(String material, String colour, InstrumentType familyType, double sellPrice, double originalPrice,
+    public Guitar(String material, String colour, InstrumentType familyType, int sellPrice, int originalPrice,
                   int noOfStrings){
         super( material, colour, familyType, originalPrice, sellPrice);
         this.noOfStrings = noOfStrings;
         this.colour = colour;
 
     }
+
 
     public int getNoOfStrings() {
         return noOfStrings;
@@ -24,9 +25,17 @@ public class Guitar extends Instrument{
         return colour;
     }
 
+     public int calculateMarkUp(){
+         System.out.println( sellPrice - originalPrice);
+         return sellPrice - originalPrice;
+
+
+     }
 
     public String play(){
             return "Twang, Twang my guitar!";
     }
+
+
 
 }

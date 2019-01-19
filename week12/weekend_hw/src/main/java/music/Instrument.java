@@ -6,11 +6,11 @@ public abstract class Instrument extends ShopItems implements IPlay {
 
     private String material;
     private String colour;
-    private double sellPrice;
-    private double originalPrice;
+    protected int sellPrice;
+    protected int originalPrice;
     InstrumentType familyType;
 
-    public Instrument(String material, String colour, InstrumentType familyType, double sellPrice, double originalPrice){
+    public Instrument(String material, String colour, InstrumentType familyType, int sellPrice, int originalPrice){
         this.material = material;
         this.colour = colour;
         this.familyType = familyType;
@@ -30,11 +30,11 @@ public abstract class Instrument extends ShopItems implements IPlay {
          return familyType;
     }
 
-    public double getSellPrice(){
+    public int getSellPrice(){
         return sellPrice;
     }
 
-    public double getOriginalPrice(){
+    public int getOriginalPrice(){
         return originalPrice;
     }
 

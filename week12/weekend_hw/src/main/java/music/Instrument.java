@@ -10,7 +10,7 @@ public abstract class Instrument extends ShopItems implements IPlay {
     protected int originalPrice;
     InstrumentType familyType;
 
-    public Instrument(String material, String colour, InstrumentType familyType, int sellPrice, int originalPrice) {
+    public Instrument(String material, String colour, InstrumentType familyType, int sellPrice, int originalPrice){
         super("guitar strings; drum sticks", sellPrice, originalPrice);
         this.material = material;
         this.colour = colour;
@@ -28,21 +28,19 @@ public abstract class Instrument extends ShopItems implements IPlay {
     }
 
     public InstrumentType getFamilyType() {
-        return familyType;
+         return familyType;
     }
 
-    public int getSellPrice() {
+    public int getSellPrice(){
         return sellPrice;
     }
 
-    public int getOriginalPrice() {
+    public int getOriginalPrice(){
         return originalPrice;
     }
-}
 
-//
-//    public abstract int calculateMarkUp();
-//
-//
-//}
+    public abstract int calculateMarkUp();
+
+
+}
 

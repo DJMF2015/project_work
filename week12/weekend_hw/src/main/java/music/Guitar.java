@@ -1,6 +1,4 @@
 package music;
-import java.util.logging.Logger;
-
 
 public class Guitar extends Instrument{
 
@@ -25,17 +23,17 @@ public class Guitar extends Instrument{
         return colour;
     }
 
-     public int markup(){
-         int markup = sellPrice - originalPrice;
-         return markup;
-     }
+    public int markup(){
+        int markup = sellPrice - originalPrice;
+        return markup;
+    }
 
     public int calculateMarkUp() {
         return markup();
 
-}
+    }
     public String play(){
-            return "Twang, Twang my guitar!";
+        return "Twang, Twang my guitar!";
     }
 
 

@@ -15,7 +15,4 @@ public enum InstrumentType {
         this.familyType = familyType;
     }
 
-    public String getType(){
-        return familyType;
-    }
 }

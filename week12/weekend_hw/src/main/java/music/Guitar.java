@@ -25,15 +25,13 @@ public class Guitar extends Instrument{
         return colour;
     }
 
-     public int profit(){
-         int profit = sellPrice - originalPrice;
-         return profit;
-
-
+     public int markup(){
+         int markup = sellPrice - originalPrice;
+         return markup;
      }
 
     public int calculateMarkUp() {
-        return profit();
+        return markup();
 
 }
     public String play(){

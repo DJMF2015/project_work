@@ -28,6 +28,7 @@ public class GuitarTest {
     public void hasFamilyType(){
         assertEquals(familyType.STRING, guitar.getFamilyType());
     }
+
     @Test
     public void hasNoOfStrings(){
         assertEquals(8, guitar.getNoOfStrings());
@@ -49,7 +50,7 @@ public class GuitarTest {
     }
 
     @Test
-    public void hasMarkUpPrice() {
-        assertEquals(200, guitar.profit());
+    public void hasMadeProfit() {
+        assertEquals(200, guitar.markup());
     }
 }

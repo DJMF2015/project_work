@@ -6,13 +6,11 @@ import java.util.ArrayList;
 
 public class Shop {
 
-
-    //NOTE: SHOPITEMS NEEDS COMPLETED FIRST AND TESTED..!
-
     private String description;
     private ArrayList<ISell> stock; //composition
     private int originalPrice ;
     private int sellingPrice;
+    static int total = 0;
 
     public Shop(String description, int originalPrice, int sellingPrice){
         this.description = description;
@@ -36,5 +34,24 @@ public class Shop {
         return stock;
     }
 
+    public int getStockItemsCount() {
+        System.out.println(stock.size());
+        return stock.size();
+    }
 
+    public void addItemToStock(ISell guitar) {
+        stock.add(guitar);
+    }
+
+    public void removeItemFromStock(ISell guitar){
+          stock.remove(guitar);
+    }
+
+    //profit margin = gross / total revenue
+    public int grossProfitMade(){
+       for (ISell items : stock) {
+           total += items.calculateMarkUp();
+       }
+       return total;
+    }
 }

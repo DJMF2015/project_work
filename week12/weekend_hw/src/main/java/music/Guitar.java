@@ -25,13 +25,17 @@ public class Guitar extends Instrument{
         return colour;
     }
 
-     public int calculateMarkUp(){
-         System.out.println( sellPrice - originalPrice);
-         return sellPrice - originalPrice;
+     public int profit(){
+         int profit = sellPrice - originalPrice;
+         return profit;
 
 
      }
 
+    public int calculateMarkUp() {
+        return profit();
+
+}
     public String play(){
             return "Twang, Twang my guitar!";
     }

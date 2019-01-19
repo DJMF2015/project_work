@@ -38,7 +38,7 @@ public abstract class Instrument extends ShopItems implements IPlay {
         return originalPrice;
     }
 
-
+    public abstract int calculateMarkUp();
 
 
 }

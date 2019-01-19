@@ -31,6 +31,7 @@ public class Shop {
     public int getSellingPrice() {
         return sellingPrice;
     }
+
     public ArrayList <ISell> getStock() {
         return stock;
     }

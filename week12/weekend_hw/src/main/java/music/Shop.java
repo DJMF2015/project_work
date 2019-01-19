@@ -47,6 +47,8 @@ public class Shop {
           stock.remove(guitar);
     }
 
+
+    //Needs refactored ...git
     //profit margin = gross / total revenue
     public int grossProfitMade(){
        for (ISell items : stock) {

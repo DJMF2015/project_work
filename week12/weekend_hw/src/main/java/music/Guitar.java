@@ -23,15 +23,13 @@ public class Guitar extends Instrument{
         return colour;
     }
 
-    public int markup(){
-        int markup = sellPrice - originalPrice;
+    public int calculateMarkUp(){
+        int markup = sellPrice - originalPrice/originalPrice * 100;
+        System.out.println("markup" + markup);
         return markup;
     }
 
-    public int calculateMarkUp() {
-        return markup();
 
-    }
     public String play(){
         return "Twang, Twang my guitar!";
     }

@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class ShopTest {
 
-    Shop shop,shop2;
+    Shop shop;
     Guitar guitar;
     Trumpet trumpet;
     Saxophone saxophone;
@@ -15,25 +15,27 @@ public class ShopTest {
     @Before
     public void before(){
         shop = new Shop("guitar, fully tested", 500, 800);
-        shop2 = new Shop("trumpet, 1 year old", 1000, 1250);
         guitar = new Guitar("wood", "mahogany", InstrumentType.ACOUSTIC, 300 ,800 ,  8);
+        saxophone = new Saxophone("golden", "clear", InstrumentType.WOODWIND,  660,520,
+                15, "Yamaha");
+        trumpet = new Trumpet("silver", "bronze", InstrumentType.BRASS,  1100,800,
+                "Mendini");
     }
 
     @Test
     public void hasDescription(){
         assertEquals("guitar, fully tested", shop.getDescription());
-        assertEquals("trumpet, 1 year old", shop2.getDescription());
     }
 
     @Test
     public void hasOriginalPrice(){
-        assertEquals(1000, shop2.getOriginalPrice());
+        assertEquals(500, shop.getOriginalPrice());
     }
 
     @Test
     public void hasSellingPrice(){
         assertEquals(800, shop.getSellingPrice());
-        assertEquals(1250, shop2.getSellingPrice());
+
     }
 
     @Test
@@ -55,7 +57,11 @@ public class ShopTest {
     public void hasMadeProfit(){
         shop.addItemToStock(guitar);
         shop.addItemToStock(guitar);
-       assertEquals(1000, shop.grossProfitMade());
+        shop.addItemToStock(trumpet);
+        shop.addItemToStock(trumpet);
+        shop.addItemToStock(saxophone);
+        shop.addItemToStock(saxophone);
+        assertEquals(2280, shop.grossProfitMade());
     }
 
 

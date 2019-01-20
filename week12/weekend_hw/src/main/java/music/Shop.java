@@ -12,6 +12,7 @@ public class Shop {
     private int sellingPrice;
     static int total = 0;
 
+
     public Shop(String description, int originalPrice, int sellingPrice){
         this.description = description;
         this.originalPrice = originalPrice;
@@ -35,11 +36,20 @@ public class Shop {
     }
 
     public int getStockItemsCount() {
-        System.out.println(stock.size());
+        System.out.println("Stock count:" + stock.size());
         return stock.size();
     }
 
+//    public boolean checkIsSufficientCash(Guitar guitar){
+//        if (ISell.shopCash >= guitar.originalPrice){
+//
+//        }
+//        return true;
+//    }
+
+
     public void addItemToStock(ISell guitar) {
+       // checkIsSufficientCash(guitar);
         stock.add(guitar);
     }
 
@@ -51,9 +61,10 @@ public class Shop {
     //Needs refactored ...git
     //profit margin = gross / total revenue
     public int grossProfitMade(){
-       for (ISell items : stock) {
-           total += items.calculateMarkUp();
+       for (ISell items : stock) { // 2
+           total += items.calculateMarkUp(); //700
+           System.out.println("total potential profit made: " );
        }
-       return total;
+       return total; //140
     }
 }

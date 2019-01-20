@@ -26,7 +26,8 @@ public class Saxophone extends Instrument {
     }
 
     public int markup() {
-        int markup = sellPrice - originalPrice;
+        int markup = sellPrice - originalPrice ;
+        System.out.println("markup" + markup);
         return markup;
     }
 

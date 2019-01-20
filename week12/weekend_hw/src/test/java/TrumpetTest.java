@@ -53,7 +53,7 @@ public class TrumpetTest {
     }
 
     @Test
-    public void hasMarkUp(){
-        assertEquals(300, trumpet.markup());
+    public void hasMadeProfit(){
+        assertEquals(300, trumpet.markup(),1.0);
     }
 }

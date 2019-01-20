@@ -57,6 +57,6 @@ public class SaxophoneTest {
 
     @Test
     public void hasMadeProfit(){
-        assertEquals(140, saxophone.markup());
+        assertEquals(140, saxophone.markup(), 1.0);
     }
 }

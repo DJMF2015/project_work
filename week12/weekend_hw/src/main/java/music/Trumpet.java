@@ -21,6 +21,7 @@ public class Trumpet extends Instrument{
 
     public int markup() {
         int markup = sellPrice - originalPrice;
+        System.out.println("markup" + markup);
         return markup;
     }
 

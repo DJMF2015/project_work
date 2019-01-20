@@ -9,6 +9,6 @@ public class ShopItemsTest {
 
     @Before
     public void before(){
-       // items = new ShopItems();
+
     }
 }

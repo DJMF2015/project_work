@@ -11,7 +11,7 @@ public class GuitarTest {
 
     @Before
     public void before(){
-        guitar = new Guitar("wood", "mahogany", familyType.STRING, 100 , 450 , 8);
+        guitar = new Guitar("wood", "mahogany", InstrumentType.STRING, 100 , 450 , 8);
     }
 
 
@@ -26,7 +26,7 @@ public class GuitarTest {
 
     @Test
     public void hasFamilyType(){
-        assertEquals(familyType.STRING, guitar.getFamilyType());
+        assertEquals(InstrumentType.STRING, guitar.getFamilyType());
     }
 
     @Test

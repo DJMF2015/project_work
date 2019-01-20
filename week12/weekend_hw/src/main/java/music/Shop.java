@@ -16,7 +16,6 @@ public class Shop {
 
     public Shop(int cash, String description) {
         this.description = description;
-        this.originalPrice = originalPrice;
         this.sellingPrice = sellingPrice;
         this.cash = cash;
         stock = new ArrayList <>();

@@ -14,7 +14,7 @@ public class ShopTest {
 
     @Before
     public void before(){
-        shop = new Shop("guitar, fully tested", 500, 800);
+        shop = new Shop(1500,"guitar, fully tested");
         guitar = new Guitar("wood", "mahogany", InstrumentType.ACOUSTIC, 300 ,800 ,  8);
         saxophone = new Saxophone("golden", "clear", InstrumentType.WOODWIND,  660,520,
                 15, "Yamaha");
@@ -27,41 +27,43 @@ public class ShopTest {
         assertEquals("guitar, fully tested", shop.getDescription());
     }
 
-    @Test
-    public void hasOriginalPrice(){
-        assertEquals(500, shop.getOriginalPrice());
-    }
+//    @Test
+//    public void hasOriginalPrice(){
+//        assertEquals(500, shop.getOriginalPrice());
+//    }
+//
+//    @Test
+//    public void hasSellingPrice(){
+//        assertEquals(800, shop.getSellingPrice());
+//
+//    }
 
-    @Test
-    public void hasSellingPrice(){
-        assertEquals(800, shop.getSellingPrice());
-
-    }
+     @Test
+     public void shopHasCash(){
+        assertEquals(1500, shop.getCash());
+     }
 
     @Test
     public void canAddItemToStock(){
         shop.addItemToStock(guitar);
         shop.addItemToStock(guitar);
-        assertEquals(2, shop.getStockItemsCount());
+        shop.addItemToStock(guitar);
+        assertEquals(3, shop.getStockItemsCount());
     }
 
     @Test
     public void canRemoveItemFromStock(){
         shop.addItemToStock(guitar);
         shop.addItemToStock(guitar);
+        shop.addItemToStock(guitar);
         shop.removeItemFromStock(guitar);
-        assertEquals(1, shop.getStockItemsCount());
+        assertEquals(2, shop.getStockItemsCount());
     }
 
     @Test
     public void hasMadeProfit(){
-        shop.addItemToStock(guitar);
-        shop.addItemToStock(guitar);
-        shop.addItemToStock(trumpet);
-        shop.addItemToStock(trumpet);
-        shop.addItemToStock(saxophone);
-        shop.addItemToStock(saxophone);
-        assertEquals(2280, shop.grossProfitMade());
+        shop.addItemToStock(guitar);  shop.addItemToStock(guitar);
+        assertEquals(1400, shop.grossProfitMade());
     }
 
 

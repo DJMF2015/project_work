@@ -5,30 +5,25 @@ import interface_behaviours.ISell;
 import java.util.ArrayList;
 
 public class Shop {
-
+    Guitar guitar;
     private String description;
-    private ArrayList<ISell> stock; //composition
-    private int originalPrice ;
+    private ArrayList <ISell> stock; //composition
+    private int originalPrice;
     private int sellingPrice;
     static int total = 0;
+    private int cash;
 
 
-    public Shop(String description, int originalPrice, int sellingPrice){
+    public Shop(int cash, String description) {
         this.description = description;
         this.originalPrice = originalPrice;
         this.sellingPrice = sellingPrice;
+        this.cash = cash;
         stock = new ArrayList <>();
     }
 
     public String getDescription() {
         return description;
-    }
-
-    public int getOriginalPrice() {
-        return originalPrice;
-    }
-    public int getSellingPrice() {
-        return sellingPrice;
     }
 
     public ArrayList <ISell> getStock() {
@@ -40,20 +35,20 @@ public class Shop {
         return stock.size();
     }
 
-//    public boolean checkIsSufficientCash(Guitar guitar){
-//        if (ISell.shopCash >= guitar.originalPrice){
-//
-//        }
-//        return true;
-//    }
-
-
-    public void addItemToStock(ISell guitar) {
-       // checkIsSufficientCash(guitar);
-        stock.add(guitar);
+    public int getCash() {
+        return cash;
     }
 
-    public void removeItemFromStock(ISell guitar){
+
+    public void addItemToStock(Instrument instrument) {
+       if (instrument.getOriginalPrice()  <getCash()){
+           stock.add(instrument);
+            cash -= instrument.getSellPrice();
+       }
+
+    }
+
+    public void removeItemFromStock(Instrument guitar){
           stock.remove(guitar);
     }
 
@@ -62,7 +57,7 @@ public class Shop {
     //profit margin = gross / total revenue
     public int grossProfitMade(){
        for (ISell items : stock) { // 2
-           total += items.calculateMarkUp(); //700
+           total += items.calculateMarkUp() ; //700
            System.out.println("total potential profit made: " );
        }
        return total; //140

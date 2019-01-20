@@ -10,6 +10,7 @@ public abstract class Instrument extends ShopItems implements IPlay {
     protected int originalPrice;
     InstrumentType familyType;
 
+
     public Instrument(String material, String colour, InstrumentType familyType, int sellPrice, int originalPrice){
         super("guitar strings; drum sticks", sellPrice, originalPrice);
         this.material = material;
@@ -17,6 +18,7 @@ public abstract class Instrument extends ShopItems implements IPlay {
         this.familyType = familyType;
         this.sellPrice = sellPrice;
         this.originalPrice = originalPrice;
+
     }
 
     public String getMaterial() {

@@ -8,9 +8,8 @@ public class Shop {
     Guitar guitar;
     private String description;
     private ArrayList <ISell> stock; //composition
-    private int originalPrice;
     private int sellingPrice;
-    static int total = 0;
+    private int total = 0;
     private int cash;
 
 
@@ -55,6 +54,7 @@ public class Shop {
     //Needs refactored ...git
     //profit margin = gross / total revenue
     public int grossProfitMade(){
+        total = 0;
        for (ISell items : stock) { // 2
            total += items.calculateMarkUp() ; //700
            System.out.println("total potential profit made: " );

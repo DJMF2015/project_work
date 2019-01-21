@@ -7,7 +7,7 @@ public class Guitar extends Instrument{
 
     public Guitar(String material, String colour, InstrumentType familyType, int sellPrice, int originalPrice,
                   int noOfStrings){
-        super( material, colour, familyType, originalPrice, sellPrice);
+        super( material, colour, familyType,  sellPrice,originalPrice);
         this.noOfStrings = noOfStrings;
         this.colour = colour;
 
@@ -24,7 +24,7 @@ public class Guitar extends Instrument{
     }
 
     public int calculateMarkUp(){
-        int markup = sellPrice - originalPrice/originalPrice * 100;
+        int markup =    originalPrice-sellPrice;
         System.out.println("markup" + markup);
         return markup;
     }

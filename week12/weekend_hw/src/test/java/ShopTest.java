@@ -39,7 +39,7 @@ public class ShopTest {
     public void hasMadeProfit(){
         shop.addItemToStock(guitar);
         shop.addItemToStock(guitar);
-        assertEquals(1400, shop.grossProfitMade());
+        assertEquals(1000, shop.grossProfitMade());
     }
 
     @Test

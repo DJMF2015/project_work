@@ -23,8 +23,8 @@ public class File implements Serializable {
     @Column(name = "size")
     private int size;
 
-    @JsonIgnoreProperties(value = "files")//avoid recursive serialisation of data
-    @Cascade(org.hibernate.annotations.CascadeType.DELETE)//delete through each column
+//    @JsonIgnoreProperties(value = "files")//avoid recursive serialisation of data
+//    @Cascade(org.hibernate.annotations.CascadeType.DELETE)//delete through each column
     @ManyToOne//relationship to type
     @JoinColumn(name = "folder_id", nullable = false) //fk of table Folder
     private Folder folder;
@@ -34,6 +34,10 @@ public class File implements Serializable {
     }
     public File(){
 
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public Long getId(){

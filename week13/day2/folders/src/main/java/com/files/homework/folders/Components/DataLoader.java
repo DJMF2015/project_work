@@ -42,7 +42,11 @@ public class DataLoader implements ApplicationRunner {
         Folder folder3 = new Folder("applications", user3);
         folderRepository.save(folder3);
 
-        File file1 = new File("E26 class notes", ".md", 80000, folder1);
+        File file1 = new File("hello_world", ".java", 8000, folder1);
         fileRepository.save(file1);
+        File file2 = new File("java notes", "txt", 1000, folder2);
+        fileRepository.save(file2);
+        File file3 = new File("class diagram", "png", 2390, folder3);
+        fileRepository.save(file3);
     }
 }

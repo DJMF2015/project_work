@@ -33,4 +33,6 @@ BeerListView.prototype.render = function () {
 
 };
 
+
+
 module.exports =  BeerListView;

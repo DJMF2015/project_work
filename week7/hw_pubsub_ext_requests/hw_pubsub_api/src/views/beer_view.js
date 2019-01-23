@@ -15,7 +15,7 @@ BeerView.prototype.bindEvents = function () {
     this.name = event.detail.name;
     console.log(event.detail.name)
     this.render(event.detail);
-    // this.renderPieChart(event.detail)
+  //  this.renderPieChart(event.detail)
     // this.renderLineChart(event.detail);
   });
 }
@@ -44,6 +44,7 @@ BeerView.prototype.render = function (beers) {
 //   const lineChartView = new LineChartView(this.container);
 //   lineChartView.renderLineChart(beersData, this.name);
 // };
+
 BeerView.prototype.createBeerListItem = function (beer) {
   const beerListView = new BeerListView();
   const beerDetail = beerDetailView.createBeerList(beer);

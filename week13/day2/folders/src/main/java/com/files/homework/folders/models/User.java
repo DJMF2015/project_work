@@ -22,7 +22,7 @@ public class User  {
     @Column(name = "name")
     private String name;
 
-    @JsonIgnoreProperties(value = "user")
+//    @JsonIgnoreProperties(value = "user")
     @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     //as can be only one user to many files
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
@@ -50,6 +50,7 @@ public class User  {
         return  name;
 
     }
+
 
     public void setName(String name){
         this.name = name;

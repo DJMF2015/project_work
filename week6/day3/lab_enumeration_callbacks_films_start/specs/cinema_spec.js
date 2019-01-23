@@ -23,39 +23,39 @@ describe('Cinema', function () {
     cinema = new Cinema(films);
   });
 
-  xit('should have a collection of films', function () {
+  it('should have a collection of films', function () {
     const actual = cinema.films;
     assert.deepStrictEqual(actual, films);
   });
 
-  xit('should be able to get a list of film titles', function (){
+  it('should be able to get a list of film titles', function (){
     const actual = cinema.filmTitles();
     expected = ['Moonlight', 'Blade Runner 2049', 'Dunkirk', 'Black Panther', 'T2 Trainspotting'];
     assert.deepStrictEqual(actual, expected);
   });
 
-  xit('should be able to find a film by title', function (){
+  it('should be able to find a film by title', function (){
     const actual = cinema.filmByTitle('Black Panther');
     assert.deepStrictEqual(actual, blackPanther);
   });
 
-  xit('should be able to filter films by genre', function (){
+  it('should be able to filter films by genre', function (){
     const actual = cinema.findByGenre('action');
     expected = [blackPanther, trainspotting ];
     assert.deepStrictEqual(actual, expected)
   });
 
-  xit('should be able to check whether there are some films from a particular year', function (){
+  it('should be able to check whether there are some films from a particular year', function (){
     const actual = cinema.findFilmByYear(2016, 2018);
     assert.strictEqual(actual, true);
   });
 
-  xit('should be able to check whether there are no films from a particular year', function (){
+  it('should be able to check whether there are no films from a particular year', function (){
     const actual = cinema.findFilmNoYear(2019, 2010);
     assert.strictEqual(actual, false);
   });
 
-  xit('should be able to check whether all films are over a particular length', function (){
+  it('should be able to check whether all films are over a particular length', function (){
     const actual  = cinema.filmHasLength(90);
     assert.strictEqual(actual, true);
   });

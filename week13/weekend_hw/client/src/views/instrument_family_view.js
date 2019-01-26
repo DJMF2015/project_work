@@ -1,11 +1,12 @@
-const PubSub = require('../helpers/pub_sub.js');
+// const PubSub = require('../helpers/pub_sub.js');
+import PubSub from '../helpers/pub_sub.js';
 
 class InstrumentFamilyView {
   constructor(container) {
     this.container = container;
   }
 
-//unrefactored
+  //unrefactored
   // InstrumentFamilyView.prototype.bindEvents = function () {
   //   PubSub.subscribe('InstrumentFamilies:selected-family-ready', (evt) => {
   //     const instrumentFamily = evt.detail;
@@ -47,7 +48,7 @@ class InstrumentFamilyView {
     return element;
   };
 
-//unrefactored
+  //unrefactored
   //   InstrumentFamilyView.prototype.createInstrumentList = function (instruments) {
   //     const list = document.createElement('ul');
   //
@@ -73,4 +74,6 @@ class InstrumentFamilyView {
   };
 
 };
-module.exports = InstrumentFamilyView;
+// Syntax: export default class {}
+// module.exports = InstrumentFamilyView;
+export default InstrumentFamilyView;

@@ -1,6 +1,7 @@
 // const PubSub = require('../helpers/pub_sub.js');
 import PubSub from '../helpers/pub_sub.js';
 
+//refactored
 class InstrumentFamilyView {
   constructor(container) {
     this.container = container;
@@ -14,6 +15,7 @@ class InstrumentFamilyView {
   //   });
   // };
 
+//refactored
   bindEvents() {
     PubSub.subscribe('InstrumentFamilies:selected-family-ready', (evt) => {
       const instrumentFamily = evt.detail;
@@ -21,27 +23,47 @@ class InstrumentFamilyView {
     });
   };
 
-  render(family) {
-    this.container.innerHTML = '';
-    const familyName = this.createElement('h2', family.name);
-    this.container.appendChild(familyName);
+//DESTRUCTURED FUNCTION
+//refactored
+  render({description, instruments, name = family}) {
+     this.container.innerHTML = '';
 
-    const familyDescription = this.createElement('p', family.description);
-    this.container.appendChild(familyDescription);
+     const familyName = this.createElement('h2', name);
+     this.container.appendChild(familyName);
 
-    const instrumentListTitle = this.createElement('h3', 'Instruments include:');
-    this.container.appendChild(instrumentListTitle);
+     const familyDescription = this.createElement('p', description);
+     this.container.appendChild(familyDescription);
 
-    const instrumentList = this.createInstrumentList(family.instruments);
-    this.container.appendChild(instrumentList);
-  };
+     const instrumentListTitle = this.createElement('h3', 'Instruments include:');
+     this.container.appendChild(instrumentListTitle);
 
+     const instrumentList = this.createInstrumentList(instruments);
+     this.container.appendChild(instrumentList);
+}
+  //unrefactored
+  // render(family) {
+  //   this.container.innerHTML = '';
+  //   const familyName = this.createElement('h2', family.name);
+  //   this.container.appendChild(familyName);
+  //
+  //   const familyDescription = this.createElement('p', family.description);
+  //   this.container.appendChild(familyDescription);
+  //
+  //   const instrumentListTitle = this.createElement('h3', 'Instruments include:');
+  //   this.container.appendChild(instrumentListTitle);
+  //
+  //   const instrumentList = this.createInstrumentList(family.instruments);
+  //   this.container.appendChild(instrumentList);
+  // };
+
+  //unrefactored
   // InstrumentFamilyView.prototype.createElement = function (elementType, text) {
   //   const element = document.createElement(elementType);
   //   element.textContent = text;
   //   return element;
   // };
 
+  //refactored
   createElement(elementType, text) {
     const element = document.createElement(elementType);
     element.textContent = text;
@@ -62,6 +84,8 @@ class InstrumentFamilyView {
   //   };
   //
   // };
+
+    //refactored
   createInstrumentList(instruments) {
     const list = document.createElement('ul');
     instruments.forEach((instrument) => {
@@ -74,6 +98,7 @@ class InstrumentFamilyView {
   };
 
 };
+
 // Syntax: export default class {}
 // module.exports = InstrumentFamilyView;
 export default InstrumentFamilyView;

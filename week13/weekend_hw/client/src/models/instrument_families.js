@@ -16,6 +16,15 @@ class InstrumentFamilies   {
     });
   }
 
+
+  // BABEL example (of above) compiled from es6 to es2015 or previous
+  // bindEvents();
+  // PubSub.publish('InstrumentFamilies:data-ready', undefined.data);
+  // PubSub.subscribe('SelectView:change', function (evt) {
+  //   var selectedIndex = evt.detail;
+  //   undefined.publishFamilyDetail(selectedIndex);
+  // });
+
 //refactored
   publishFamilyDetail(selectedIndex) {
     const selectedFamily = this.data[selectedIndex];

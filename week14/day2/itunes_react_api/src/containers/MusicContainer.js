@@ -22,7 +22,7 @@ class MusicContainer extends Component {
   render() {
     return(
       <div>
-        <h2>iTunes Top20</h2>
+        <h2>iTunes Top 20</h2>
         <SongList songs={this.state.songs}  />
       </div>
     )

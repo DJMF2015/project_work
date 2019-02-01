@@ -1,14 +1,18 @@
 body {
   margin: 0;
-  padding: 0;
+  background: linear-gradient(to bottom, rgba(206,220,231,1) 25%,rgba(89,106,114,1) 99%);
+  background: rgb(158,158,158); /* Old browsers */
+  background: -moz-linear-gradient(-45deg, rgba(158,158,158,1) 40%, rgba(14,14,14,1) 98%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, rgba(158,158,158,1) 40%,rgba(14,14,14,1) 98%); /* Chrome10-25,Safari5.1-6 */
+  padding: 3%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  monospace;
 }

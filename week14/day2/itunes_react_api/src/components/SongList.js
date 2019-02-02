@@ -4,11 +4,15 @@ const SongList = (props) => {
   console.log(props)
   const feed = props.songs.map((song, index) => {
     return <tr key={index}>
-      <td>{index+1}</td>
-      <td>{song["im:name"]["label"]}</td>
-      <td>{song["im:artist"]["label"]}</td>
-      <td><img src ={song["im:image"][0]["label"]} alt="image"></img></td>
+      <div className="text">
+        <td>{index+1}</td>
+        <td>{song["im:name"]["label"]}</td>
+        <td>{song["im:artist"]["label"]}</td>
+      </div>
+      
+      <td><img src ={song["im:image"][0]["label"]} alt="artist-image"></img></td>
       <td><audio controls src ={song["link"][1]["attributes"]["href"]}>Preview</audio></td>
+
     </tr>
   })
 

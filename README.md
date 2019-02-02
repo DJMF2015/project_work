@@ -1,6 +1,6 @@
 ### codeclan homework solutions
 
-This repo contains full completed solutions where possible to the course cohort e26
+This repo contains solutions to weekday/weekend homework for the 16 week course.
 
 #### week1-5
  - Ruby programming

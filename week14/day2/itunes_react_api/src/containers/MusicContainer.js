@@ -1,6 +1,5 @@
 
 import React, {Component, Fragment} from 'react';
-import Song from '../components/Song.js';
 import SongList from '../components/SongList.js';
 
 class MusicContainer extends Component {
@@ -22,7 +21,7 @@ class MusicContainer extends Component {
   render() {
     return(
         <div className="text">
-        <h2>iTunes UK Top 20</h2>
+        <h1><center>iTunes UK Top 20</center></h1>
         <SongList songs={this.state.songs}  />
       </div>
     )

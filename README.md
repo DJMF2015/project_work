@@ -1,4 +1,4 @@
-### codeclan homework solutions
+### codeclan solutions
 
 This repo contains solutions to weekday/weekend homework for the 16 week course.
 
@@ -21,7 +21,7 @@ This repo contains solutions to weekday/weekend homework for the 16 week course.
   - MongoDb
   - Group Project - NodeJS/Express/Javascript/MongoDB application
  
-#### week 10: careers week
+#### week 10: n/a
 
 #### week 11-15
   - Java Fundamentals
@@ -34,9 +34,10 @@ This repo contains solutions to weekday/weekend homework for the 16 week course.
   - Javascript ECMA6 features: classes, destructuring, closures, use of import/export
   - REACT framework - fundamentals: compisition, i-way data flow, Stateless functions,
   websockets, API inetgration.
- - Project - Full Stack : Java Spring & REACT
+ - Project: final - Full Stack : Java Spring & REACT
  
  
+    
 
  
 15/10/18

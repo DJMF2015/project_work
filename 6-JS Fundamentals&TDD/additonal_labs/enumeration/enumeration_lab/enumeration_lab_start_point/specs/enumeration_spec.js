@@ -40,7 +40,7 @@ describe('My Enumeration Library', function() {
     assert.deepEqual( result, [ 2, 4, 6 ])
   });
 
-  it("returns true if *some* elements meet a condition", function() {
+  xit("returns true if *some* elements meet a condition", function() {
     assert.equal( myEnumLib.some( testArrayOfNumbers, function( number ) {
       return number > 3;
     }), true );
@@ -49,7 +49,7 @@ describe('My Enumeration Library', function() {
     }), false );
   });
 
-  it("returns true if *every* element meets a condition", function() {
+  xit("returns true if *every* element meets a condition", function() {
     assert.equal( myEnumLib.every( testArrayOfNumbers, function( number ) {
       return number > 0;
     }), true )
@@ -58,7 +58,7 @@ describe('My Enumeration Library', function() {
     }), false )
   });
 
-  it("can reduce an array (to the sum of its items)", function() {
+  xit("can reduce an array (to the sum of its items)", function() {
     assert.equal( myEnumLib.reduce( testArrayOfNumbers, function( a, b ) {
       return a + b;
     }), 21 ) // 1 + 2 + 3 + 4 + 5 + 6 === 21

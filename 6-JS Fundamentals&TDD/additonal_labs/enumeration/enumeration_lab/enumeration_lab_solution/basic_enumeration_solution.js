@@ -18,7 +18,7 @@ Enumeration.prototype.map = function (array, callback) {
 
 Enumeration.prototype.filter = function (array, callback) {
   var filteredArray = [];
-  for (var object of array) {
+  for (const object of array) {
     if (callback(object)) {
       filteredArray.push(object);
     }

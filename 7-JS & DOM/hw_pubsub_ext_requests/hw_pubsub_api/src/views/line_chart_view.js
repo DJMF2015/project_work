@@ -8,7 +8,10 @@ const LineChartView = function (container) {
 //renderLineChart
 LineChartView.prototype.renderLineChart = function (beersData, beerName){
   //this.container=innerHTML = '';
-  const dataForGraph = beersData.map(beer => beer.abv);
+  const dataForGraph = beersData.map(beer => beer.method.mash_temp[0].duration);
+  console.log(dataForGraph)
+  const data= beersData.map(beer => beer.ingredients.yeast);
+  console.log(data)
   const chartContainer = document.createElement('div');
   chartContainer.className = 'Line-Chart';
   const lineChart = new LineChart('Date Beers Brewed', beerName, dataForGraph, chartContainer)

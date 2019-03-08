@@ -2,7 +2,7 @@ const Highcharts = require('highcharts');
 require('highcharts/modules/exporting')(Highcharts);
 
 const LineChart = function(title, name, data, container) {
-  const today = new Date("Dec 31, 2018 24:00:00");
+  const today = new Date("Mar 08, 2019 24:00:00");
   const chart = new Highcharts.Chart({
     chart: {
       renderTo: container,

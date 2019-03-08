@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const beerSelect = document.querySelector('#beers');
   const beerSelectView = new SelectView(beerSelect);
-  debugger
+
   beerSelectView.bindEvents();
 
   const beerContainer = document.querySelector('#beers-container');

@@ -18,7 +18,7 @@ Beers.prototype.bindEvents = function () {
 };
 
 Beers.prototype.getBeers = function () {
-  const requestHelper = new RequestHelper('https://api.punkapi.com/v2/beers');
+  const requestHelper = new RequestHelper('https://api.punkapi.com/v2/beers?page=2&per_page=10');
   requestHelper.get().then((beers) => { // should be .then((beers) => {})
     this.beerData = beers;
     const name = this.getListofNames();

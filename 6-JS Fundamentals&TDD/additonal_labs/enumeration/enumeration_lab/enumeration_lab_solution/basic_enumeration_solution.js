@@ -46,6 +46,13 @@ Enumeration.prototype.every = function (array, callback) {
   return resultArray.length === array.length;
 }
 
+Enumeration.prototype.every = function (array, callback) {
+  var resultArray = [];
+
+
+return result
+}
+
 Enumeration.prototype.reduce = function(array, callback) {
   var total = 0;
   for (var object of array) {

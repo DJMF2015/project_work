@@ -40,16 +40,16 @@ describe('My Enumeration Library', function() {
     assert.deepEqual( result, [ 2, 4, 6 ])
   });
 
-  xit("returns true if *some* elements meet a condition", function() {
+  it("returns true if *some* elements meet a condition", function() {
     assert.equal( myEnumLib.some( testArrayOfNumbers, function( number ) {
-      return number > 3;
+      return number > 3;//if first or subsequent over 3 return true
     }), true );
     assert.equal( myEnumLib.some( testArrayOfNumbers, function( number ) {
-      return number > 100;
+      return number > 100; //if 0 over 100 return false
     }), false );
   });
 
-  xit("returns true if *every* element meets a condition", function() {
+  it("returns true if *every* element meets a condition", function() {
     assert.equal( myEnumLib.every( testArrayOfNumbers, function( number ) {
       return number > 0;
     }), true )

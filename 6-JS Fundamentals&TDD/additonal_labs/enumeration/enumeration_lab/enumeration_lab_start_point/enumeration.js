@@ -69,17 +69,24 @@ Enumeration.prototype.every = function (array, callback) {
   const results = [];
   for (let number of array){
     if(callback(number))
-      results.push(number) //add to array if true
+    results.push(number) //add to array if true
   }
-  return results.length === array.length; //returns results for true 
+  return results.length === array.length; //returns results for true
 }
 
-Enumeration.prototype.reduce = function(array, accumulatingFunction){
-  var accumulator = 0;
+//reduce takes 4 args (accumulator, current value, current index, array) returns acc as a single vaue from all iterations
+Enumeration.prototype.reduce = function(array, accumulatingCallback){
 
+  return array.reduce((accumulator, accumulatingCallback) => accumulator + accumulatingCallback, 0);
 
-  return accumulator
 };
 
+Enumeration.prototype.reduce = function( array, accumulatingFunction ) {
+  var accumulator = 0;
+  this.forEach( array, function( currentValue ) {
+    accumulator = accumulatingFunction( accumulator, currentValue );
+  });
+  return accumulator;
+};
 
 module.exports = Enumeration;

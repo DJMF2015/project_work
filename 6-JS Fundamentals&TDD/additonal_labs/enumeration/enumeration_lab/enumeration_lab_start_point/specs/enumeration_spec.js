@@ -58,7 +58,7 @@ describe('My Enumeration Library', function() {
     }), false )
   });
 
-  xit("can reduce an array (to the sum of its items)", function() {
+  it("can reduce an array (to the sum of its items)", function() {
     assert.equal( myEnumLib.reduce( testArrayOfNumbers, function( a, b ) {
       return a + b;
     }), 21 ) // 1 + 2 + 3 + 4 + 5 + 6 === 21

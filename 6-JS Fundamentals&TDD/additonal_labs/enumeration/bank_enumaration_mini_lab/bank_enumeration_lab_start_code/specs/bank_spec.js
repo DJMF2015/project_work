@@ -26,15 +26,15 @@ describe('Bank', function() {
     assert.strictEqual(bank.accounts.length, 4);
   });
 
-  xit("should be able to find an account by owner name", function() {
+  it("should be able to find an account by owner name", function() {
     assert.deepEqual(bank.accountByName("Craig"), account4);
   });
 
-  xit("should be able to find an account with highest value", function() {
+  it("should be able to find an account with highest value", function() {
     assert.deepEqual(bank.largestAccount(), account3);
   });
 
-  xit("should be able to add 10% interest to all accounts", function() {
+  it("should be able to add 10% interest to all accounts", function() {
     var interestPaid1 = new Account("Sian", 66, 'personal');
     var interestPaid2 = new Account("Keith", 11, 'business');
     var interestPaid3 = new Account("Harrison", 88, 'personal');
@@ -42,7 +42,7 @@ describe('Bank', function() {
     var expected = [interestPaid1, interestPaid2, interestPaid3, interestPaid4]
 
     bank.payInterest();
-    
+
     assert.deepStrictEqual(bank.accounts, expected)
   });
 

@@ -41,7 +41,8 @@ Enumeration.prototype.some = function( array, booleanFunction ) {
 Enumeration.prototype.every = function( array, booleanFunction ) {
   var result = true;
   this.forEach( array, function( item ) {
-    if ( !booleanFunction( item ) ) result = false;
+    if (!booleanFunction(item)
+    result = false;
   })
   return result;
 };

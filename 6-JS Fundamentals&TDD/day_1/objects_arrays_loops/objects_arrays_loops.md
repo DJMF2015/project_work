@@ -59,6 +59,7 @@ console.log('number of elements:', numberOfElements);
 To get the first element we pass the index `0` to the array using square brackets again. We can access the other elements with their respective index numbers.
 
 ```js
+
 var firstSport = sports[0];
 console.log('first sport:', firstSport);
 // -> first sport: football
@@ -130,7 +131,8 @@ console.log('sports:', sports);
 ```
 
 ### Manipulating Arrays with `splice`
-
+splice allows us to remove add/remove an element from middle of an array
+eg) remove or add a specific word in a prepopulated array eg) array.splice(2,1);
 These methods are useful, but they only let us modify the beginning or end of the array. What about if we want to add or remove something from the middle of the array? To do this, we can use the Array method, [`splice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice).
 
 Let's remove `'curling'` from the `sports` array using `splice`. We can see from the docs that `splice` has parameters:
@@ -158,7 +160,7 @@ When we have an array, and want to do the same thing with each value in the arra
 for (var currentSport of sports) {
   var uppercasedSport = currentSport.toUpperCase();
   console.log(uppercasedSport);
-
+//for loop in js - for..of for..in
   // -> FOOTBALL
   // -> TENNIS
   // -> RUGBY

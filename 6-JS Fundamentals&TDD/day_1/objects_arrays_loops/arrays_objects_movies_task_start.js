@@ -53,8 +53,28 @@ var movies = [
   },
 ];
 
-// 1. Loop through the array of movies and make each movie's title all capital letters.
+// 1. Loop through the array of movies and make each movie's & director's title/name all capital letters.
+for (let movie of movies){
+  for (let movie of movies){
+    const title = movie.title
+    const director = movie.director
+    const film = title.toUpperCase();
+    const actor = director.toUpperCase();
+    movie.title = film;
+    movie.director = actor;
 
-// 2. Loop through the array and find the movie with the title Citizen Kane. log its year of release.
+    console.log('movies:', movies);
+  }
+}
+//2. Loop through the array and find the movie with the title Citizen Kane. log its year of release.
+for (let movie of movies){
+  if (movie.title.toUpperCase() ===  'citizen Kane'.toUpperCase()){
+    console.log(`Year of release for Citizen Kane: ${movie.year}`)
+  }
+}
+//3. Using a different kind of loop, iterate through the movies and log each movie's title and audience rating.
+for (i = 0; i < movies.length;i++){
+  const rating = movies[i];
+  console.log(`Film: ${rating.title}, Rating:` + ' ' + `${rating.ratings.audience}`)
 
-// 3. Using a different kind of loop, iterate through the movies and log each movie's title and audience rating.
+}

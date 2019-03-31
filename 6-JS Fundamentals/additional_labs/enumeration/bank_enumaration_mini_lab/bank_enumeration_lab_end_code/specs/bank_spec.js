@@ -34,7 +34,7 @@ describe('Bank', function() {
     assert.deepEqual(bank.largestAccount(), account3);
   });
 
-  it("should be able to add 10% interest to all accounts", function() {
+  xit("should be able to add 10% interest to all accounts", function() {
     var interestPaid1 = new Account("Sian", 66, 'personal');
     var interestPaid2 = new Account("Keith", 11, 'business');
     var interestPaid3 = new Account("Harrison", 88, 'personal');
@@ -50,11 +50,11 @@ describe('Bank', function() {
     assert.deepStrictEqual(bank.businessAccounts(), [account2, account4]);
   });
 
-  it("should be able to find total value of all acounts", function() {
+  xit("should be able to find total value of all acounts", function() {
     assert.strictEqual(bank.totalValue(), 155);
   });
 
-  it("should be able to find the average value of accounts", function() {
+  xit("should be able to find the average value of accounts", function() {
     assert.strictEqual(bank.averageValue(), 38.75);
   });
 

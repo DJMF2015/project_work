@@ -69,9 +69,8 @@ const getSomethingFromTheShop = function(budget, callback) {
 
   callback(wanted, got);
 };
-
-//getSomethingFromTheShop execute sthe callback and passes to the returning function whic accepts an arg and callback that
-//returns the agumnets as output . Higher order functios either take a function as an argument OR return a function as output.
+ 
+//Higher order functions either take a function as an argument OR return a function as output.
 //A callback is a function and functions in js are first class objects as can be referenced by vars and passed to other functions like varibles.
 getSomethingFromTheShop("nae money", function(request, response) {
   console.log("I wanted " + request + "but all I got was a " + response);

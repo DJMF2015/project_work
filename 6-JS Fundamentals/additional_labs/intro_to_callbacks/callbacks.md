@@ -12,7 +12,7 @@ Higher-order functions either take a function as an argument or return a functio
 
 Because functions are *first class objects* in JavaScript, they can be referenced by variables and passed around just like variables.
 
-Let's create a directory. 
+Let's create a directory.
 
 ```
 mkdir higher_order_functions
@@ -28,7 +28,7 @@ setTimeout(function() {
 }, 1000);
 ```
 
-So here the first argument is the callback and the second is a value in milliseconds. setTimeout is a built in JavaScript function and we're using it here to illustrate how callbacks behave. 
+So here the first argument is the callback and the second is a value in milliseconds. setTimeout is a built in JavaScript function and we're using it here to illustrate how callbacks behave.
 
 In the example above, the callback is an *anonymous* function. It has no name and is passed in at the same time that it is defined.
 
@@ -121,6 +121,6 @@ redChecker("Print out this new message please!", "red", logRed, logNotRed);
 
 2. **Maths Fun:** Write two functions *increment* and *square*. *increment* should take in a number and return the number plus 1. *square* should take in a number and return it multiplied by itself.
 
-  Write another function called *doSomeMathsForMe* that takes in a number (*n*) and a function (a callback) and executes the callback, passing in *n* as an argument.
+3. Write another function called *doSomeMathsForMe* that takes in a number (*n*) and a function (a callback) and executes the callback, passing in *n* as an argument.
 
   Invoke *doSomeMathsForMe* by passing it a number and the *increment* and/or *square* function.

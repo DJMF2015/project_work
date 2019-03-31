@@ -68,7 +68,6 @@ in to a higher order function's arguments. If extracting it to a variable before
 passing it in makes it more clear what's going on, it's totally fine as well.
 
 ## Writing our own forEach
-> Let class do as exercise if going well.
 
 To really understand what a forEach is doing, we can write our own. Ours will
 work a little differently because it won't be a method on `Array`.

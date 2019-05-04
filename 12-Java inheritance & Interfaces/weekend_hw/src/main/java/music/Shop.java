@@ -51,8 +51,6 @@ public class Shop {
     }
 
 
-    //Needs refactored ...git
-    //profit margin = gross / total revenue
     public int grossProfitMade(){
         total = 0;
        for (ISell items : stock) { // 2

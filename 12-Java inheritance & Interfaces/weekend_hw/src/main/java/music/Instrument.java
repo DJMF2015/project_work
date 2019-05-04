@@ -1,8 +1,9 @@
 package music;
 
 import interface_behaviours.IPlay;
+import interface_behaviours.ISell;
 
-public abstract class Instrument extends ShopItems implements IPlay {
+public abstract class Instrument extends ShopItems implements IPlay{
 
     private String material;
     private String colour;

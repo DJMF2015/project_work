@@ -61,13 +61,16 @@ public class Card {
                 && this.suit == that.suit;
     }
 
-//    public boolean equalCard(Card that){
-//       if (this.rank == that.rank && this.suit == that.suit){
-//           return true;
-//       }
-//       return false;
-//    }
-
+      public void findCard(String card){
+           for (int i = 0; i< RANKS.length;i++){
+               if (card == card){
+                   System.out.println("Found card: " + card );
+                   break;
+               } else {
+                   System.out.println("not found " + card);
+               }
+           }
+      }
     /**
      * Returns the card's index in a sorted deck of 52 cards.
      */
@@ -80,6 +83,7 @@ public class Card {
      */
 
     public String toString() {
+
         return RANKS[this.rank] + " of " + SUITS[this.suit];
     }
 
@@ -92,9 +96,8 @@ public class Card {
           Card card = new Card(11, 2);
           System.out.println(card.getPosition());
           Card cards = new Card(11, 1);
-
+          cards.findCard(RANKS[12]);
           printCard(cards);
-//          Card[] cads = new Card[52];
         }
     }
 

@@ -1,4 +1,4 @@
-### codeclan solutions
+### Information Technology Professional Training: solutions
 
 This repo contains solutions to weekday/weekend homework for the 16 week course.
 
